@@ -1,0 +1,61 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="free_trialformule">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="code" type="VARCHAR(500)"/>
+        <column name="dayspeerweek" type="VARCHAR(500)"/>
+        <column name="timeperday" type="VARCHAR(500)"/>
+        <column name="teacher_genderoption" type="VARCHAR(500)"/>
+        <column name="teacher_age_range" type="VARCHAR(500)"/>
+        <column name="teacher_personnality" type="VARCHAR(500)"/>
+        <column name="status" type="TINYINT"/>
+        <column name="date_confirmation" type="TIMESTAMP"/>
+
+        <column name="inscription_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="free_trialformule"
+              baseColumnNames="inscription_id"
+              referencedTableName="inscription"
+              referencedColumnNames="id"
+              constraintName="fk_free_trialformule_inscription"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/freetrial/FreeTrialformule.csv"
+            tableName="free_trialformule">
+      <column name="id" type="NUMERIC"/>
+          <column name="code" type="VARCHAR(500)"/>
+          <column name="dayspeerweek" type="VARCHAR(500)"/>
+          <column name="timeperday" type="VARCHAR(500)"/>
+          <column name="teacher_genderoption" type="VARCHAR(500)"/>
+          <column name="teacher_age_range" type="VARCHAR(500)"/>
+          <column name="teacher_personnality" type="VARCHAR(500)"/>
+          <column name="status" type="TINYINT"/>
+          <column name="date_confirmation" type="TIMESTAMP"/>
+        <column name="inscription" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,67 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="free_trial_detail">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="presence" type="TINYINT"/>
+        <column name="whats_up_message_sent" type="TINYINT"/>
+        <column name="date_envoiwhats_up_message" type="TIMESTAMP"/>
+        <column name="email_message_sent" type="TINYINT"/>
+        <column name="date_envoi_email_message" type="TIMESTAMP"/>
+        <column name="abonne" type="TINYINT"/>
+
+        <column name="free_trial_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="etudiant_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="free_trial_detail"
+              baseColumnNames="free_trial_id"
+              referencedTableName="free_trial"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_detail_free_trial"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial_detail"
+              baseColumnNames="etudiant_id"
+              referencedTableName="etudiant"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_detail_etudiant"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/freetrial/FreeTrialDetail.csv"
+            tableName="free_trial_detail">
+      <column name="id" type="NUMERIC"/>
+          <column name="presence" type="TINYINT"/>
+          <column name="whats_up_message_sent" type="TINYINT"/>
+          <column name="date_envoiwhats_up_message" type="TIMESTAMP"/>
+          <column name="email_message_sent" type="TINYINT"/>
+          <column name="date_envoi_email_message" type="TIMESTAMP"/>
+          <column name="abonne" type="TINYINT"/>
+        <column name="free_trial" type="BIGINT"/>
+        <column name="etudiant" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

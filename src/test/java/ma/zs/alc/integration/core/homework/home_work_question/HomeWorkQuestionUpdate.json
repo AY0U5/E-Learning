@@ -1,0 +1,45 @@
+{
+    "id": 1,
+    "ref": "ref-11",
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "numero": "101",
+    "id": 1,
+    "pointReponseJuste": "101",
+    "id": 1,
+    "pointReponsefausse": "101",
+    "id": 1,
+    "typeDeQuestion": {"id": "1"},
+    "id": 1,
+    "homeWork": {"id": "1"},
+
+    "howeWorkQSTReponses": [
+        {
+            "ref":"ref-1",
+            "lib":"lib-1",
+            "etatReponse":"etatReponse-1",
+            "numero":"10"
+        },
+        {
+            "ref":"ref-2",
+            "lib":"lib-2",
+            "etatReponse":"etatReponse-2",
+            "numero":"20"
+        },
+        {
+            "ref":"ref-3",
+            "lib":"lib-3",
+            "etatReponse":"etatReponse-3",
+            "numero":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

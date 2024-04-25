@@ -1,0 +1,17 @@
+{
+    "ref": "#string",
+    "libelle": "#string",
+    "image": "#string",
+    "description": "#string",
+    "numeroOrdre": "#number",
+    "destinataire": "#string"
+
+}
+
+
+
+
+
+
+
+

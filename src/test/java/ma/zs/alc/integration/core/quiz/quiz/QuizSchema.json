@@ -1,0 +1,74 @@
+{
+    "ref": "#string",
+    "lib": "#string",
+    "section": {"id": "#number"},
+    "numero": "#number",
+    "seuilReussite": "#number",
+
+    "questions": [
+      {
+        "ref":"#string",}
+        "libelle":"#string",}
+        "urlImg":"#string",}
+        "urlVideo":"#string",}
+        "numero":"#number",}
+        "pointReponseJuste":"#number",}
+        "pointReponsefausse":"#number",}
+        "typeDeQuestion":{"id": "#number"},}
+        "homeWork":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "libelle":"#string",}
+        "urlImg":"#string",}
+        "urlVideo":"#string",}
+        "numero":"#number",}
+        "pointReponseJuste":"#number",}
+        "pointReponsefausse":"#number",}
+        "typeDeQuestion":{"id": "#number"},}
+        "homeWork":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "libelle":"#string",}
+        "urlImg":"#string",}
+        "urlVideo":"#string",}
+        "numero":"#number",}
+        "pointReponseJuste":"#number",}
+        "pointReponsefausse":"#number",}
+        "typeDeQuestion":{"id": "#number"},}
+        "homeWork":{"id": "#number"}}
+      }
+    ],
+    "quizEtudiants": [
+      {
+        "ref":"#string",}
+        "etudiant":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "etudiant":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "etudiant":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

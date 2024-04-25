@@ -1,0 +1,32 @@
+{
+    "reference": "reference-1",
+    "prof": {"id": "1"},
+    "cours": {"id": "1"},
+    "groupeEtudiant": {"id": "1"},
+    "duree": "10",
+    "totalheure": "10",
+    "mois": "10",
+    "annee": "10",
+    "payer": "true",
+    "salary": {"id": "1"},
+
+    "sessionCoursSections": [
+        {
+            "section":{"id": "1"}
+        },
+        {
+            "section":{"id": "2"}
+        },
+        {
+            "section":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

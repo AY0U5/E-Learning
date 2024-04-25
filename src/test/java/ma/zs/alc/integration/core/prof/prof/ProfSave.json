@@ -1,0 +1,89 @@
+{
+    "ref": "ref-1",
+    "about": "about-1",
+    "parcours": {"id": "1"},
+    "categorieProf": {"id": "1"},
+    "typeTeacher": {"id": "1"},
+    "credentialsNonExpired": "true",
+    "enabled": "true",
+    "accountNonExpired": "true",
+    "accountNonLocked": "true",
+    "passwordChanged": "true",
+    "username": "username-1",
+    "password": "password-1",
+
+    "trancheHoraireProfs": [
+        {
+            "startHour":"startHour-1",
+            "endHour":"endHour-1",
+            "day":"10",
+            "groupIndex":"10",
+            "profsId":"10"
+        },
+        {
+            "startHour":"startHour-2",
+            "endHour":"endHour-2",
+            "day":"20",
+            "groupIndex":"20",
+            "profsId":"20"
+        },
+        {
+            "startHour":"startHour-3",
+            "endHour":"endHour-3",
+            "day":"30",
+            "groupIndex":"30",
+            "profsId":"30"
+        }
+    ],
+    "classRooms": [
+        {
+            "libelle":"libelle-1",
+            "description":"description-1"
+        },
+        {
+            "libelle":"libelle-2",
+            "description":"description-2"
+        },
+        {
+            "libelle":"libelle-3",
+            "description":"description-3"
+        }
+    ],
+    "recommendTeachers": [
+        {
+            "ref":"ref-1",
+            "nombrevote":"10",
+            "nom":"nom-1",
+            "prenom":"prenom-1",
+            "commentaire":"commentaire-1",
+            "telephone":"telephone-1",
+            "login":"login-1"
+        },
+        {
+            "ref":"ref-2",
+            "nombrevote":"20",
+            "nom":"nom-2",
+            "prenom":"prenom-2",
+            "commentaire":"commentaire-2",
+            "telephone":"telephone-2",
+            "login":"login-2"
+        },
+        {
+            "ref":"ref-3",
+            "nombrevote":"30",
+            "nom":"nom-3",
+            "prenom":"prenom-3",
+            "commentaire":"commentaire-3",
+            "telephone":"telephone-3",
+            "login":"login-3"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

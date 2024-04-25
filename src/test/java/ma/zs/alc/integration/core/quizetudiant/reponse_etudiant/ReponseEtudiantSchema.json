@@ -1,0 +1,17 @@
+{
+    "ref": "#string",
+    "reponse": {"id": "#number"},
+    "answer": "#string",
+    "quizEtudiant": {"id": "#number"},
+    "note": "#number",
+    "question": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

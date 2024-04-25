@@ -1,0 +1,19 @@
+{
+    "code": "#string",
+    "inscription": {"id": "#number"},
+    "dayspeerweek": "#string",
+    "timeperday": "#string",
+    "teacherGenderoption": "#string",
+    "teacherAgeRange": "#string",
+    "teacherPersonnality": "#string",
+    "status": "#bool",
+
+}
+
+
+
+
+
+
+
+

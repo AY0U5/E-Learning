@@ -1,0 +1,83 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="prof">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="ref" type="VARCHAR(500)"/>
+        <column name="about" type="VARCHAR(500)"/>
+        <column name="credentials_non_expired" type="TINYINT"/>
+        <column name="enabled" type="TINYINT"/>
+        <column name="account_non_expired" type="TINYINT"/>
+        <column name="account_non_locked" type="TINYINT"/>
+        <column name="password_changed" type="TINYINT"/>
+        <column name="username" type="VARCHAR(500)"/>
+        <column name="password" type="VARCHAR(500)"/>
+
+        <column name="parcours_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="categorie_prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_teacher_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="prof"
+              baseColumnNames="parcours_id"
+              referencedTableName="parcours"
+              referencedColumnNames="id"
+              constraintName="fk_prof_parcours"/>
+      <addForeignKeyConstraint
+              baseTableName="prof"
+              baseColumnNames="categorie_prof_id"
+              referencedTableName="categorie_prof"
+              referencedColumnNames="id"
+              constraintName="fk_prof_categorie_prof"/>
+      <addForeignKeyConstraint
+              baseTableName="prof"
+              baseColumnNames="type_teacher_id"
+              referencedTableName="type_teacher"
+              referencedColumnNames="id"
+              constraintName="fk_prof_type_teacher"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/prof/Prof.csv"
+            tableName="prof">
+      <column name="id" type="NUMERIC"/>
+          <column name="ref" type="VARCHAR(500)"/>
+          <column name="about" type="VARCHAR(500)"/>
+          <column name="credentials_non_expired" type="TINYINT"/>
+          <column name="enabled" type="TINYINT"/>
+          <column name="account_non_expired" type="TINYINT"/>
+          <column name="account_non_locked" type="TINYINT"/>
+          <column name="password_changed" type="TINYINT"/>
+          <column name="username" type="VARCHAR(500)"/>
+          <column name="password" type="VARCHAR(500)"/>
+        <column name="parcours" type="BIGINT"/>
+        <column name="categorie_prof" type="BIGINT"/>
+        <column name="type_teacher" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

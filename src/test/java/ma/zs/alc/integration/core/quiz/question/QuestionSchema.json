@@ -1,0 +1,41 @@
+{
+    "ref": "#string",
+    "libelle": "#string",
+    "urlImg": "#string",
+    "urlVideo": "#string",
+    "numero": "#number",
+    "pointReponseJuste": "#number",
+    "pointReponsefausse": "#number",
+    "typeDeQuestion": {"id": "#number"},
+    "quiz": {"id": "#number"},
+    "homeWork": {"id": "#number"},
+
+    "reponses": [
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

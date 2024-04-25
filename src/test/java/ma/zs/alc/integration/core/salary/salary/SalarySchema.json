@@ -1,0 +1,20 @@
+{
+    "code": "#string",
+    "prof": {"id": "#number"},
+    "mois": "#number",
+    "annee": "#number",
+    "nbrSessionMensuel": "#number",
+    "payer": "#bool",
+    "totalPayment": "#number",
+    "totalBonusClassAverage": "#number",
+    "totalBonusWorkload": "#number"
+
+}
+
+
+
+
+
+
+
+

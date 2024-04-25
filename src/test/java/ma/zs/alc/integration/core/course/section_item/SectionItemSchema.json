@@ -1,0 +1,19 @@
+{
+    "imageUrl": "#string",
+    "response": "#string",
+    "transcription": "#string",
+    "translation": "#string",
+    "explanation": "#string",
+    "example": "#string",
+    "synonyms": "#string",
+    "section": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

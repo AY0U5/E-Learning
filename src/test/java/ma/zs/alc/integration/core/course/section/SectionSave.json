@@ -1,0 +1,54 @@
+{
+    "code": "code-1",
+    "libelle": "libelle-1",
+    "urlImage": "urlImage-1",
+    "urlImage2": "urlImage2-1",
+    "urlImage3": "urlImage3-1",
+    "urlVideo": "urlVideo-1",
+    "contenu": "contenu-1",
+    "questions": "questions-1",
+    "indicationProf": "indicationProf-1",
+    "numeroOrder": "10",
+    "categorieSection": {"id": "1"},
+    "cours": {"id": "1"},
+    "url": "10",
+    "content": "10",
+
+    "sectionItems": [
+        {
+            "imageUrl":"imageUrl-1",
+            "response":"response-1",
+            "transcription":"transcription-1",
+            "translation":"translation-1",
+            "explanation":"explanation-1",
+            "example":"example-1",
+            "synonyms":"synonyms-1"
+        },
+        {
+            "imageUrl":"imageUrl-2",
+            "response":"response-2",
+            "transcription":"transcription-2",
+            "translation":"translation-2",
+            "explanation":"explanation-2",
+            "example":"example-2",
+            "synonyms":"synonyms-2"
+        },
+        {
+            "imageUrl":"imageUrl-3",
+            "response":"response-3",
+            "transcription":"transcription-3",
+            "translation":"translation-3",
+            "explanation":"explanation-3",
+            "example":"example-3",
+            "synonyms":"synonyms-3"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

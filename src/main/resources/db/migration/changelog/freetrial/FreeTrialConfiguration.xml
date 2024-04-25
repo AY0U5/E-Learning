@@ -1,0 +1,39 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="free_trial_configuration">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="date_application_debut" type="TIMESTAMP"/>
+        <column name="date_application_fin" type="TIMESTAMP"/>
+        <column name="nombre_student_max" type="BIGINT"/>
+        <column name="nombre_student_min" type="BIGINT"/>
+
+
+    </createTable>
+  </changeSet>
+
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="2" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/freetrial/FreeTrialConfiguration.csv"
+            tableName="free_trial_configuration">
+      <column name="id" type="NUMERIC"/>
+          <column name="date_application_debut" type="TIMESTAMP"/>
+          <column name="date_application_fin" type="TIMESTAMP"/>
+          <column name="nombre_student_max" type="BIGINT"/>
+          <column name="nombre_student_min" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

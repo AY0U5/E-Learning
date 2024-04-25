@@ -1,0 +1,25 @@
+{
+    "nombreCours": "#number",
+    "forGroupe": "#bool",
+    "code": "#string",
+    "libelle": "#string",
+    "description": "#string",
+    "preRequisites": "#string",
+    "whyTakeThisCourse": "#string",
+    "expectations": "#string",
+    "parcours": {"id": "#number"},
+    "imgUrl": "#string",
+    "price": {"id": "#number"},
+    "totalStudents": "#number",
+    "rating": "#string",
+    "oldPrice": "#string"
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+{
+    "subject": "#string",
+    "ref": "#string",
+    "groupeEtudiant": {"id": "#number"},
+    "prof": {"id": "#number"},
+    "cours": {"id": "#number"},
+    "grpName": "#string",
+    "profName": "#string",
+    "profsId": "#number"
+
+}
+
+
+
+
+
+
+
+

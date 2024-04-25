@@ -1,0 +1,52 @@
+{
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "id": 1,
+    "id": 1,
+    "section": {"id": "1"},
+
+    "vocabularys": [
+        {
+            "ref":"ref-1",
+            "numero":"10",
+            "word":"word-1",
+            "libelle":"libelle-1",
+            "result":"result-1",
+            "explication":"explication-1",
+            "exemple":"exemple-1",
+            "image":"image-1",
+            "section":{"id": "1"}
+        },
+        {
+            "ref":"ref-2",
+            "numero":"20",
+            "word":"word-2",
+            "libelle":"libelle-2",
+            "result":"result-2",
+            "explication":"explication-2",
+            "exemple":"exemple-2",
+            "image":"image-2",
+            "section":{"id": "2"}
+        },
+        {
+            "ref":"ref-3",
+            "numero":"30",
+            "word":"word-3",
+            "libelle":"libelle-3",
+            "result":"result-3",
+            "explication":"explication-3",
+            "exemple":"exemple-3",
+            "image":"image-3",
+            "section":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

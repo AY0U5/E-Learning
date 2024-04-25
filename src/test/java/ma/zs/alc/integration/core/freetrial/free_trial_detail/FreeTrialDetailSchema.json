@@ -1,0 +1,17 @@
+{
+    "freeTrial": {"id": "#number"},
+    "etudiant": {"id": "#number"},
+    "presence": "#bool",
+    "whatsUpMessageSent": "#bool",
+    "emailMessageSent": "#bool",
+    "abonne": "#bool"
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+{
+    "ref": "#string",
+    "numero": "#number",
+    "word": "#string",
+    "libelle": "#string",
+    "result": "#string",
+    "explication": "#string",
+    "exemple": "#string",
+    "image": "#string",
+    "section": {"id": "#number"},
+    "vocabularyQuiz": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

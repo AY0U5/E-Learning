@@ -1,0 +1,39 @@
+{
+    "ref": "#string",
+    "libelle": "#string",
+    "description": "#string",
+    "log": "#string",
+    "password": "#string",
+
+    "parcourss": [
+      {
+        "description":"#string",}
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number",}
+        "nombreCours":"#number"}
+      },
+      {
+        "description":"#string",}
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number",}
+        "nombreCours":"#number"}
+      },
+      {
+        "description":"#string",}
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number",}
+        "nombreCours":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

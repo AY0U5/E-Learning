@@ -1,0 +1,89 @@
+{
+    "ref": "#string",
+    "about": "#string",
+    "parcours": {"id": "#number"},
+    "categorieProf": {"id": "#number"},
+    "typeTeacher": {"id": "#number"},
+    "credentialsNonExpired": "#bool",
+    "enabled": "#bool",
+    "accountNonExpired": "#bool",
+    "accountNonLocked": "#bool",
+    "passwordChanged": "#bool",
+    "username": "#string",
+    "password": "#string",
+
+    "trancheHoraireProfs": [
+      {
+        "startHour":"#string",}
+        "endHour":"#string",}
+        "day":"#number",}
+        "groupIndex":"#number",}
+        "profsId":"#number"}
+      },
+      {
+        "startHour":"#string",}
+        "endHour":"#string",}
+        "day":"#number",}
+        "groupIndex":"#number",}
+        "profsId":"#number"}
+      },
+      {
+        "startHour":"#string",}
+        "endHour":"#string",}
+        "day":"#number",}
+        "groupIndex":"#number",}
+        "profsId":"#number"}
+      }
+    ],
+    "classRooms": [
+      {
+        "libelle":"#string",}
+        "description":"#string"}
+      },
+      {
+        "libelle":"#string",}
+        "description":"#string"}
+      },
+      {
+        "libelle":"#string",}
+        "description":"#string"}
+      }
+    ],
+    "recommendTeachers": [
+      {
+        "ref":"#string",}
+        "nombrevote":"#number",}
+        "nom":"#string",}
+        "prenom":"#string",}
+        "commentaire":"#string",}
+        "telephone":"#string",}
+        "login":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "nombrevote":"#number",}
+        "nom":"#string",}
+        "prenom":"#string",}
+        "commentaire":"#string",}
+        "telephone":"#string",}
+        "login":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "nombrevote":"#number",}
+        "nom":"#string",}
+        "prenom":"#string",}
+        "commentaire":"#string",}
+        "telephone":"#string",}
+        "login":"#string"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

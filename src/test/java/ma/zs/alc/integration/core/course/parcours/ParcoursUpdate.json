@@ -1,0 +1,128 @@
+{
+    "id": 1,
+    "id": 1,
+    "id": 1,
+    "description": "description-11",
+    "id": 1,
+    "code": "code-11",
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "numeroOrder": "101",
+    "id": 1,
+    "nombreCours": "101",
+    "id": 1,
+    "centre": {"id": "1"},
+
+    "courss": [
+        {
+            "code":"code-1",
+            "libelle":"libelle-1",
+            "description":"description-1",
+            "image":"image-1",
+            "etatCours":{"id": "1"},
+            "nombreSectionFinalise":"10",
+            "nombreSectionEnCours":"10",
+            "nombreLinkEnCours":"10",
+            "nombreLinkFinalise":"10",
+            "numeroOrder":"10"
+        },
+        {
+            "code":"code-2",
+            "libelle":"libelle-2",
+            "description":"description-2",
+            "image":"image-2",
+            "etatCours":{"id": "2"},
+            "nombreSectionFinalise":"20",
+            "nombreSectionEnCours":"20",
+            "nombreLinkEnCours":"20",
+            "nombreLinkFinalise":"20",
+            "numeroOrder":"20"
+        },
+        {
+            "code":"code-3",
+            "libelle":"libelle-3",
+            "description":"description-3",
+            "image":"image-3",
+            "etatCours":{"id": "3"},
+            "nombreSectionFinalise":"30",
+            "nombreSectionEnCours":"30",
+            "nombreLinkEnCours":"30",
+            "nombreLinkFinalise":"30",
+            "numeroOrder":"30"
+        }
+    ],
+    "etudiants": [
+        {
+            "ref":"ref-1",
+            "teacherLocality":{"id": "1"},
+            "groupOption":"groupOption-1",
+            "etatEtudiantSchedule":{"id": "1"},
+            "groupeEtude":{"id": "1"},
+            "packStudent":{"id": "1"},
+            "statutSocial":{"id": "1"},
+            "interetEtudiant":{"id": "1"},
+            "niveauEtude":{"id": "1"},
+            "skill":{"id": "1"},
+            "fonction":{"id": "1"},
+            "langue":{"id": "1"},
+            "credentialsNonExpired":"false",
+            "enabled":"false",
+            "accountNonExpired":"false",
+            "accountNonLocked":"false",
+            "passwordChanged":"false",
+            "username":"username-1",
+            "password":"password-1"
+        },
+        {
+            "ref":"ref-2",
+            "teacherLocality":{"id": "2"},
+            "groupOption":"groupOption-2",
+            "etatEtudiantSchedule":{"id": "2"},
+            "groupeEtude":{"id": "2"},
+            "packStudent":{"id": "2"},
+            "statutSocial":{"id": "2"},
+            "interetEtudiant":{"id": "2"},
+            "niveauEtude":{"id": "2"},
+            "skill":{"id": "2"},
+            "fonction":{"id": "2"},
+            "langue":{"id": "2"},
+            "credentialsNonExpired":"true",
+            "enabled":"true",
+            "accountNonExpired":"true",
+            "accountNonLocked":"true",
+            "passwordChanged":"true",
+            "username":"username-2",
+            "password":"password-2"
+        },
+        {
+            "ref":"ref-3",
+            "teacherLocality":{"id": "3"},
+            "groupOption":"groupOption-3",
+            "etatEtudiantSchedule":{"id": "3"},
+            "groupeEtude":{"id": "3"},
+            "packStudent":{"id": "3"},
+            "statutSocial":{"id": "3"},
+            "interetEtudiant":{"id": "3"},
+            "niveauEtude":{"id": "3"},
+            "skill":{"id": "3"},
+            "fonction":{"id": "3"},
+            "langue":{"id": "3"},
+            "credentialsNonExpired":"false",
+            "enabled":"false",
+            "accountNonExpired":"false",
+            "accountNonLocked":"false",
+            "passwordChanged":"false",
+            "username":"username-3",
+            "password":"password-3"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

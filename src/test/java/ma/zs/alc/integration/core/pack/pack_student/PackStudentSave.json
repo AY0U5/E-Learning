@@ -1,0 +1,25 @@
+{
+    "nombreCours": "10",
+    "forGroupe": "true",
+    "code": "code-1",
+    "libelle": "libelle-1",
+    "description": "description-1",
+    "preRequisites": "preRequisites-1",
+    "whyTakeThisCourse": "whyTakeThisCourse-1",
+    "expectations": "expectations-1",
+    "parcours": {"id": "1"},
+    "imgUrl": "imgUrl-1",
+    "price": {"id": "1"},
+    "totalStudents": "10",
+    "rating": "rating-1",
+    "oldPrice": "oldPrice-1"
+
+}
+
+
+
+
+
+
+
+

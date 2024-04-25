@@ -1,0 +1,45 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="contact">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="name" type="VARCHAR(500)"/>
+        <column name="email" type="VARCHAR(500)"/>
+        <column name="phone" type="VARCHAR(500)"/>
+        <column name="set_from" type="VARCHAR(500)"/>
+        <column name="date_contact" type="TIMESTAMP"/>
+        <column name="replied" type="TINYINT"/>
+        <column name="message" type="VARCHAR(500)"/>
+
+
+    </createTable>
+  </changeSet>
+
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="2" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/common/Contact.csv"
+            tableName="contact">
+      <column name="id" type="NUMERIC"/>
+          <column name="name" type="VARCHAR(500)"/>
+          <column name="email" type="VARCHAR(500)"/>
+          <column name="phone" type="VARCHAR(500)"/>
+          <column name="set_from" type="VARCHAR(500)"/>
+          <column name="date_contact" type="TIMESTAMP"/>
+          <column name="replied" type="TINYINT"/>
+          <column name="message" type="VARCHAR(500)"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

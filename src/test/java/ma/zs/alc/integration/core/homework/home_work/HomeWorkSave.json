@@ -1,0 +1,59 @@
+{
+    "libelle": "libelle-1",
+    "urlImage": "urlImage-1",
+    "urlVideo": "urlVideo-1",
+    "cours": {"id": "1"},
+    "typeHomeWork": {"id": "1"},
+
+    "homeWorkQuestions": [
+        {
+            "ref":"ref-1",
+            "libelle":"libelle-1",
+            "numero":"10",
+            "pointReponseJuste":"10",
+            "pointReponsefausse":"10",
+            "typeDeQuestion":{"id": "1"}
+        },
+        {
+            "ref":"ref-2",
+            "libelle":"libelle-2",
+            "numero":"20",
+            "pointReponseJuste":"20",
+            "pointReponsefausse":"20",
+            "typeDeQuestion":{"id": "2"}
+        },
+        {
+            "ref":"ref-3",
+            "libelle":"libelle-3",
+            "numero":"30",
+            "pointReponseJuste":"30",
+            "pointReponsefausse":"30",
+            "typeDeQuestion":{"id": "3"}
+        }
+    ],
+    "homeWorkEtudiants": [
+        {
+            "etudiant":{"id": "1"},
+            "note":"10",
+            "resultat":"resultat-1"
+        },
+        {
+            "etudiant":{"id": "2"},
+            "note":"20",
+            "resultat":"resultat-2"
+        },
+        {
+            "etudiant":{"id": "3"},
+            "note":"30",
+            "resultat":"resultat-3"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

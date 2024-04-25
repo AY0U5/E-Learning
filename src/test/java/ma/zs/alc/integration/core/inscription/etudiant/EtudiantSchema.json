@@ -1,0 +1,65 @@
+{
+    "ref": "#string",
+    "teacherLocality": {"id": "#number"},
+    "groupOption": "#string",
+    "etatEtudiantSchedule": {"id": "#number"},
+    "parcours": {"id": "#number"},
+    "groupeEtude": {"id": "#number"},
+    "packStudent": {"id": "#number"},
+    "statutSocial": {"id": "#number"},
+    "interetEtudiant": {"id": "#number"},
+    "niveauEtude": {"id": "#number"},
+    "skill": {"id": "#number"},
+    "fonction": {"id": "#number"},
+    "langue": {"id": "#number"},
+    "credentialsNonExpired": "#bool",
+    "enabled": "#bool",
+    "accountNonExpired": "#bool",
+    "accountNonLocked": "#bool",
+    "passwordChanged": "#bool",
+    "username": "#string",
+    "password": "#string",
+
+    "quizEtudiants": [
+      {
+        "ref":"#string",}
+        "quiz":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "quiz":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "quiz":{"id": "#number"},}
+        "note":"#number",}
+        "resultat":"#string",}
+        "questionCurrent":"#number"}
+      }
+    ],
+    "groupeEtudiantDetails": [
+      {
+        "groupeEtudiant":{"id": "#number"}}
+      },
+      {
+        "groupeEtudiant":{"id": "#number"}}
+      },
+      {
+        "groupeEtudiant":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

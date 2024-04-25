@@ -1,0 +1,48 @@
+{
+    "libelle": "#string",
+    "section": {"id": "#number"},
+
+    "vocabularys": [
+      {
+        "ref":"#string",}
+        "numero":"#number",}
+        "word":"#string",}
+        "libelle":"#string",}
+        "result":"#string",}
+        "explication":"#string",}
+        "exemple":"#string",}
+        "image":"#string",}
+        "section":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "numero":"#number",}
+        "word":"#string",}
+        "libelle":"#string",}
+        "result":"#string",}
+        "explication":"#string",}
+        "exemple":"#string",}
+        "image":"#string",}
+        "section":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "numero":"#number",}
+        "word":"#string",}
+        "libelle":"#string",}
+        "result":"#string",}
+        "explication":"#string",}
+        "exemple":"#string",}
+        "image":"#string",}
+        "section":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

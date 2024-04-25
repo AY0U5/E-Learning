@@ -1,0 +1,62 @@
+{
+    "code": "#string",
+    "libelle": "#string",
+    "numeroOrder": "#number",
+    "superCategorieSection": {"id": "#number"},
+
+    "sections": [
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "cours":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "cours":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "cours":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

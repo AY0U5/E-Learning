@@ -1,0 +1,69 @@
+{
+    "id": 1,
+    "reference": "reference-11",
+    "id": 1,
+    "prof": {"id": "1"},
+    "id": 1,
+    "niveauEtude": {"id": "1"},
+    "id": 1,
+    "id": 1,
+    "link": "link-11",
+    "id": 1,
+    "emailTeacherSent": "true1",
+    "id": 1,
+    "id": 1,
+    "whatsTeacherSent": "true1",
+    "id": 1,
+    "id": 1,
+    "freeTrialStudentWhatsTemplate": {"id": "1"},
+    "id": 1,
+    "freeTrialStudentEmailTemplate": {"id": "1"},
+    "id": 1,
+    "freeTrialTeacherEmailTemplate": {"id": "1"},
+    "id": 1,
+    "freeTrialTeacherWhatsTemplate": {"id": "1"},
+    "id": 1,
+    "id": 1,
+    "id": 1,
+    "nombreStudentTotal": "101",
+    "id": 1,
+    "freeTrialConfiguration": {"id": "1"},
+    "id": 1,
+    "nombreStudentAbonne": "101",
+    "id": 1,
+    "nombreStudentPresent": "101",
+    "id": 1,
+    "statutFreeTrial": {"id": "1"},
+
+    "freeTrialDetails": [
+        {
+            "etudiant":{"id": "1"},
+            "presence":"false",
+            "whatsUpMessageSent":"false",
+            "emailMessageSent":"false",
+            "abonne":"false"
+        },
+        {
+            "etudiant":{"id": "2"},
+            "presence":"true",
+            "whatsUpMessageSent":"true",
+            "emailMessageSent":"true",
+            "abonne":"true"
+        },
+        {
+            "etudiant":{"id": "3"},
+            "presence":"false",
+            "whatsUpMessageSent":"false",
+            "emailMessageSent":"false",
+            "abonne":"false"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

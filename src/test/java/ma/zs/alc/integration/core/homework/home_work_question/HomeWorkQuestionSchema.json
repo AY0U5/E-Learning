@@ -1,0 +1,38 @@
+{
+    "ref": "#string",
+    "libelle": "#string",
+    "numero": "#number",
+    "pointReponseJuste": "#number",
+    "pointReponsefausse": "#number",
+    "typeDeQuestion": {"id": "#number"},
+    "homeWork": {"id": "#number"},
+
+    "howeWorkQSTReponses": [
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      },
+      {
+        "ref":"#string",}
+        "lib":"#string",}
+        "etatReponse":"#string",}
+        "numero":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

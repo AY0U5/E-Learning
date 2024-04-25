@@ -1,0 +1,54 @@
+{
+    "code": "#string",
+    "libelle": "#string",
+    "urlImage": "#string",
+    "urlImage2": "#string",
+    "urlImage3": "#string",
+    "urlVideo": "#string",
+    "contenu": "#string",
+    "questions": "#string",
+    "indicationProf": "#string",
+    "numeroOrder": "#number",
+    "categorieSection": {"id": "#number"},
+    "cours": {"id": "#number"},
+    "url": "#number",
+    "content": "#number",
+
+    "sectionItems": [
+      {
+        "imageUrl":"#string",}
+        "response":"#string",}
+        "transcription":"#string",}
+        "translation":"#string",}
+        "explanation":"#string",}
+        "example":"#string",}
+        "synonyms":"#string"}
+      },
+      {
+        "imageUrl":"#string",}
+        "response":"#string",}
+        "transcription":"#string",}
+        "translation":"#string",}
+        "explanation":"#string",}
+        "example":"#string",}
+        "synonyms":"#string"}
+      },
+      {
+        "imageUrl":"#string",}
+        "response":"#string",}
+        "transcription":"#string",}
+        "translation":"#string",}
+        "explanation":"#string",}
+        "example":"#string",}
+        "synonyms":"#string"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

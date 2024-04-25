@@ -1,0 +1,31 @@
+{
+    "libelle": "#string",
+    "nombrePlace": "#number",
+    "nombrePlacevide": "#number",
+    "nombrePlaceNonVide": "#number",
+    "groupeEtude": {"id": "#number"},
+    "groupeType": {"id": "#number"},
+    "groupeEtat": {"id": "#number"},
+    "parcours": {"id": "#number"},
+    "prof": {"id": "#number"},
+
+    "groupeEtudiantDetails": [
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

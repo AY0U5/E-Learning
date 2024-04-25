@@ -1,0 +1,57 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="quiz">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="ref" type="VARCHAR(500)"/>
+        <column name="lib" type="VARCHAR(500)"/>
+        <column name="date_debut" type="TIMESTAMP"/>
+        <column name="date_fin" type="TIMESTAMP"/>
+        <column name="numero" type="BIGINT"/>
+        <column name="seuil_reussite" type="BIGINT"/>
+
+        <column name="section_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="quiz"
+              baseColumnNames="section_id"
+              referencedTableName="section"
+              referencedColumnNames="id"
+              constraintName="fk_quiz_section"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/quiz/Quiz.csv"
+            tableName="quiz">
+      <column name="id" type="NUMERIC"/>
+          <column name="ref" type="VARCHAR(500)"/>
+          <column name="lib" type="VARCHAR(500)"/>
+          <column name="date_debut" type="TIMESTAMP"/>
+          <column name="date_fin" type="TIMESTAMP"/>
+          <column name="numero" type="BIGINT"/>
+          <column name="seuil_reussite" type="BIGINT"/>
+        <column name="section" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

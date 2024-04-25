@@ -1,0 +1,49 @@
+{
+    "reference": "#string",
+    "prof": {"id": "#number"},
+    "niveauEtude": {"id": "#number"},
+    "link": "#string",
+    "emailTeacherSent": "#bool",
+    "whatsTeacherSent": "#bool",
+    "freeTrialStudentWhatsTemplate": {"id": "#number"},
+    "freeTrialStudentEmailTemplate": {"id": "#number"},
+    "freeTrialTeacherEmailTemplate": {"id": "#number"},
+    "freeTrialTeacherWhatsTemplate": {"id": "#number"},
+    "nombreStudentTotal": "#number",
+    "freeTrialConfiguration": {"id": "#number"},
+    "nombreStudentAbonne": "#number",
+    "nombreStudentPresent": "#number",
+    "statutFreeTrial": {"id": "#number"},
+
+    "freeTrialDetails": [
+      {
+        "etudiant":{"id": "#number"},}
+        "presence":"#bool",}
+        "whatsUpMessageSent":"#bool",}
+        "emailMessageSent":"#bool",}
+        "abonne":"#bool"}
+      },
+      {
+        "etudiant":{"id": "#number"},}
+        "presence":"#bool",}
+        "whatsUpMessageSent":"#bool",}
+        "emailMessageSent":"#bool",}
+        "abonne":"#bool"}
+      },
+      {
+        "etudiant":{"id": "#number"},}
+        "presence":"#bool",}
+        "whatsUpMessageSent":"#bool",}
+        "emailMessageSent":"#bool",}
+        "abonne":"#bool"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

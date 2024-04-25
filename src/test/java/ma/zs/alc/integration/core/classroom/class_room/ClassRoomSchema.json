@@ -1,0 +1,36 @@
+{
+    "libelle": "#string",
+    "description": "#string",
+    "prof": {"id": "#number"},
+
+    "etudiantClassRooms": [
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      },
+      {
+        "etudiant":{"id": "#number"}}
+      }
+    ],
+    "quizClassRooms": [
+      {
+        "quiz":{"id": "#number"}}
+      },
+      {
+        "quiz":{"id": "#number"}}
+      },
+      {
+        "quiz":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{
+    "id": 1,
+    "code": "code-11",
+    "id": 1,
+    "libelle": "libelle-11",
+
+    "categorieSections": [
+        {
+            "code":"code-1",
+            "libelle":"libelle-1",
+            "numeroOrder":"10"
+        },
+        {
+            "code":"code-2",
+            "libelle":"libelle-2",
+            "numeroOrder":"20"
+        },
+        {
+            "code":"code-3",
+            "libelle":"libelle-3",
+            "numeroOrder":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

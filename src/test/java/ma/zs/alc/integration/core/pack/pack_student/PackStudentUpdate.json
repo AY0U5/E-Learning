@@ -1,0 +1,39 @@
+{
+    "id": 1,
+    "nombreCours": "101",
+    "id": 1,
+    "forGroupe": "true1",
+    "id": 1,
+    "code": "code-11",
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "description": "description-11",
+    "id": 1,
+    "preRequisites": "preRequisites-11",
+    "id": 1,
+    "whyTakeThisCourse": "whyTakeThisCourse-11",
+    "id": 1,
+    "expectations": "expectations-11",
+    "id": 1,
+    "parcours": {"id": "1"},
+    "id": 1,
+    "imgUrl": "imgUrl-11",
+    "id": 1,
+    "price": {"id": "1"},
+    "id": 1,
+    "totalStudents": "101",
+    "id": 1,
+    "rating": "rating-11",
+    "id": 1,
+    "oldPrice": "oldPrice-11"
+
+}
+
+
+
+
+
+
+
+

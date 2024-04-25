@@ -1,0 +1,15 @@
+{
+    "etudiant": {"id": "#number"},
+    "prof": {"id": "#number"},
+    "cours": {"id": "#number"},
+    "payer": "#bool",
+
+}
+
+
+
+
+
+
+
+

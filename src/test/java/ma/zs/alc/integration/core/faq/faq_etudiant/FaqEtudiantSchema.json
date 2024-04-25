@@ -1,0 +1,16 @@
+{
+    "description": "#string",
+    "libelle": "#string",
+    "etudiant": {"id": "#number"},
+    "admin": {"id": "#number"},
+    "faqType": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

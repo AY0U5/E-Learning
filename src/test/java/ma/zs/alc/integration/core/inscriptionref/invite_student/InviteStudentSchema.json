@@ -1,0 +1,16 @@
+{
+    "code": "#string",
+    "etudiant": {"id": "#number"},
+    "isAccepted": "#bool",
+    "isPaidPack": "#bool",
+    "emailInvited": "#string",
+
+}
+
+
+
+
+
+
+
+

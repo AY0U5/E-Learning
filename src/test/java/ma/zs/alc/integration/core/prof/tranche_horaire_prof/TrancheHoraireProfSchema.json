@@ -1,0 +1,17 @@
+{
+    "prof": {"id": "#number"},
+    "startHour": "#string",
+    "endHour": "#string",
+    "day": "#number",
+    "groupIndex": "#number",
+    "profsId": "#number"
+
+}
+
+
+
+
+
+
+
+

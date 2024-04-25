@@ -1,0 +1,21 @@
+{
+    "reference": "#string",
+    "message": "#string",
+    "setFrom": "#string",
+    "img": "#string",
+    "traite": "#bool",
+    "postView": "#bool",
+    "objetReclamationEtudiant": "#string",
+    "commentaireTraiteur": "#string",
+    "username": "#string",
+    "typeReclamationEtudiant": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

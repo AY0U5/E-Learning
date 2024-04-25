@@ -1,0 +1,44 @@
+{
+    "id": 1,
+    "ref": "ref-11",
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "description": "description-11",
+    "id": 1,
+    "log": "log-11",
+    "id": 1,
+    "password": "password-11",
+
+    "parcourss": [
+        {
+            "description":"description-1",
+            "code":"code-1",
+            "libelle":"libelle-1",
+            "numeroOrder":"10",
+            "nombreCours":"10"
+        },
+        {
+            "description":"description-2",
+            "code":"code-2",
+            "libelle":"libelle-2",
+            "numeroOrder":"20",
+            "nombreCours":"20"
+        },
+        {
+            "description":"description-3",
+            "code":"code-3",
+            "libelle":"libelle-3",
+            "numeroOrder":"30",
+            "nombreCours":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

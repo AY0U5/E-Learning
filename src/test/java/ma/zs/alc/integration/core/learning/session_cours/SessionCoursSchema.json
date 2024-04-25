@@ -1,0 +1,32 @@
+{
+    "reference": "#string",
+    "prof": {"id": "#number"},
+    "cours": {"id": "#number"},
+    "groupeEtudiant": {"id": "#number"},
+    "duree": "#number",
+    "totalheure": "#number",
+    "mois": "#number",
+    "annee": "#number",
+    "payer": "#bool",
+    "salary": {"id": "#number"},
+
+    "sessionCoursSections": [
+      {
+        "section":{"id": "#number"}}
+      },
+      {
+        "section":{"id": "#number"}}
+      },
+      {
+        "section":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

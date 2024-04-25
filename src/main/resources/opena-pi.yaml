@@ -1,0 +1,7145 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /etatCourss:
+    get:
+      summary: List all etatCourss
+      operationId: listEtatCourss
+      tags:
+        - etatCourss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etatCourss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtatCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etatCours
+      operationId: createEtatCourss
+      tags:
+        - etatCourss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etatCourss/{etatCoursId}:
+    get:
+      summary: Info for a specific etatCours
+      operationId: showEtatCoursById
+      tags:
+        - etatCourss
+      parameters:
+        - name: etatCoursId
+          in: path
+          required: true
+          description: The id of the etatCours to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtatCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /howeWorkQSTReponses:
+    get:
+      summary: List all howeWorkQSTReponses
+      operationId: listHoweWorkQSTReponses
+      tags:
+        - howeWorkQSTReponses
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of howeWorkQSTReponses
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/HoweWorkQSTReponses'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a howeWorkQSTReponse
+      operationId: createHoweWorkQSTReponses
+      tags:
+        - howeWorkQSTReponses
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /howeWorkQSTReponses/{howeWorkQSTReponseId}:
+    get:
+      summary: Info for a specific howeWorkQSTReponse
+      operationId: showHoweWorkQSTReponseById
+      tags:
+        - howeWorkQSTReponses
+      parameters:
+        - name: howeWorkQSTReponseId
+          in: path
+          required: true
+          description: The id of the howeWorkQSTReponse to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/HoweWorkQSTReponses'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /scheduleProfs:
+    get:
+      summary: List all scheduleProfs
+      operationId: listScheduleProfs
+      tags:
+        - scheduleProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of scheduleProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ScheduleProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a scheduleProf
+      operationId: createScheduleProfs
+      tags:
+        - scheduleProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /scheduleProfs/{scheduleProfId}:
+    get:
+      summary: Info for a specific scheduleProf
+      operationId: showScheduleProfById
+      tags:
+        - scheduleProfs
+      parameters:
+        - name: scheduleProfId
+          in: path
+          required: true
+          description: The id of the scheduleProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ScheduleProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialDetails:
+    get:
+      summary: List all freeTrialDetails
+      operationId: listFreeTrialDetails
+      tags:
+        - freeTrialDetails
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialDetails
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialDetail
+      operationId: createFreeTrialDetails
+      tags:
+        - freeTrialDetails
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialDetails/{freeTrialDetailId}:
+    get:
+      summary: Info for a specific freeTrialDetail
+      operationId: showFreeTrialDetailById
+      tags:
+        - freeTrialDetails
+      parameters:
+        - name: freeTrialDetailId
+          in: path
+          required: true
+          description: The id of the freeTrialDetail to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /recommendTeachers:
+    get:
+      summary: List all recommendTeachers
+      operationId: listRecommendTeachers
+      tags:
+        - recommendTeachers
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of recommendTeachers
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RecommendTeachers'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a recommendTeacher
+      operationId: createRecommendTeachers
+      tags:
+        - recommendTeachers
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /recommendTeachers/{recommendTeacherId}:
+    get:
+      summary: Info for a specific recommendTeacher
+      operationId: showRecommendTeacherById
+      tags:
+        - recommendTeachers
+      parameters:
+        - name: recommendTeacherId
+          in: path
+          required: true
+          description: The id of the recommendTeacher to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RecommendTeachers'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponseEtudiants:
+    get:
+      summary: List all reponseEtudiants
+      operationId: listReponseEtudiants
+      tags:
+        - reponseEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reponseEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReponseEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reponseEtudiant
+      operationId: createReponseEtudiants
+      tags:
+        - reponseEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponseEtudiants/{reponseEtudiantId}:
+    get:
+      summary: Info for a specific reponseEtudiant
+      operationId: showReponseEtudiantById
+      tags:
+        - reponseEtudiants
+      parameters:
+        - name: reponseEtudiantId
+          in: path
+          required: true
+          description: The id of the reponseEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReponseEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /fonctions:
+    get:
+      summary: List all fonctions
+      operationId: listFonctions
+      tags:
+        - fonctions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of fonctions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Fonctions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a fonction
+      operationId: createFonctions
+      tags:
+        - fonctions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /fonctions/{fonctionId}:
+    get:
+      summary: Info for a specific fonction
+      operationId: showFonctionById
+      tags:
+        - fonctions
+      parameters:
+        - name: fonctionId
+          in: path
+          required: true
+          description: The id of the fonction to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Fonctions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /admins:
+    get:
+      summary: List all admins
+      operationId: listAdmins
+      tags:
+        - admins
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of admins
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Admins'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a admin
+      operationId: createAdmins
+      tags:
+        - admins
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /admins/{adminId}:
+    get:
+      summary: Info for a specific admin
+      operationId: showAdminById
+      tags:
+        - admins
+      parameters:
+        - name: adminId
+          in: path
+          required: true
+          description: The id of the admin to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Admins'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeDeQuestions:
+    get:
+      summary: List all typeDeQuestions
+      operationId: listTypeDeQuestions
+      tags:
+        - typeDeQuestions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeDeQuestions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeDeQuestions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeDeQuestion
+      operationId: createTypeDeQuestions
+      tags:
+        - typeDeQuestions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeDeQuestions/{typeDeQuestionId}:
+    get:
+      summary: Info for a specific typeDeQuestion
+      operationId: showTypeDeQuestionById
+      tags:
+        - typeDeQuestions
+      parameters:
+        - name: typeDeQuestionId
+          in: path
+          required: true
+          description: The id of the typeDeQuestion to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeDeQuestions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classRooms:
+    get:
+      summary: List all classRooms
+      operationId: listClassRooms
+      tags:
+        - classRooms
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of classRooms
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a classRoom
+      operationId: createClassRooms
+      tags:
+        - classRooms
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classRooms/{classRoomId}:
+    get:
+      summary: Info for a specific classRoom
+      operationId: showClassRoomById
+      tags:
+        - classRooms
+      parameters:
+        - name: classRoomId
+          in: path
+          required: true
+          description: The id of the classRoom to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sessionCourss:
+    get:
+      summary: List all sessionCourss
+      operationId: listSessionCourss
+      tags:
+        - sessionCourss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of sessionCourss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SessionCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a sessionCours
+      operationId: createSessionCourss
+      tags:
+        - sessionCourss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sessionCourss/{sessionCoursId}:
+    get:
+      summary: Info for a specific sessionCours
+      operationId: showSessionCoursById
+      tags:
+        - sessionCourss
+      parameters:
+        - name: sessionCoursId
+          in: path
+          required: true
+          description: The id of the sessionCours to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SessionCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorks:
+    get:
+      summary: List all homeWorks
+      operationId: listHomeWorks
+      tags:
+        - homeWorks
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of homeWorks
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/HomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a homeWork
+      operationId: createHomeWorks
+      tags:
+        - homeWorks
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorks/{homeWorkId}:
+    get:
+      summary: Info for a specific homeWork
+      operationId: showHomeWorkById
+      tags:
+        - homeWorks
+      parameters:
+        - name: homeWorkId
+          in: path
+          required: true
+          description: The id of the homeWork to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/HomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /superCategorieSections:
+    get:
+      summary: List all superCategorieSections
+      operationId: listSuperCategorieSections
+      tags:
+        - superCategorieSections
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of superCategorieSections
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SuperCategorieSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a superCategorieSection
+      operationId: createSuperCategorieSections
+      tags:
+        - superCategorieSections
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /superCategorieSections/{superCategorieSectionId}:
+    get:
+      summary: Info for a specific superCategorieSection
+      operationId: showSuperCategorieSectionById
+      tags:
+        - superCategorieSections
+      parameters:
+        - name: superCategorieSectionId
+          in: path
+          required: true
+          description: The id of the superCategorieSection to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SuperCategorieSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etatEtudiantSchedules:
+    get:
+      summary: List all etatEtudiantSchedules
+      operationId: listEtatEtudiantSchedules
+      tags:
+        - etatEtudiantSchedules
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etatEtudiantSchedules
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtatEtudiantSchedules'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etatEtudiantSchedule
+      operationId: createEtatEtudiantSchedules
+      tags:
+        - etatEtudiantSchedules
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etatEtudiantSchedules/{etatEtudiantScheduleId}:
+    get:
+      summary: Info for a specific etatEtudiantSchedule
+      operationId: showEtatEtudiantScheduleById
+      tags:
+        - etatEtudiantSchedules
+      parameters:
+        - name: etatEtudiantScheduleId
+          in: path
+          required: true
+          description: The id of the etatEtudiantSchedule to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtatEtudiantSchedules'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialConfigurations:
+    get:
+      summary: List all freeTrialConfigurations
+      operationId: listFreeTrialConfigurations
+      tags:
+        - freeTrialConfigurations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialConfigurations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialConfigurations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialConfiguration
+      operationId: createFreeTrialConfigurations
+      tags:
+        - freeTrialConfigurations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialConfigurations/{freeTrialConfigurationId}:
+    get:
+      summary: Info for a specific freeTrialConfiguration
+      operationId: showFreeTrialConfigurationById
+      tags:
+        - freeTrialConfigurations
+      parameters:
+        - name: freeTrialConfigurationId
+          in: path
+          required: true
+          description: The id of the freeTrialConfiguration to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialConfigurations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeReclamationEtudiants:
+    get:
+      summary: List all typeReclamationEtudiants
+      operationId: listTypeReclamationEtudiants
+      tags:
+        - typeReclamationEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeReclamationEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeReclamationEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeReclamationEtudiant
+      operationId: createTypeReclamationEtudiants
+      tags:
+        - typeReclamationEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeReclamationEtudiants/{typeReclamationEtudiantId}:
+    get:
+      summary: Info for a specific typeReclamationEtudiant
+      operationId: showTypeReclamationEtudiantById
+      tags:
+        - typeReclamationEtudiants
+      parameters:
+        - name: typeReclamationEtudiantId
+          in: path
+          required: true
+          description: The id of the typeReclamationEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeReclamationEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /packStudents:
+    get:
+      summary: List all packStudents
+      operationId: listPackStudents
+      tags:
+        - packStudents
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of packStudents
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/PackStudents'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a packStudent
+      operationId: createPackStudents
+      tags:
+        - packStudents
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /packStudents/{packStudentId}:
+    get:
+      summary: Info for a specific packStudent
+      operationId: showPackStudentById
+      tags:
+        - packStudents
+      parameters:
+        - name: packStudentId
+          in: path
+          required: true
+          description: The id of the packStudent to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/PackStudents'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reclamationProfs:
+    get:
+      summary: List all reclamationProfs
+      operationId: listReclamationProfs
+      tags:
+        - reclamationProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reclamationProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReclamationProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reclamationProf
+      operationId: createReclamationProfs
+      tags:
+        - reclamationProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reclamationProfs/{reclamationProfId}:
+    get:
+      summary: Info for a specific reclamationProf
+      operationId: showReclamationProfById
+      tags:
+        - reclamationProfs
+      parameters:
+        - name: reclamationProfId
+          in: path
+          required: true
+          description: The id of the reclamationProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReclamationProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /servicess:
+    get:
+      summary: List all servicess
+      operationId: listServicess
+      tags:
+        - servicess
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of servicess
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Servicess'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a services
+      operationId: createServicess
+      tags:
+        - servicess
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /servicess/{servicesId}:
+    get:
+      summary: Info for a specific services
+      operationId: showServicesById
+      tags:
+        - servicess
+      parameters:
+        - name: servicesId
+          in: path
+          required: true
+          description: The id of the services to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Servicess'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /trancheHoraireProfs:
+    get:
+      summary: List all trancheHoraireProfs
+      operationId: listTrancheHoraireProfs
+      tags:
+        - trancheHoraireProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of trancheHoraireProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TrancheHoraireProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a trancheHoraireProf
+      operationId: createTrancheHoraireProfs
+      tags:
+        - trancheHoraireProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /trancheHoraireProfs/{trancheHoraireProfId}:
+    get:
+      summary: Info for a specific trancheHoraireProf
+      operationId: showTrancheHoraireProfById
+      tags:
+        - trancheHoraireProfs
+      parameters:
+        - name: trancheHoraireProfId
+          in: path
+          required: true
+          description: The id of the trancheHoraireProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TrancheHoraireProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sectionItems:
+    get:
+      summary: List all sectionItems
+      operationId: listSectionItems
+      tags:
+        - sectionItems
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of sectionItems
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SectionItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a sectionItem
+      operationId: createSectionItems
+      tags:
+        - sectionItems
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sectionItems/{sectionItemId}:
+    get:
+      summary: Info for a specific sectionItem
+      operationId: showSectionItemById
+      tags:
+        - sectionItems
+      parameters:
+        - name: sectionItemId
+          in: path
+          required: true
+          description: The id of the sectionItem to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SectionItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /statutSocials:
+    get:
+      summary: List all statutSocials
+      operationId: listStatutSocials
+      tags:
+        - statutSocials
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of statutSocials
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StatutSocials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a statutSocial
+      operationId: createStatutSocials
+      tags:
+        - statutSocials
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /statutSocials/{statutSocialId}:
+    get:
+      summary: Info for a specific statutSocial
+      operationId: showStatutSocialById
+      tags:
+        - statutSocials
+      parameters:
+        - name: statutSocialId
+          in: path
+          required: true
+          description: The id of the statutSocial to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StatutSocials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /dictionarys:
+    get:
+      summary: List all dictionarys
+      operationId: listDictionarys
+      tags:
+        - dictionarys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of dictionarys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Dictionarys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a dictionary
+      operationId: createDictionarys
+      tags:
+        - dictionarys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /dictionarys/{dictionaryId}:
+    get:
+      summary: Info for a specific dictionary
+      operationId: showDictionaryById
+      tags:
+        - dictionarys
+      parameters:
+        - name: dictionaryId
+          in: path
+          required: true
+          description: The id of the dictionary to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Dictionarys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqEtudiants:
+    get:
+      summary: List all faqEtudiants
+      operationId: listFaqEtudiants
+      tags:
+        - faqEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of faqEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FaqEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a faqEtudiant
+      operationId: createFaqEtudiants
+      tags:
+        - faqEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqEtudiants/{faqEtudiantId}:
+    get:
+      summary: Info for a specific faqEtudiant
+      operationId: showFaqEtudiantById
+      tags:
+        - faqEtudiants
+      parameters:
+        - name: faqEtudiantId
+          in: path
+          required: true
+          description: The id of the faqEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FaqEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /workloadBonuss:
+    get:
+      summary: List all workloadBonuss
+      operationId: listWorkloadBonuss
+      tags:
+        - workloadBonuss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of workloadBonuss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/WorkloadBonuss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a workloadBonus
+      operationId: createWorkloadBonuss
+      tags:
+        - workloadBonuss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /workloadBonuss/{workloadBonusId}:
+    get:
+      summary: Info for a specific workloadBonus
+      operationId: showWorkloadBonusById
+      tags:
+        - workloadBonuss
+      parameters:
+        - name: workloadBonusId
+          in: path
+          required: true
+          description: The id of the workloadBonus to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/WorkloadBonuss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sessionCoursSections:
+    get:
+      summary: List all sessionCoursSections
+      operationId: listSessionCoursSections
+      tags:
+        - sessionCoursSections
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of sessionCoursSections
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SessionCoursSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a sessionCoursSection
+      operationId: createSessionCoursSections
+      tags:
+        - sessionCoursSections
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sessionCoursSections/{sessionCoursSectionId}:
+    get:
+      summary: Info for a specific sessionCoursSection
+      operationId: showSessionCoursSectionById
+      tags:
+        - sessionCoursSections
+      parameters:
+        - name: sessionCoursSectionId
+          in: path
+          required: true
+          description: The id of the sessionCoursSection to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SessionCoursSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeTypes:
+    get:
+      summary: List all groupeTypes
+      operationId: listGroupeTypes
+      tags:
+        - groupeTypes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of groupeTypes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/GroupeTypes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a groupeType
+      operationId: createGroupeTypes
+      tags:
+        - groupeTypes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeTypes/{groupeTypeId}:
+    get:
+      summary: Info for a specific groupeType
+      operationId: showGroupeTypeById
+      tags:
+        - groupeTypes
+      parameters:
+        - name: groupeTypeId
+          in: path
+          required: true
+          description: The id of the groupeType to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/GroupeTypes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudiants:
+    get:
+      summary: List all groupeEtudiants
+      operationId: listGroupeEtudiants
+      tags:
+        - groupeEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of groupeEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/GroupeEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a groupeEtudiant
+      operationId: createGroupeEtudiants
+      tags:
+        - groupeEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudiants/{groupeEtudiantId}:
+    get:
+      summary: Info for a specific groupeEtudiant
+      operationId: showGroupeEtudiantById
+      tags:
+        - groupeEtudiants
+      parameters:
+        - name: groupeEtudiantId
+          in: path
+          required: true
+          description: The id of the groupeEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/GroupeEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classAverageBonusProfs:
+    get:
+      summary: List all classAverageBonusProfs
+      operationId: listClassAverageBonusProfs
+      tags:
+        - classAverageBonusProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of classAverageBonusProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ClassAverageBonusProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a classAverageBonusProf
+      operationId: createClassAverageBonusProfs
+      tags:
+        - classAverageBonusProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classAverageBonusProfs/{classAverageBonusProfId}:
+    get:
+      summary: Info for a specific classAverageBonusProf
+      operationId: showClassAverageBonusProfById
+      tags:
+        - classAverageBonusProfs
+      parameters:
+        - name: classAverageBonusProfId
+          in: path
+          required: true
+          description: The id of the classAverageBonusProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ClassAverageBonusProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieSections:
+    get:
+      summary: List all categorieSections
+      operationId: listCategorieSections
+      tags:
+        - categorieSections
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of categorieSections
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/CategorieSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a categorieSection
+      operationId: createCategorieSections
+      tags:
+        - categorieSections
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieSections/{categorieSectionId}:
+    get:
+      summary: Info for a specific categorieSection
+      operationId: showCategorieSectionById
+      tags:
+        - categorieSections
+      parameters:
+        - name: categorieSectionId
+          in: path
+          required: true
+          description: The id of the categorieSection to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/CategorieSections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /profs:
+    get:
+      summary: List all profs
+      operationId: listProfs
+      tags:
+        - profs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of profs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Profs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a prof
+      operationId: createProfs
+      tags:
+        - profs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /profs/{profId}:
+    get:
+      summary: Info for a specific prof
+      operationId: showProfById
+      tags:
+        - profs
+      parameters:
+        - name: profId
+          in: path
+          required: true
+          description: The id of the prof to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Profs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /centres:
+    get:
+      summary: List all centres
+      operationId: listCentres
+      tags:
+        - centres
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of centres
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Centres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a centre
+      operationId: createCentres
+      tags:
+        - centres
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /centres/{centreId}:
+    get:
+      summary: Info for a specific centre
+      operationId: showCentreById
+      tags:
+        - centres
+      parameters:
+        - name: centreId
+          in: path
+          required: true
+          description: The id of the centre to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Centres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /teacherLocalitys:
+    get:
+      summary: List all teacherLocalitys
+      operationId: listTeacherLocalitys
+      tags:
+        - teacherLocalitys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of teacherLocalitys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TeacherLocalitys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a teacherLocality
+      operationId: createTeacherLocalitys
+      tags:
+        - teacherLocalitys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /teacherLocalitys/{teacherLocalityId}:
+    get:
+      summary: Info for a specific teacherLocality
+      operationId: showTeacherLocalityById
+      tags:
+        - teacherLocalitys
+      parameters:
+        - name: teacherLocalityId
+          in: path
+          required: true
+          description: The id of the teacherLocality to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TeacherLocalitys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /skills:
+    get:
+      summary: List all skills
+      operationId: listSkills
+      tags:
+        - skills
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of skills
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Skills'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a skill
+      operationId: createSkills
+      tags:
+        - skills
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /skills/{skillId}:
+    get:
+      summary: Info for a specific skill
+      operationId: showSkillById
+      tags:
+        - skills
+      parameters:
+        - name: skillId
+          in: path
+          required: true
+          description: The id of the skill to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Skills'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialStudentWhatsTemplates:
+    get:
+      summary: List all freeTrialStudentWhatsTemplates
+      operationId: listFreeTrialStudentWhatsTemplates
+      tags:
+        - freeTrialStudentWhatsTemplates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialStudentWhatsTemplates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialStudentWhatsTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialStudentWhatsTemplate
+      operationId: createFreeTrialStudentWhatsTemplates
+      tags:
+        - freeTrialStudentWhatsTemplates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialStudentWhatsTemplates/{freeTrialStudentWhatsTemplateId}:
+    get:
+      summary: Info for a specific freeTrialStudentWhatsTemplate
+      operationId: showFreeTrialStudentWhatsTemplateById
+      tags:
+        - freeTrialStudentWhatsTemplates
+      parameters:
+        - name: freeTrialStudentWhatsTemplateId
+          in: path
+          required: true
+          description: The id of the freeTrialStudentWhatsTemplate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialStudentWhatsTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /calendrierProfs:
+    get:
+      summary: List all calendrierProfs
+      operationId: listCalendrierProfs
+      tags:
+        - calendrierProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of calendrierProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/CalendrierProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a calendrierProf
+      operationId: createCalendrierProfs
+      tags:
+        - calendrierProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /calendrierProfs/{calendrierProfId}:
+    get:
+      summary: Info for a specific calendrierProf
+      operationId: showCalendrierProfById
+      tags:
+        - calendrierProfs
+      parameters:
+        - name: calendrierProfId
+          in: path
+          required: true
+          description: The id of the calendrierProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/CalendrierProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiants:
+    get:
+      summary: List all etudiants
+      operationId: listEtudiants
+      tags:
+        - etudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Etudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etudiant
+      operationId: createEtudiants
+      tags:
+        - etudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiants/{etudiantId}:
+    get:
+      summary: Info for a specific etudiant
+      operationId: showEtudiantById
+      tags:
+        - etudiants
+      parameters:
+        - name: etudiantId
+          in: path
+          required: true
+          description: The id of the etudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Etudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieProfs:
+    get:
+      summary: List all categorieProfs
+      operationId: listCategorieProfs
+      tags:
+        - categorieProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of categorieProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/CategorieProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a categorieProf
+      operationId: createCategorieProfs
+      tags:
+        - categorieProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieProfs/{categorieProfId}:
+    get:
+      summary: Info for a specific categorieProf
+      operationId: showCategorieProfById
+      tags:
+        - categorieProfs
+      parameters:
+        - name: categorieProfId
+          in: path
+          required: true
+          description: The id of the categorieProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/CategorieProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /questions:
+    get:
+      summary: List all questions
+      operationId: listQuestions
+      tags:
+        - questions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of questions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Questions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a question
+      operationId: createQuestions
+      tags:
+        - questions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /questions/{questionId}:
+    get:
+      summary: Info for a specific question
+      operationId: showQuestionById
+      tags:
+        - questions
+      parameters:
+        - name: questionId
+          in: path
+          required: true
+          description: The id of the question to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Questions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /contacts:
+    get:
+      summary: List all contacts
+      operationId: listContacts
+      tags:
+        - contacts
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of contacts
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Contacts'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a contact
+      operationId: createContacts
+      tags:
+        - contacts
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /contacts/{contactId}:
+    get:
+      summary: Info for a specific contact
+      operationId: showContactById
+      tags:
+        - contacts
+      parameters:
+        - name: contactId
+          in: path
+          required: true
+          description: The id of the contact to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Contacts'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqProfs:
+    get:
+      summary: List all faqProfs
+      operationId: listFaqProfs
+      tags:
+        - faqProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of faqProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FaqProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a faqProf
+      operationId: createFaqProfs
+      tags:
+        - faqProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqProfs/{faqProfId}:
+    get:
+      summary: Info for a specific faqProf
+      operationId: showFaqProfById
+      tags:
+        - faqProfs
+      parameters:
+        - name: faqProfId
+          in: path
+          required: true
+          description: The id of the faqProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FaqProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /niveauEtudes:
+    get:
+      summary: List all niveauEtudes
+      operationId: listNiveauEtudes
+      tags:
+        - niveauEtudes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of niveauEtudes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/NiveauEtudes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a niveauEtude
+      operationId: createNiveauEtudes
+      tags:
+        - niveauEtudes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /niveauEtudes/{niveauEtudeId}:
+    get:
+      summary: Info for a specific niveauEtude
+      operationId: showNiveauEtudeById
+      tags:
+        - niveauEtudes
+      parameters:
+        - name: niveauEtudeId
+          in: path
+          required: true
+          description: The id of the niveauEtude to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/NiveauEtudes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etatInscriptions:
+    get:
+      summary: List all etatInscriptions
+      operationId: listEtatInscriptions
+      tags:
+        - etatInscriptions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etatInscriptions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtatInscriptions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etatInscription
+      operationId: createEtatInscriptions
+      tags:
+        - etatInscriptions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etatInscriptions/{etatInscriptionId}:
+    get:
+      summary: Info for a specific etatInscription
+      operationId: showEtatInscriptionById
+      tags:
+        - etatInscriptions
+      parameters:
+        - name: etatInscriptionId
+          in: path
+          required: true
+          description: The id of the etatInscription to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtatInscriptions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialformules:
+    get:
+      summary: List all freeTrialformules
+      operationId: listFreeTrialformules
+      tags:
+        - freeTrialformules
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialformules
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialformules'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialformule
+      operationId: createFreeTrialformules
+      tags:
+        - freeTrialformules
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialformules/{freeTrialformuleId}:
+    get:
+      summary: Info for a specific freeTrialformule
+      operationId: showFreeTrialformuleById
+      tags:
+        - freeTrialformules
+      parameters:
+        - name: freeTrialformuleId
+          in: path
+          required: true
+          description: The id of the freeTrialformule to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialformules'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudes:
+    get:
+      summary: List all groupeEtudes
+      operationId: listGroupeEtudes
+      tags:
+        - groupeEtudes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of groupeEtudes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/GroupeEtudes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a groupeEtude
+      operationId: createGroupeEtudes
+      tags:
+        - groupeEtudes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudes/{groupeEtudeId}:
+    get:
+      summary: Info for a specific groupeEtude
+      operationId: showGroupeEtudeById
+      tags:
+        - groupeEtudes
+      parameters:
+        - name: groupeEtudeId
+          in: path
+          required: true
+          description: The id of the groupeEtude to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/GroupeEtudes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizs:
+    get:
+      summary: List all quizs
+      operationId: listQuizs
+      tags:
+        - quizs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of quizs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Quizs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a quiz
+      operationId: createQuizs
+      tags:
+        - quizs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizs/{quizId}:
+    get:
+      summary: Info for a specific quiz
+      operationId: showQuizById
+      tags:
+        - quizs
+      parameters:
+        - name: quizId
+          in: path
+          required: true
+          description: The id of the quiz to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Quizs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /langues:
+    get:
+      summary: List all langues
+      operationId: listLangues
+      tags:
+        - langues
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of langues
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Langues'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a langue
+      operationId: createLangues
+      tags:
+        - langues
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /langues/{langueId}:
+    get:
+      summary: Info for a specific langue
+      operationId: showLangueById
+      tags:
+        - langues
+      parameters:
+        - name: langueId
+          in: path
+          required: true
+          description: The id of the langue to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Langues'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /workloadBonusProfs:
+    get:
+      summary: List all workloadBonusProfs
+      operationId: listWorkloadBonusProfs
+      tags:
+        - workloadBonusProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of workloadBonusProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/WorkloadBonusProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a workloadBonusProf
+      operationId: createWorkloadBonusProfs
+      tags:
+        - workloadBonusProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /workloadBonusProfs/{workloadBonusProfId}:
+    get:
+      summary: Info for a specific workloadBonusProf
+      operationId: showWorkloadBonusProfById
+      tags:
+        - workloadBonusProfs
+      parameters:
+        - name: workloadBonusProfId
+          in: path
+          required: true
+          description: The id of the workloadBonusProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/WorkloadBonusProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classAverageBonuss:
+    get:
+      summary: List all classAverageBonuss
+      operationId: listClassAverageBonuss
+      tags:
+        - classAverageBonuss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of classAverageBonuss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ClassAverageBonuss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a classAverageBonus
+      operationId: createClassAverageBonuss
+      tags:
+        - classAverageBonuss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /classAverageBonuss/{classAverageBonusId}:
+    get:
+      summary: Info for a specific classAverageBonus
+      operationId: showClassAverageBonusById
+      tags:
+        - classAverageBonuss
+      parameters:
+        - name: classAverageBonusId
+          in: path
+          required: true
+          description: The id of the classAverageBonus to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ClassAverageBonuss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizEtudiants:
+    get:
+      summary: List all quizEtudiants
+      operationId: listQuizEtudiants
+      tags:
+        - quizEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of quizEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/QuizEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a quizEtudiant
+      operationId: createQuizEtudiants
+      tags:
+        - quizEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizEtudiants/{quizEtudiantId}:
+    get:
+      summary: Info for a specific quizEtudiant
+      operationId: showQuizEtudiantById
+      tags:
+        - quizEtudiants
+      parameters:
+        - name: quizEtudiantId
+          in: path
+          required: true
+          description: The id of the quizEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/QuizEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialTeacherEmailTemplates:
+    get:
+      summary: List all freeTrialTeacherEmailTemplates
+      operationId: listFreeTrialTeacherEmailTemplates
+      tags:
+        - freeTrialTeacherEmailTemplates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialTeacherEmailTemplates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialTeacherEmailTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialTeacherEmailTemplate
+      operationId: createFreeTrialTeacherEmailTemplates
+      tags:
+        - freeTrialTeacherEmailTemplates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialTeacherEmailTemplates/{freeTrialTeacherEmailTemplateId}:
+    get:
+      summary: Info for a specific freeTrialTeacherEmailTemplate
+      operationId: showFreeTrialTeacherEmailTemplateById
+      tags:
+        - freeTrialTeacherEmailTemplates
+      parameters:
+        - name: freeTrialTeacherEmailTemplateId
+          in: path
+          required: true
+          description: The id of the freeTrialTeacherEmailTemplate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialTeacherEmailTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /courss:
+    get:
+      summary: List all courss
+      operationId: listCourss
+      tags:
+        - courss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of courss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Courss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a cours
+      operationId: createCourss
+      tags:
+        - courss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /courss/{coursId}:
+    get:
+      summary: Info for a specific cours
+      operationId: showCoursById
+      tags:
+        - courss
+      parameters:
+        - name: coursId
+          in: path
+          required: true
+          description: The id of the cours to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Courss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizClassRooms:
+    get:
+      summary: List all quizClassRooms
+      operationId: listQuizClassRooms
+      tags:
+        - quizClassRooms
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of quizClassRooms
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/QuizClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a quizClassRoom
+      operationId: createQuizClassRooms
+      tags:
+        - quizClassRooms
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /quizClassRooms/{quizClassRoomId}:
+    get:
+      summary: Info for a specific quizClassRoom
+      operationId: showQuizClassRoomById
+      tags:
+        - quizClassRooms
+      parameters:
+        - name: quizClassRoomId
+          in: path
+          required: true
+          description: The id of the quizClassRoom to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/QuizClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /paiements:
+    get:
+      summary: List all paiements
+      operationId: listPaiements
+      tags:
+        - paiements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of paiements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Paiements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a paiement
+      operationId: createPaiements
+      tags:
+        - paiements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /paiements/{paiementId}:
+    get:
+      summary: Info for a specific paiement
+      operationId: showPaiementById
+      tags:
+        - paiements
+      parameters:
+        - name: paiementId
+          in: path
+          required: true
+          description: The id of the paiement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Paiements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeTeachers:
+    get:
+      summary: List all typeTeachers
+      operationId: listTypeTeachers
+      tags:
+        - typeTeachers
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeTeachers
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeTeachers'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeTeacher
+      operationId: createTypeTeachers
+      tags:
+        - typeTeachers
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeTeachers/{typeTeacherId}:
+    get:
+      summary: Info for a specific typeTeacher
+      operationId: showTypeTeacherById
+      tags:
+        - typeTeachers
+      parameters:
+        - name: typeTeacherId
+          in: path
+          required: true
+          description: The id of the typeTeacher to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeTeachers'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorkEtudiants:
+    get:
+      summary: List all homeWorkEtudiants
+      operationId: listHomeWorkEtudiants
+      tags:
+        - homeWorkEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of homeWorkEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/HomeWorkEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a homeWorkEtudiant
+      operationId: createHomeWorkEtudiants
+      tags:
+        - homeWorkEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorkEtudiants/{homeWorkEtudiantId}:
+    get:
+      summary: Info for a specific homeWorkEtudiant
+      operationId: showHomeWorkEtudiantById
+      tags:
+        - homeWorkEtudiants
+      parameters:
+        - name: homeWorkEtudiantId
+          in: path
+          required: true
+          description: The id of the homeWorkEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/HomeWorkEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reclamationEtudiants:
+    get:
+      summary: List all reclamationEtudiants
+      operationId: listReclamationEtudiants
+      tags:
+        - reclamationEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reclamationEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReclamationEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reclamationEtudiant
+      operationId: createReclamationEtudiants
+      tags:
+        - reclamationEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reclamationEtudiants/{reclamationEtudiantId}:
+    get:
+      summary: Info for a specific reclamationEtudiant
+      operationId: showReclamationEtudiantById
+      tags:
+        - reclamationEtudiants
+      parameters:
+        - name: reclamationEtudiantId
+          in: path
+          required: true
+          description: The id of the reclamationEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReclamationEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeHomeWorks:
+    get:
+      summary: List all typeHomeWorks
+      operationId: listTypeHomeWorks
+      tags:
+        - typeHomeWorks
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeHomeWorks
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeHomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeHomeWork
+      operationId: createTypeHomeWorks
+      tags:
+        - typeHomeWorks
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeHomeWorks/{typeHomeWorkId}:
+    get:
+      summary: Info for a specific typeHomeWork
+      operationId: showTypeHomeWorkById
+      tags:
+        - typeHomeWorks
+      parameters:
+        - name: typeHomeWorkId
+          in: path
+          required: true
+          description: The id of the typeHomeWork to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeHomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrials:
+    get:
+      summary: List all freeTrials
+      operationId: listFreeTrials
+      tags:
+        - freeTrials
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrials
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrial
+      operationId: createFreeTrials
+      tags:
+        - freeTrials
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrials/{freeTrialId}:
+    get:
+      summary: Info for a specific freeTrial
+      operationId: showFreeTrialById
+      tags:
+        - freeTrials
+      parameters:
+        - name: freeTrialId
+          in: path
+          required: true
+          description: The id of the freeTrial to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vocabularyQuizs:
+    get:
+      summary: List all vocabularyQuizs
+      operationId: listVocabularyQuizs
+      tags:
+        - vocabularyQuizs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of vocabularyQuizs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/VocabularyQuizs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a vocabularyQuiz
+      operationId: createVocabularyQuizs
+      tags:
+        - vocabularyQuizs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vocabularyQuizs/{vocabularyQuizId}:
+    get:
+      summary: Info for a specific vocabularyQuiz
+      operationId: showVocabularyQuizById
+      tags:
+        - vocabularyQuizs
+      parameters:
+        - name: vocabularyQuizId
+          in: path
+          required: true
+          description: The id of the vocabularyQuiz to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/VocabularyQuizs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /inscriptions:
+    get:
+      summary: List all inscriptions
+      operationId: listInscriptions
+      tags:
+        - inscriptions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of inscriptions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Inscriptions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a inscription
+      operationId: createInscriptions
+      tags:
+        - inscriptions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /inscriptions/{inscriptionId}:
+    get:
+      summary: Info for a specific inscription
+      operationId: showInscriptionById
+      tags:
+        - inscriptions
+      parameters:
+        - name: inscriptionId
+          in: path
+          required: true
+          description: The id of the inscription to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Inscriptions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /salarys:
+    get:
+      summary: List all salarys
+      operationId: listSalarys
+      tags:
+        - salarys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of salarys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Salarys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a salary
+      operationId: createSalarys
+      tags:
+        - salarys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /salarys/{salaryId}:
+    get:
+      summary: Info for a specific salary
+      operationId: showSalaryById
+      tags:
+        - salarys
+      parameters:
+        - name: salaryId
+          in: path
+          required: true
+          description: The id of the salary to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Salarys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorkQuestions:
+    get:
+      summary: List all homeWorkQuestions
+      operationId: listHomeWorkQuestions
+      tags:
+        - homeWorkQuestions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of homeWorkQuestions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/HomeWorkQuestions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a homeWorkQuestion
+      operationId: createHomeWorkQuestions
+      tags:
+        - homeWorkQuestions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /homeWorkQuestions/{homeWorkQuestionId}:
+    get:
+      summary: Info for a specific homeWorkQuestion
+      operationId: showHomeWorkQuestionById
+      tags:
+        - homeWorkQuestions
+      parameters:
+        - name: homeWorkQuestionId
+          in: path
+          required: true
+          description: The id of the homeWorkQuestion to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/HomeWorkQuestions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /prices:
+    get:
+      summary: List all prices
+      operationId: listPrices
+      tags:
+        - prices
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of prices
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Prices'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a price
+      operationId: createPrices
+      tags:
+        - prices
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /prices/{priceId}:
+    get:
+      summary: Info for a specific price
+      operationId: showPriceById
+      tags:
+        - prices
+      parameters:
+        - name: priceId
+          in: path
+          required: true
+          description: The id of the price to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Prices'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantClassRooms:
+    get:
+      summary: List all etudiantClassRooms
+      operationId: listEtudiantClassRooms
+      tags:
+        - etudiantClassRooms
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etudiantClassRooms
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtudiantClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etudiantClassRoom
+      operationId: createEtudiantClassRooms
+      tags:
+        - etudiantClassRooms
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantClassRooms/{etudiantClassRoomId}:
+    get:
+      summary: Info for a specific etudiantClassRoom
+      operationId: showEtudiantClassRoomById
+      tags:
+        - etudiantClassRooms
+      parameters:
+        - name: etudiantClassRoomId
+          in: path
+          required: true
+          description: The id of the etudiantClassRoom to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtudiantClassRooms'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /profReviews:
+    get:
+      summary: List all profReviews
+      operationId: listProfReviews
+      tags:
+        - profReviews
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of profReviews
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ProfReviews'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a profReview
+      operationId: createProfReviews
+      tags:
+        - profReviews
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /profReviews/{profReviewId}:
+    get:
+      summary: Info for a specific profReview
+      operationId: showProfReviewById
+      tags:
+        - profReviews
+      parameters:
+        - name: profReviewId
+          in: path
+          required: true
+          description: The id of the profReview to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ProfReviews'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqTypes:
+    get:
+      summary: List all faqTypes
+      operationId: listFaqTypes
+      tags:
+        - faqTypes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of faqTypes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FaqTypes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a faqType
+      operationId: createFaqTypes
+      tags:
+        - faqTypes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqTypes/{faqTypeId}:
+    get:
+      summary: Info for a specific faqType
+      operationId: showFaqTypeById
+      tags:
+        - faqTypes
+      parameters:
+        - name: faqTypeId
+          in: path
+          required: true
+          description: The id of the faqType to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FaqTypes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /confirmationTokens:
+    get:
+      summary: List all confirmationTokens
+      operationId: listConfirmationTokens
+      tags:
+        - confirmationTokens
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of confirmationTokens
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ConfirmationTokens'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a confirmationToken
+      operationId: createConfirmationTokens
+      tags:
+        - confirmationTokens
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /confirmationTokens/{confirmationTokenId}:
+    get:
+      summary: Info for a specific confirmationToken
+      operationId: showConfirmationTokenById
+      tags:
+        - confirmationTokens
+      parameters:
+        - name: confirmationTokenId
+          in: path
+          required: true
+          description: The id of the confirmationToken to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ConfirmationTokens'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponseEtudiantHomeWorks:
+    get:
+      summary: List all reponseEtudiantHomeWorks
+      operationId: listReponseEtudiantHomeWorks
+      tags:
+        - reponseEtudiantHomeWorks
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reponseEtudiantHomeWorks
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ReponseEtudiantHomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reponseEtudiantHomeWork
+      operationId: createReponseEtudiantHomeWorks
+      tags:
+        - reponseEtudiantHomeWorks
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponseEtudiantHomeWorks/{reponseEtudiantHomeWorkId}:
+    get:
+      summary: Info for a specific reponseEtudiantHomeWork
+      operationId: showReponseEtudiantHomeWorkById
+      tags:
+        - reponseEtudiantHomeWorks
+      parameters:
+        - name: reponseEtudiantHomeWorkId
+          in: path
+          required: true
+          description: The id of the reponseEtudiantHomeWork to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ReponseEtudiantHomeWorks'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /newss:
+    get:
+      summary: List all newss
+      operationId: listNewss
+      tags:
+        - newss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of newss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Newss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a news
+      operationId: createNewss
+      tags:
+        - newss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /newss/{newsId}:
+    get:
+      summary: Info for a specific news
+      operationId: showNewsById
+      tags:
+        - newss
+      parameters:
+        - name: newsId
+          in: path
+          required: true
+          description: The id of the news to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Newss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /statutFreeTrials:
+    get:
+      summary: List all statutFreeTrials
+      operationId: listStatutFreeTrials
+      tags:
+        - statutFreeTrials
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of statutFreeTrials
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/StatutFreeTrials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a statutFreeTrial
+      operationId: createStatutFreeTrials
+      tags:
+        - statutFreeTrials
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /statutFreeTrials/{statutFreeTrialId}:
+    get:
+      summary: Info for a specific statutFreeTrial
+      operationId: showStatutFreeTrialById
+      tags:
+        - statutFreeTrials
+      parameters:
+        - name: statutFreeTrialId
+          in: path
+          required: true
+          description: The id of the statutFreeTrial to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/StatutFreeTrials'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtats:
+    get:
+      summary: List all groupeEtats
+      operationId: listGroupeEtats
+      tags:
+        - groupeEtats
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of groupeEtats
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/GroupeEtats'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a groupeEtat
+      operationId: createGroupeEtats
+      tags:
+        - groupeEtats
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtats/{groupeEtatId}:
+    get:
+      summary: Info for a specific groupeEtat
+      operationId: showGroupeEtatById
+      tags:
+        - groupeEtats
+      parameters:
+        - name: groupeEtatId
+          in: path
+          required: true
+          description: The id of the groupeEtat to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/GroupeEtats'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /parcourss:
+    get:
+      summary: List all parcourss
+      operationId: listParcourss
+      tags:
+        - parcourss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of parcourss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Parcourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a parcours
+      operationId: createParcourss
+      tags:
+        - parcourss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /parcourss/{parcoursId}:
+    get:
+      summary: Info for a specific parcours
+      operationId: showParcoursById
+      tags:
+        - parcourss
+      parameters:
+        - name: parcoursId
+          in: path
+          required: true
+          description: The id of the parcours to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Parcourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudiantDetails:
+    get:
+      summary: List all groupeEtudiantDetails
+      operationId: listGroupeEtudiantDetails
+      tags:
+        - groupeEtudiantDetails
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of groupeEtudiantDetails
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/GroupeEtudiantDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a groupeEtudiantDetail
+      operationId: createGroupeEtudiantDetails
+      tags:
+        - groupeEtudiantDetails
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /groupeEtudiantDetails/{groupeEtudiantDetailId}:
+    get:
+      summary: Info for a specific groupeEtudiantDetail
+      operationId: showGroupeEtudiantDetailById
+      tags:
+        - groupeEtudiantDetails
+      parameters:
+        - name: groupeEtudiantDetailId
+          in: path
+          required: true
+          description: The id of the groupeEtudiantDetail to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/GroupeEtudiantDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /inviteStudents:
+    get:
+      summary: List all inviteStudents
+      operationId: listInviteStudents
+      tags:
+        - inviteStudents
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of inviteStudents
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/InviteStudents'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a inviteStudent
+      operationId: createInviteStudents
+      tags:
+        - inviteStudents
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /inviteStudents/{inviteStudentId}:
+    get:
+      summary: Info for a specific inviteStudent
+      operationId: showInviteStudentById
+      tags:
+        - inviteStudents
+      parameters:
+        - name: inviteStudentId
+          in: path
+          required: true
+          description: The id of the inviteStudent to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/InviteStudents'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantReviews:
+    get:
+      summary: List all etudiantReviews
+      operationId: listEtudiantReviews
+      tags:
+        - etudiantReviews
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etudiantReviews
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtudiantReviews'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etudiantReview
+      operationId: createEtudiantReviews
+      tags:
+        - etudiantReviews
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantReviews/{etudiantReviewId}:
+    get:
+      summary: Info for a specific etudiantReview
+      operationId: showEtudiantReviewById
+      tags:
+        - etudiantReviews
+      parameters:
+        - name: etudiantReviewId
+          in: path
+          required: true
+          description: The id of the etudiantReview to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtudiantReviews'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /interetEtudiants:
+    get:
+      summary: List all interetEtudiants
+      operationId: listInteretEtudiants
+      tags:
+        - interetEtudiants
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of interetEtudiants
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/InteretEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a interetEtudiant
+      operationId: createInteretEtudiants
+      tags:
+        - interetEtudiants
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /interetEtudiants/{interetEtudiantId}:
+    get:
+      summary: Info for a specific interetEtudiant
+      operationId: showInteretEtudiantById
+      tags:
+        - interetEtudiants
+      parameters:
+        - name: interetEtudiantId
+          in: path
+          required: true
+          description: The id of the interetEtudiant to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/InteretEtudiants'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantCourss:
+    get:
+      summary: List all etudiantCourss
+      operationId: listEtudiantCourss
+      tags:
+        - etudiantCourss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of etudiantCourss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/EtudiantCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a etudiantCours
+      operationId: createEtudiantCourss
+      tags:
+        - etudiantCourss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /etudiantCourss/{etudiantCoursId}:
+    get:
+      summary: Info for a specific etudiantCours
+      operationId: showEtudiantCoursById
+      tags:
+        - etudiantCourss
+      parameters:
+        - name: etudiantCoursId
+          in: path
+          required: true
+          description: The id of the etudiantCours to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/EtudiantCourss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialStudentEmailTemplates:
+    get:
+      summary: List all freeTrialStudentEmailTemplates
+      operationId: listFreeTrialStudentEmailTemplates
+      tags:
+        - freeTrialStudentEmailTemplates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialStudentEmailTemplates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialStudentEmailTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialStudentEmailTemplate
+      operationId: createFreeTrialStudentEmailTemplates
+      tags:
+        - freeTrialStudentEmailTemplates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialStudentEmailTemplates/{freeTrialStudentEmailTemplateId}:
+    get:
+      summary: Info for a specific freeTrialStudentEmailTemplate
+      operationId: showFreeTrialStudentEmailTemplateById
+      tags:
+        - freeTrialStudentEmailTemplates
+      parameters:
+        - name: freeTrialStudentEmailTemplateId
+          in: path
+          required: true
+          description: The id of the freeTrialStudentEmailTemplate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialStudentEmailTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vocabularys:
+    get:
+      summary: List all vocabularys
+      operationId: listVocabularys
+      tags:
+        - vocabularys
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of vocabularys
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Vocabularys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a vocabulary
+      operationId: createVocabularys
+      tags:
+        - vocabularys
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vocabularys/{vocabularyId}:
+    get:
+      summary: Info for a specific vocabulary
+      operationId: showVocabularyById
+      tags:
+        - vocabularys
+      parameters:
+        - name: vocabularyId
+          in: path
+          required: true
+          description: The id of the vocabulary to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Vocabularys'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponses:
+    get:
+      summary: List all reponses
+      operationId: listReponses
+      tags:
+        - reponses
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of reponses
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Reponses'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a reponse
+      operationId: createReponses
+      tags:
+        - reponses
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /reponses/{reponseId}:
+    get:
+      summary: Info for a specific reponse
+      operationId: showReponseById
+      tags:
+        - reponses
+      parameters:
+        - name: reponseId
+          in: path
+          required: true
+          description: The id of the reponse to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Reponses'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqs:
+    get:
+      summary: List all faqs
+      operationId: listFaqs
+      tags:
+        - faqs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of faqs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Faqs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a faq
+      operationId: createFaqs
+      tags:
+        - faqs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /faqs/{faqId}:
+    get:
+      summary: Info for a specific faq
+      operationId: showFaqById
+      tags:
+        - faqs
+      parameters:
+        - name: faqId
+          in: path
+          required: true
+          description: The id of the faq to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Faqs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialTeacherWhatsTemplates:
+    get:
+      summary: List all freeTrialTeacherWhatsTemplates
+      operationId: listFreeTrialTeacherWhatsTemplates
+      tags:
+        - freeTrialTeacherWhatsTemplates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of freeTrialTeacherWhatsTemplates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/FreeTrialTeacherWhatsTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a freeTrialTeacherWhatsTemplate
+      operationId: createFreeTrialTeacherWhatsTemplates
+      tags:
+        - freeTrialTeacherWhatsTemplates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /freeTrialTeacherWhatsTemplates/{freeTrialTeacherWhatsTemplateId}:
+    get:
+      summary: Info for a specific freeTrialTeacherWhatsTemplate
+      operationId: showFreeTrialTeacherWhatsTemplateById
+      tags:
+        - freeTrialTeacherWhatsTemplates
+      parameters:
+        - name: freeTrialTeacherWhatsTemplateId
+          in: path
+          required: true
+          description: The id of the freeTrialTeacherWhatsTemplate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/FreeTrialTeacherWhatsTemplates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /levelTestConfigurations:
+    get:
+      summary: List all levelTestConfigurations
+      operationId: listLevelTestConfigurations
+      tags:
+        - levelTestConfigurations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of levelTestConfigurations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/LevelTestConfigurations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a levelTestConfiguration
+      operationId: createLevelTestConfigurations
+      tags:
+        - levelTestConfigurations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /levelTestConfigurations/{levelTestConfigurationId}:
+    get:
+      summary: Info for a specific levelTestConfiguration
+      operationId: showLevelTestConfigurationById
+      tags:
+        - levelTestConfigurations
+      parameters:
+        - name: levelTestConfigurationId
+          in: path
+          required: true
+          description: The id of the levelTestConfiguration to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/LevelTestConfigurations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeReclamationProfs:
+    get:
+      summary: List all typeReclamationProfs
+      operationId: listTypeReclamationProfs
+      tags:
+        - typeReclamationProfs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeReclamationProfs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeReclamationProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeReclamationProf
+      operationId: createTypeReclamationProfs
+      tags:
+        - typeReclamationProfs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeReclamationProfs/{typeReclamationProfId}:
+    get:
+      summary: Info for a specific typeReclamationProf
+      operationId: showTypeReclamationProfById
+      tags:
+        - typeReclamationProfs
+      parameters:
+        - name: typeReclamationProfId
+          in: path
+          required: true
+          description: The id of the typeReclamationProf to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeReclamationProfs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sections:
+    get:
+      summary: List all sections
+      operationId: listSections
+      tags:
+        - sections
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of sections
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Sections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a section
+      operationId: createSections
+      tags:
+        - sections
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /sections/{sectionId}:
+    get:
+      summary: Info for a specific section
+      operationId: showSectionById
+      tags:
+        - sections
+      parameters:
+        - name: sectionId
+          in: path
+          required: true
+          description: The id of the section to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Sections'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  EtatCours:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  EtatCourss:
+    type: array
+    items:
+      $ref: '#/definitions/EtatCours'
+  HoweWorkQSTReponse:
+    type: "object"
+    required:
+      - id
+      - ref
+      - lib
+      - etatReponse
+      - numero
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      lib:
+        type: string
+      etatReponse:
+        type: string
+      numero:
+        type: int
+  HoweWorkQSTReponses:
+    type: array
+    items:
+      $ref: '#/definitions/HoweWorkQSTReponse'
+  ScheduleProf:
+    type: "object"
+    required:
+      - id
+      - subject
+      - startTime
+      - endTime
+      - ref
+      - grpName
+      - profName
+      - profsId
+    properties:
+      id:
+        type: int
+      subject:
+        type: string
+      startTime:
+        type: date
+      endTime:
+        type: date
+      ref:
+        type: string
+      grpName:
+        type: string
+      profName:
+        type: string
+      profsId:
+        type: int
+  ScheduleProfs:
+    type: array
+    items:
+      $ref: '#/definitions/ScheduleProf'
+  FreeTrialDetail:
+    type: "object"
+    required:
+      - id
+      - presence
+      - whatsUpMessageSent
+      - dateEnvoiwhatsUpMessage
+      - emailMessageSent
+      - dateEnvoiEmailMessage
+      - abonne
+    properties:
+      id:
+        type: int
+      presence:
+        type: boolean
+      whatsUpMessageSent:
+        type: boolean
+      dateEnvoiwhatsUpMessage:
+        type: date
+      emailMessageSent:
+        type: boolean
+      dateEnvoiEmailMessage:
+        type: date
+      abonne:
+        type: boolean
+  FreeTrialDetails:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialDetail'
+  RecommendTeacher:
+    type: "object"
+    required:
+      - id
+      - ref
+      - nombrevote
+      - nom
+      - prenom
+      - commentaire
+      - telephone
+      - login
+      - dateRecommamdation
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      nombrevote:
+        type: int
+      nom:
+        type: string
+      prenom:
+        type: string
+      commentaire:
+        type: string
+      telephone:
+        type: string
+      login:
+        type: string
+      dateRecommamdation:
+        type: date
+  RecommendTeachers:
+    type: array
+    items:
+      $ref: '#/definitions/RecommendTeacher'
+  ReponseEtudiant:
+    type: "object"
+    required:
+      - id
+      - ref
+      - answer
+      - note
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      answer:
+        type: string
+      note:
+        type: number
+  ReponseEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/ReponseEtudiant'
+  Fonction:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Fonctions:
+    type: array
+    items:
+      $ref: '#/definitions/Fonction'
+  Admin:
+    type: "object"
+    required:
+      - id
+      - description
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  Admins:
+    type: array
+    items:
+      $ref: '#/definitions/Admin'
+  TypeDeQuestion:
+    type: "object"
+    required:
+      - id
+      - ref
+      - lib
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      lib:
+        type: string
+  TypeDeQuestions:
+    type: array
+    items:
+      $ref: '#/definitions/TypeDeQuestion'
+  ClassRoom:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - description
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      description:
+        type: string
+  ClassRooms:
+    type: array
+    items:
+      $ref: '#/definitions/ClassRoom'
+  SessionCours:
+    type: "object"
+    required:
+      - id
+      - reference
+      - duree
+      - totalheure
+      - mois
+      - annee
+      - dateFin
+      - dateDebut
+      - payer
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      duree:
+        type: number
+      totalheure:
+        type: number
+      mois:
+        type: number
+      annee:
+        type: number
+      dateFin:
+        type: date
+      dateDebut:
+        type: date
+      payer:
+        type: boolean
+  SessionCourss:
+    type: array
+    items:
+      $ref: '#/definitions/SessionCours'
+  HomeWork:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - urlImage
+      - urlVideo
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      urlImage:
+        type: string
+      urlVideo:
+        type: string
+  HomeWorks:
+    type: array
+    items:
+      $ref: '#/definitions/HomeWork'
+  SuperCategorieSection:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  SuperCategorieSections:
+    type: array
+    items:
+      $ref: '#/definitions/SuperCategorieSection'
+  EtatEtudiantSchedule:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+      - couleur
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+      couleur:
+        type: string
+  EtatEtudiantSchedules:
+    type: array
+    items:
+      $ref: '#/definitions/EtatEtudiantSchedule'
+  FreeTrialConfiguration:
+    type: "object"
+    required:
+      - id
+      - dateApplicationDebut
+      - dateApplicationFin
+      - nombreStudentMax
+      - nombreStudentMin
+    properties:
+      id:
+        type: int
+      dateApplicationDebut:
+        type: date
+      dateApplicationFin:
+        type: date
+      nombreStudentMax:
+        type: int
+      nombreStudentMin:
+        type: int
+  FreeTrialConfigurations:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialConfiguration'
+  TypeReclamationEtudiant:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  TypeReclamationEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/TypeReclamationEtudiant'
+  PackStudent:
+    type: "object"
+    required:
+      - id
+      - nombreCours
+      - forGroupe
+      - code
+      - libelle
+      - description
+      - preRequisites
+      - whyTakeThisCourse
+      - expectations
+      - imgUrl
+      - totalStudents
+      - rating
+      - oldPrice
+    properties:
+      id:
+        type: int
+      nombreCours:
+        type: int
+      forGroupe:
+        type: boolean
+      code:
+        type: string
+      libelle:
+        type: string
+      description:
+        type: string
+      preRequisites:
+        type: string
+      whyTakeThisCourse:
+        type: string
+      expectations:
+        type: string
+      imgUrl:
+        type: string
+      totalStudents:
+        type: int
+      rating:
+        type: string
+      oldPrice:
+        type: string
+  PackStudents:
+    type: array
+    items:
+      $ref: '#/definitions/PackStudent'
+  ReclamationProf:
+    type: "object"
+    required:
+      - id
+      - reference
+      - dateReclamation
+      - message
+      - traite
+      - dateTraitement
+      - dateReponse
+      - postView
+      - commentaireTraiteur
+      - objetReclamationProf
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      dateReclamation:
+        type: date
+      message:
+        type: string
+      traite:
+        type: boolean
+      dateTraitement:
+        type: date
+      dateReponse:
+        type: date
+      postView:
+        type: boolean
+      commentaireTraiteur:
+        type: string
+      objetReclamationProf:
+        type: string
+  ReclamationProfs:
+    type: array
+    items:
+      $ref: '#/definitions/ReclamationProf'
+  Services:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+      - description
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+      description:
+        type: string
+  Servicess:
+    type: array
+    items:
+      $ref: '#/definitions/Services'
+  TrancheHoraireProf:
+    type: "object"
+    required:
+      - id
+      - startHour
+      - endHour
+      - day
+      - groupIndex
+      - profsId
+    properties:
+      id:
+        type: int
+      startHour:
+        type: string
+      endHour:
+        type: string
+      day:
+        type: int
+      groupIndex:
+        type: int
+      profsId:
+        type: int
+  TrancheHoraireProfs:
+    type: array
+    items:
+      $ref: '#/definitions/TrancheHoraireProf'
+  SectionItem:
+    type: "object"
+    required:
+      - id
+      - imageUrl
+      - response
+      - transcription
+      - translation
+      - explanation
+      - example
+      - synonyms
+    properties:
+      id:
+        type: int
+      imageUrl:
+        type: string
+      response:
+        type: string
+      transcription:
+        type: string
+      translation:
+        type: string
+      explanation:
+        type: string
+      example:
+        type: string
+      synonyms:
+        type: string
+  SectionItems:
+    type: array
+    items:
+      $ref: '#/definitions/SectionItem'
+  StatutSocial:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  StatutSocials:
+    type: array
+    items:
+      $ref: '#/definitions/StatutSocial'
+  Dictionary:
+    type: "object"
+    required:
+      - id
+      - word
+      - definition
+    properties:
+      id:
+        type: int
+      word:
+        type: string
+      definition:
+        type: string
+  Dictionarys:
+    type: array
+    items:
+      $ref: '#/definitions/Dictionary'
+  FaqEtudiant:
+    type: "object"
+    required:
+      - id
+      - description
+      - libelle
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      libelle:
+        type: string
+  FaqEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/FaqEtudiant'
+  WorkloadBonus:
+    type: "object"
+    required:
+      - id
+      - code
+      - nombreSession
+      - prix
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      nombreSession:
+        type: int
+      prix:
+        type: number
+  WorkloadBonuss:
+    type: array
+    items:
+      $ref: '#/definitions/WorkloadBonus'
+  SessionCoursSection:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  SessionCoursSections:
+    type: array
+    items:
+      $ref: '#/definitions/SessionCoursSection'
+  GroupeType:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  GroupeTypes:
+    type: array
+    items:
+      $ref: '#/definitions/GroupeType'
+  GroupeEtudiant:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - dateDebut
+      - dateFin
+      - nombrePlace
+      - nombrePlacevide
+      - nombrePlaceNonVide
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      dateDebut:
+        type: date
+      dateFin:
+        type: date
+      nombrePlace:
+        type: int
+      nombrePlacevide:
+        type: int
+      nombrePlaceNonVide:
+        type: int
+  GroupeEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/GroupeEtudiant'
+  ClassAverageBonusProf:
+    type: "object"
+    required:
+      - id
+      - mois
+      - annee
+    properties:
+      id:
+        type: int
+      mois:
+        type: int
+      annee:
+        type: int
+  ClassAverageBonusProfs:
+    type: array
+    items:
+      $ref: '#/definitions/ClassAverageBonusProf'
+  CategorieSection:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+      - numeroOrder
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+      numeroOrder:
+        type: int
+  CategorieSections:
+    type: array
+    items:
+      $ref: '#/definitions/CategorieSection'
+  Prof:
+    type: "object"
+    required:
+      - id
+      - ref
+      - about
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      about:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  Profs:
+    type: array
+    items:
+      $ref: '#/definitions/Prof'
+  Centre:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+      - description
+      - log
+      - password
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+      description:
+        type: string
+      log:
+        type: string
+      password:
+        type: string
+  Centres:
+    type: array
+    items:
+      $ref: '#/definitions/Centre'
+  TeacherLocality:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  TeacherLocalitys:
+    type: array
+    items:
+      $ref: '#/definitions/TeacherLocality'
+  Skill:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Skills:
+    type: array
+    items:
+      $ref: '#/definitions/Skill'
+  FreeTrialStudentWhatsTemplate:
+    type: "object"
+    required:
+      - id
+      - object
+      - corps
+      - source
+    properties:
+      id:
+        type: int
+      object:
+        type: string
+      corps:
+        type: string
+      source:
+        type: string
+  FreeTrialStudentWhatsTemplates:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialStudentWhatsTemplate'
+  CalendrierProf:
+    type: "object"
+    required:
+      - id
+      - ref
+      - startTime
+      - endTime
+      - startRecur
+      - endRecur
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      startTime:
+        type: string
+      endTime:
+        type: string
+      startRecur:
+        type: date
+      endRecur:
+        type: date
+  CalendrierProfs:
+    type: array
+    items:
+      $ref: '#/definitions/CalendrierProf'
+  Etudiant:
+    type: "object"
+    required:
+      - id
+      - ref
+      - groupOption
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      groupOption:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  Etudiants:
+    type: array
+    items:
+      $ref: '#/definitions/Etudiant'
+  CategorieProf:
+    type: "object"
+    required:
+      - id
+      - code
+      - level
+      - lessonRate
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      level:
+        type: string
+      lessonRate:
+        type: number
+  CategorieProfs:
+    type: array
+    items:
+      $ref: '#/definitions/CategorieProf'
+  Question:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+      - urlImg
+      - urlVideo
+      - numero
+      - pointReponseJuste
+      - pointReponsefausse
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+      urlImg:
+        type: string
+      urlVideo:
+        type: string
+      numero:
+        type: int
+      pointReponseJuste:
+        type: number
+      pointReponsefausse:
+        type: number
+  Questions:
+    type: array
+    items:
+      $ref: '#/definitions/Question'
+  Contact:
+    type: "object"
+    required:
+      - id
+      - name
+      - email
+      - phone
+      - setFrom
+      - dateContact
+      - replied
+      - message
+    properties:
+      id:
+        type: int
+      name:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      setFrom:
+        type: string
+      dateContact:
+        type: date
+      replied:
+        type: boolean
+      message:
+        type: string
+  Contacts:
+    type: array
+    items:
+      $ref: '#/definitions/Contact'
+  FaqProf:
+    type: "object"
+    required:
+      - id
+      - description
+      - libelle
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      libelle:
+        type: string
+  FaqProfs:
+    type: array
+    items:
+      $ref: '#/definitions/FaqProf'
+  NiveauEtude:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  NiveauEtudes:
+    type: array
+    items:
+      $ref: '#/definitions/NiveauEtude'
+  EtatInscription:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+  EtatInscriptions:
+    type: array
+    items:
+      $ref: '#/definitions/EtatInscription'
+  FreeTrialformule:
+    type: "object"
+    required:
+      - id
+      - code
+      - dayspeerweek
+      - timeperday
+      - teacherGenderoption
+      - teacherAgeRange
+      - teacherPersonnality
+      - status
+      - dateConfirmation
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      dayspeerweek:
+        type: string
+      timeperday:
+        type: string
+      teacherGenderoption:
+        type: string
+      teacherAgeRange:
+        type: string
+      teacherPersonnality:
+        type: string
+      status:
+        type: boolean
+      dateConfirmation:
+        type: date
+  FreeTrialformules:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialformule'
+  GroupeEtude:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - description
+      - nombreEtudiant
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      description:
+        type: string
+      nombreEtudiant:
+        type: int
+  GroupeEtudes:
+    type: array
+    items:
+      $ref: '#/definitions/GroupeEtude'
+  Quiz:
+    type: "object"
+    required:
+      - id
+      - ref
+      - lib
+      - dateDebut
+      - dateFin
+      - numero
+      - seuilReussite
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      lib:
+        type: string
+      dateDebut:
+        type: date
+      dateFin:
+        type: date
+      numero:
+        type: int
+      seuilReussite:
+        type: int
+  Quizs:
+    type: array
+    items:
+      $ref: '#/definitions/Quiz'
+  Langue:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+  Langues:
+    type: array
+    items:
+      $ref: '#/definitions/Langue'
+  WorkloadBonusProf:
+    type: "object"
+    required:
+      - id
+      - mois
+      - annee
+    properties:
+      id:
+        type: int
+      mois:
+        type: int
+      annee:
+        type: int
+  WorkloadBonusProfs:
+    type: array
+    items:
+      $ref: '#/definitions/WorkloadBonusProf'
+  ClassAverageBonus:
+    type: "object"
+    required:
+      - id
+      - code
+      - nombreSession
+      - prix
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      nombreSession:
+        type: int
+      prix:
+        type: number
+  ClassAverageBonuss:
+    type: array
+    items:
+      $ref: '#/definitions/ClassAverageBonus'
+  QuizEtudiant:
+    type: "object"
+    required:
+      - id
+      - ref
+      - note
+      - resultat
+      - questionCurrent
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      note:
+        type: number
+      resultat:
+        type: string
+      questionCurrent:
+        type: int
+  QuizEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/QuizEtudiant'
+  FreeTrialTeacherEmailTemplate:
+    type: "object"
+    required:
+      - id
+      - object
+      - corps
+      - source
+    properties:
+      id:
+        type: int
+      object:
+        type: string
+      corps:
+        type: string
+      source:
+        type: string
+  FreeTrialTeacherEmailTemplates:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialTeacherEmailTemplate'
+  Cours:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+      - description
+      - image
+      - nombreSectionFinalise
+      - nombreSectionEnCours
+      - nombreLinkEnCours
+      - nombreLinkFinalise
+      - numeroOrder
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+      description:
+        type: string
+      image:
+        type: string
+      nombreSectionFinalise:
+        type: int
+      nombreSectionEnCours:
+        type: int
+      nombreLinkEnCours:
+        type: int
+      nombreLinkFinalise:
+        type: int
+      numeroOrder:
+        type: int
+  Courss:
+    type: array
+    items:
+      $ref: '#/definitions/Cours'
+  QuizClassRoom:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  QuizClassRooms:
+    type: array
+    items:
+      $ref: '#/definitions/QuizClassRoom'
+  Paiement:
+    type: "object"
+    required:
+      - id
+      - datePaiement
+    properties:
+      id:
+        type: int
+      datePaiement:
+        type: date
+  Paiements:
+    type: array
+    items:
+      $ref: '#/definitions/Paiement'
+  TypeTeacher:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+  TypeTeachers:
+    type: array
+    items:
+      $ref: '#/definitions/TypeTeacher'
+  HomeWorkEtudiant:
+    type: "object"
+    required:
+      - id
+      - note
+      - resultat
+      - dateHomeWork
+    properties:
+      id:
+        type: int
+      note:
+        type: number
+      resultat:
+        type: string
+      dateHomeWork:
+        type: date
+  HomeWorkEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/HomeWorkEtudiant'
+  ReclamationEtudiant:
+    type: "object"
+    required:
+      - id
+      - reference
+      - dateReclamation
+      - message
+      - setFrom
+      - img
+      - traite
+      - dateTraitement
+      - dateReponse
+      - postView
+      - objetReclamationEtudiant
+      - commentaireTraiteur
+      - username
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      dateReclamation:
+        type: date
+      message:
+        type: string
+      setFrom:
+        type: string
+      img:
+        type: string
+      traite:
+        type: boolean
+      dateTraitement:
+        type: date
+      dateReponse:
+        type: date
+      postView:
+        type: boolean
+      objetReclamationEtudiant:
+        type: string
+      commentaireTraiteur:
+        type: string
+      username:
+        type: string
+  ReclamationEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/ReclamationEtudiant'
+  TypeHomeWork:
+    type: "object"
+    required:
+      - id
+      - code
+      - lib
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      lib:
+        type: string
+  TypeHomeWorks:
+    type: array
+    items:
+      $ref: '#/definitions/TypeHomeWork'
+  FreeTrial:
+    type: "object"
+    required:
+      - id
+      - reference
+      - dateFreeTrial
+      - link
+      - emailTeacherSent
+      - emailTeacherSendingDate
+      - whatsTeacherSent
+      - whatsTeacherSendingDate
+      - dateFreeTrialPremierRappel
+      - dateFreeTrialPremierDeuxiemeRappel
+      - nombreStudentTotal
+      - nombreStudentAbonne
+      - nombreStudentPresent
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      dateFreeTrial:
+        type: date
+      link:
+        type: string
+      emailTeacherSent:
+        type: boolean
+      emailTeacherSendingDate:
+        type: date
+      whatsTeacherSent:
+        type: boolean
+      whatsTeacherSendingDate:
+        type: date
+      dateFreeTrialPremierRappel:
+        type: date
+      dateFreeTrialPremierDeuxiemeRappel:
+        type: date
+      nombreStudentTotal:
+        type: int
+      nombreStudentAbonne:
+        type: int
+      nombreStudentPresent:
+        type: int
+  FreeTrials:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrial'
+  VocabularyQuiz:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - dateDebut
+      - dateFin
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      dateDebut:
+        type: date
+      dateFin:
+        type: date
+  VocabularyQuizs:
+    type: array
+    items:
+      $ref: '#/definitions/VocabularyQuiz'
+  Inscription:
+    type: "object"
+    required:
+      - id
+      - numeroInscription
+      - noteQuizNiveau
+      - quizFinished
+      - dateRegistration
+      - datedebutinscription
+      - datefininscription
+      - skype
+    properties:
+      id:
+        type: int
+      numeroInscription:
+        type: int
+      noteQuizNiveau:
+        type: number
+      quizFinished:
+        type: boolean
+      dateRegistration:
+        type: string
+      datedebutinscription:
+        type: date
+      datefininscription:
+        type: date
+      skype:
+        type: string
+  Inscriptions:
+    type: array
+    items:
+      $ref: '#/definitions/Inscription'
+  Salary:
+    type: "object"
+    required:
+      - id
+      - code
+      - mois
+      - annee
+      - nbrSessionMensuel
+      - payer
+      - totalPayment
+      - totalBonusClassAverage
+      - totalBonusWorkload
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      mois:
+        type: int
+      annee:
+        type: int
+      nbrSessionMensuel:
+        type: number
+      payer:
+        type: boolean
+      totalPayment:
+        type: number
+      totalBonusClassAverage:
+        type: number
+      totalBonusWorkload:
+        type: number
+  Salarys:
+    type: array
+    items:
+      $ref: '#/definitions/Salary'
+  HomeWorkQuestion:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+      - numero
+      - pointReponseJuste
+      - pointReponsefausse
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+      numero:
+        type: int
+      pointReponseJuste:
+        type: number
+      pointReponsefausse:
+        type: number
+  HomeWorkQuestions:
+    type: array
+    items:
+      $ref: '#/definitions/HomeWorkQuestion'
+  Price:
+    type: "object"
+    required:
+      - id
+      - price
+      - oldPrice
+      - lib
+      - nreCourse
+      - nreHours
+      - nreMonth
+      - forGroup
+    properties:
+      id:
+        type: int
+      price:
+        type: number
+      oldPrice:
+        type: number
+      lib:
+        type: string
+      nreCourse:
+        type: number
+      nreHours:
+        type: number
+      nreMonth:
+        type: number
+      forGroup:
+        type: boolean
+  Prices:
+    type: array
+    items:
+      $ref: '#/definitions/Price'
+  EtudiantClassRoom:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  EtudiantClassRooms:
+    type: array
+    items:
+      $ref: '#/definitions/EtudiantClassRoom'
+  ProfReview:
+    type: "object"
+    required:
+      - id
+      - review
+      - comment
+      - dateReview
+    properties:
+      id:
+        type: int
+      review:
+        type: int
+      comment:
+        type: string
+      dateReview:
+        type: date
+  ProfReviews:
+    type: array
+    items:
+      $ref: '#/definitions/ProfReview'
+  FaqType:
+    type: "object"
+    required:
+      - id
+      - destinataire
+      - libelle
+    properties:
+      id:
+        type: int
+      destinataire:
+        type: string
+      libelle:
+        type: string
+  FaqTypes:
+    type: array
+    items:
+      $ref: '#/definitions/FaqType'
+  ConfirmationToken:
+    type: "object"
+    required:
+      - id
+      - token
+      - expiresAt
+      - createdAt
+      - confirmedAt
+    properties:
+      id:
+        type: int
+      token:
+        type: string
+      expiresAt:
+        type: date
+      createdAt:
+        type: date
+      confirmedAt:
+        type: date
+  ConfirmationTokens:
+    type: array
+    items:
+      $ref: '#/definitions/ConfirmationToken'
+  ReponseEtudiantHomeWork:
+    type: "object"
+    required:
+      - id
+      - answer
+      - profNote
+      - note
+    properties:
+      id:
+        type: int
+      answer:
+        type: string
+      profNote:
+        type: string
+      note:
+        type: number
+  ReponseEtudiantHomeWorks:
+    type: array
+    items:
+      $ref: '#/definitions/ReponseEtudiantHomeWork'
+  News:
+    type: "object"
+    required:
+      - id
+      - ref
+      - libelle
+      - image
+      - description
+      - dateNews
+      - dateDebut
+      - dateFin
+      - numeroOrdre
+      - destinataire
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      libelle:
+        type: string
+      image:
+        type: string
+      description:
+        type: string
+      dateNews:
+        type: date
+      dateDebut:
+        type: date
+      dateFin:
+        type: date
+      numeroOrdre:
+        type: int
+      destinataire:
+        type: string
+  Newss:
+    type: array
+    items:
+      $ref: '#/definitions/News'
+  StatutFreeTrial:
+    type: "object"
+    required:
+      - id
+      - libelle
+      - code
+      - style
+    properties:
+      id:
+        type: int
+      libelle:
+        type: string
+      code:
+        type: string
+      style:
+        type: string
+  StatutFreeTrials:
+    type: array
+    items:
+      $ref: '#/definitions/StatutFreeTrial'
+  GroupeEtat:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  GroupeEtats:
+    type: array
+    items:
+      $ref: '#/definitions/GroupeEtat'
+  Parcours:
+    type: "object"
+    required:
+      - id
+      - datePublication
+      - dateCreation
+      - description
+      - code
+      - libelle
+      - numeroOrder
+      - nombreCours
+    properties:
+      id:
+        type: int
+      datePublication:
+        type: date
+      dateCreation:
+        type: date
+      description:
+        type: string
+      code:
+        type: string
+      libelle:
+        type: string
+      numeroOrder:
+        type: int
+      nombreCours:
+        type: int
+  Parcourss:
+    type: array
+    items:
+      $ref: '#/definitions/Parcours'
+  GroupeEtudiantDetail:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  GroupeEtudiantDetails:
+    type: array
+    items:
+      $ref: '#/definitions/GroupeEtudiantDetail'
+  InviteStudent:
+    type: "object"
+    required:
+      - id
+      - code
+      - isAccepted
+      - isPaidPack
+      - emailInvited
+      - dateSentInvitation
+      - dateAcceptInvitation
+      - datePayPack
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      isAccepted:
+        type: boolean
+      isPaidPack:
+        type: boolean
+      emailInvited:
+        type: string
+      dateSentInvitation:
+        type: date
+      dateAcceptInvitation:
+        type: date
+      datePayPack:
+        type: date
+  InviteStudents:
+    type: array
+    items:
+      $ref: '#/definitions/InviteStudent'
+  EtudiantReview:
+    type: "object"
+    required:
+      - id
+      - review
+      - comment
+      - dateReview
+    properties:
+      id:
+        type: int
+      review:
+        type: int
+      comment:
+        type: string
+      dateReview:
+        type: date
+  EtudiantReviews:
+    type: array
+    items:
+      $ref: '#/definitions/EtudiantReview'
+  InteretEtudiant:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  InteretEtudiants:
+    type: array
+    items:
+      $ref: '#/definitions/InteretEtudiant'
+  EtudiantCours:
+    type: "object"
+    required:
+      - id
+      - payer
+      - dateFin
+    properties:
+      id:
+        type: int
+      payer:
+        type: boolean
+      dateFin:
+        type: date
+  EtudiantCourss:
+    type: array
+    items:
+      $ref: '#/definitions/EtudiantCours'
+  FreeTrialStudentEmailTemplate:
+    type: "object"
+    required:
+      - id
+      - object
+      - corps
+      - source
+    properties:
+      id:
+        type: int
+      object:
+        type: string
+      corps:
+        type: string
+      source:
+        type: string
+  FreeTrialStudentEmailTemplates:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialStudentEmailTemplate'
+  Vocabulary:
+    type: "object"
+    required:
+      - id
+      - ref
+      - numero
+      - word
+      - libelle
+      - result
+      - explication
+      - exemple
+      - image
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      numero:
+        type: int
+      word:
+        type: string
+      libelle:
+        type: string
+      result:
+        type: string
+      explication:
+        type: string
+      exemple:
+        type: string
+      image:
+        type: string
+  Vocabularys:
+    type: array
+    items:
+      $ref: '#/definitions/Vocabulary'
+  Reponse:
+    type: "object"
+    required:
+      - id
+      - ref
+      - lib
+      - etatReponse
+      - numero
+    properties:
+      id:
+        type: int
+      ref:
+        type: string
+      lib:
+        type: string
+      etatReponse:
+        type: string
+      numero:
+        type: int
+  Reponses:
+    type: array
+    items:
+      $ref: '#/definitions/Reponse'
+  Faq:
+    type: "object"
+    required:
+      - id
+      - description
+      - libelle
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      libelle:
+        type: string
+  Faqs:
+    type: array
+    items:
+      $ref: '#/definitions/Faq'
+  FreeTrialTeacherWhatsTemplate:
+    type: "object"
+    required:
+      - id
+      - object
+      - corps
+      - source
+    properties:
+      id:
+        type: int
+      object:
+        type: string
+      corps:
+        type: string
+      source:
+        type: string
+  FreeTrialTeacherWhatsTemplates:
+    type: array
+    items:
+      $ref: '#/definitions/FreeTrialTeacherWhatsTemplate'
+  LevelTestConfiguration:
+    type: "object"
+    required:
+      - id
+      - noteMin
+      - noteMax
+    properties:
+      id:
+        type: int
+      noteMin:
+        type: number
+      noteMax:
+        type: number
+  LevelTestConfigurations:
+    type: array
+    items:
+      $ref: '#/definitions/LevelTestConfiguration'
+  TypeReclamationProf:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  TypeReclamationProfs:
+    type: array
+    items:
+      $ref: '#/definitions/TypeReclamationProf'
+  Section:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+      - urlImage
+      - urlImage2
+      - urlImage3
+      - urlVideo
+      - contenu
+      - questions
+      - indicationProf
+      - numeroOrder
+      - url
+      - content
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+      urlImage:
+        type: string
+      urlImage2:
+        type: string
+      urlImage3:
+        type: string
+      urlVideo:
+        type: string
+      contenu:
+        type: string
+      questions:
+        type: string
+      indicationProf:
+        type: string
+      numeroOrder:
+        type: int
+      url:
+        type: int
+      content:
+        type: int
+  Sections:
+    type: array
+    items:
+      $ref: '#/definitions/Section'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

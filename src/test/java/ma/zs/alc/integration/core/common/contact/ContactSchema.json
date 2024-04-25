@@ -1,0 +1,17 @@
+{
+    "name": "#string",
+    "email": "#string",
+    "phone": "#string",
+    "setFrom": "#string",
+    "replied": "#bool",
+    "message": "#string"
+
+}
+
+
+
+
+
+
+
+

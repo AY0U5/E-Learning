@@ -1,0 +1,40 @@
+{
+    "ref": "#string",
+    "etudiant": {"id": "#number"},
+    "quiz": {"id": "#number"},
+    "note": "#number",
+    "resultat": "#string",
+    "questionCurrent": "#number",
+
+    "reponseEtudiants": [
+      {
+        "ref":"#string",}
+        "reponse":{"id": "#number"},}
+        "answer":"#string",}
+        "note":"#number",}
+        "question":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "reponse":{"id": "#number"},}
+        "answer":"#string",}
+        "note":"#number",}
+        "question":{"id": "#number"}}
+      },
+      {
+        "ref":"#string",}
+        "reponse":{"id": "#number"},}
+        "answer":"#string",}
+        "note":"#number",}
+        "question":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

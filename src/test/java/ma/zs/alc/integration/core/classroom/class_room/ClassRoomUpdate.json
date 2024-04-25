@@ -1,0 +1,39 @@
+{
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "description": "description-11",
+    "id": 1,
+    "prof": {"id": "1"},
+
+    "etudiantClassRooms": [
+        {
+            "etudiant":{"id": "1"}
+        },
+        {
+            "etudiant":{"id": "2"}
+        },
+        {
+            "etudiant":{"id": "3"}
+        }
+    ],
+    "quizClassRooms": [
+        {
+            "quiz":{"id": "1"}
+        },
+        {
+            "quiz":{"id": "2"}
+        },
+        {
+            "quiz":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

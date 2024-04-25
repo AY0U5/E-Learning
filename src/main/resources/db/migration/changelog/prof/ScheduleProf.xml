@@ -1,0 +1,79 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="schedule_prof">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="subject" type="VARCHAR(500)"/>
+        <column name="start_time" type="TIMESTAMP"/>
+        <column name="end_time" type="TIMESTAMP"/>
+        <column name="ref" type="VARCHAR(500)"/>
+        <column name="grp_name" type="VARCHAR(500)"/>
+        <column name="prof_name" type="VARCHAR(500)"/>
+        <column name="profs_id" type="BIGINT"/>
+
+        <column name="groupe_etudiant_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="cours_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="schedule_prof"
+              baseColumnNames="groupe_etudiant_id"
+              referencedTableName="groupe_etudiant"
+              referencedColumnNames="id"
+              constraintName="fk_schedule_prof_groupe_etudiant"/>
+      <addForeignKeyConstraint
+              baseTableName="schedule_prof"
+              baseColumnNames="prof_id"
+              referencedTableName="prof"
+              referencedColumnNames="id"
+              constraintName="fk_schedule_prof_prof"/>
+      <addForeignKeyConstraint
+              baseTableName="schedule_prof"
+              baseColumnNames="cours_id"
+              referencedTableName="cours"
+              referencedColumnNames="id"
+              constraintName="fk_schedule_prof_cours"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/prof/ScheduleProf.csv"
+            tableName="schedule_prof">
+      <column name="id" type="NUMERIC"/>
+          <column name="subject" type="VARCHAR(500)"/>
+          <column name="start_time" type="TIMESTAMP"/>
+          <column name="end_time" type="TIMESTAMP"/>
+          <column name="ref" type="VARCHAR(500)"/>
+          <column name="grp_name" type="VARCHAR(500)"/>
+          <column name="prof_name" type="VARCHAR(500)"/>
+          <column name="profs_id" type="BIGINT"/>
+        <column name="groupe_etudiant" type="BIGINT"/>
+        <column name="prof" type="BIGINT"/>
+        <column name="cours" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

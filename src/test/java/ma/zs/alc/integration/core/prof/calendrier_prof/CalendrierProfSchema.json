@@ -1,0 +1,16 @@
+{
+    "ref": "#string",
+    "startTime": "#string",
+    "endTime": "#string",
+    "prof": {"id": "#number"},
+    "etudiant": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

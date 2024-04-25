@@ -1,0 +1,120 @@
+{
+    "description": "#string",
+    "code": "#string",
+    "libelle": "#string",
+    "numeroOrder": "#number",
+    "nombreCours": "#number",
+    "centre": {"id": "#number"},
+
+    "courss": [
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "description":"#string",}
+        "image":"#string",}
+        "etatCours":{"id": "#number"},}
+        "nombreSectionFinalise":"#number",}
+        "nombreSectionEnCours":"#number",}
+        "nombreLinkEnCours":"#number",}
+        "nombreLinkFinalise":"#number",}
+        "numeroOrder":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "description":"#string",}
+        "image":"#string",}
+        "etatCours":{"id": "#number"},}
+        "nombreSectionFinalise":"#number",}
+        "nombreSectionEnCours":"#number",}
+        "nombreLinkEnCours":"#number",}
+        "nombreLinkFinalise":"#number",}
+        "numeroOrder":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "description":"#string",}
+        "image":"#string",}
+        "etatCours":{"id": "#number"},}
+        "nombreSectionFinalise":"#number",}
+        "nombreSectionEnCours":"#number",}
+        "nombreLinkEnCours":"#number",}
+        "nombreLinkFinalise":"#number",}
+        "numeroOrder":"#number"}
+      }
+    ],
+    "etudiants": [
+      {
+        "ref":"#string",}
+        "teacherLocality":{"id": "#number"},}
+        "groupOption":"#string",}
+        "etatEtudiantSchedule":{"id": "#number"},}
+        "groupeEtude":{"id": "#number"},}
+        "packStudent":{"id": "#number"},}
+        "statutSocial":{"id": "#number"},}
+        "interetEtudiant":{"id": "#number"},}
+        "niveauEtude":{"id": "#number"},}
+        "skill":{"id": "#number"},}
+        "fonction":{"id": "#number"},}
+        "langue":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "teacherLocality":{"id": "#number"},}
+        "groupOption":"#string",}
+        "etatEtudiantSchedule":{"id": "#number"},}
+        "groupeEtude":{"id": "#number"},}
+        "packStudent":{"id": "#number"},}
+        "statutSocial":{"id": "#number"},}
+        "interetEtudiant":{"id": "#number"},}
+        "niveauEtude":{"id": "#number"},}
+        "skill":{"id": "#number"},}
+        "fonction":{"id": "#number"},}
+        "langue":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "teacherLocality":{"id": "#number"},}
+        "groupOption":"#string",}
+        "etatEtudiantSchedule":{"id": "#number"},}
+        "groupeEtude":{"id": "#number"},}
+        "packStudent":{"id": "#number"},}
+        "statutSocial":{"id": "#number"},}
+        "interetEtudiant":{"id": "#number"},}
+        "niveauEtude":{"id": "#number"},}
+        "skill":{"id": "#number"},}
+        "fonction":{"id": "#number"},}
+        "langue":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

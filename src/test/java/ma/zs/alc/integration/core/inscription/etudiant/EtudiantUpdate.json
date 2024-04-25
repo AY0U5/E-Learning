@@ -1,0 +1,85 @@
+{
+    "id": 1,
+    "ref": "ref-11",
+    "id": 1,
+    "teacherLocality": {"id": "1"},
+    "id": 1,
+    "groupOption": "groupOption-11",
+    "id": 1,
+    "etatEtudiantSchedule": {"id": "1"},
+    "id": 1,
+    "parcours": {"id": "1"},
+    "id": 1,
+    "groupeEtude": {"id": "1"},
+    "id": 1,
+    "packStudent": {"id": "1"},
+    "id": 1,
+    "statutSocial": {"id": "1"},
+    "id": 1,
+    "interetEtudiant": {"id": "1"},
+    "id": 1,
+    "niveauEtude": {"id": "1"},
+    "id": 1,
+    "skill": {"id": "1"},
+    "id": 1,
+    "fonction": {"id": "1"},
+    "id": 1,
+    "langue": {"id": "1"},
+    "id": 1,
+    "credentialsNonExpired": "true1",
+    "id": 1,
+    "enabled": "true1",
+    "id": 1,
+    "accountNonExpired": "true1",
+    "id": 1,
+    "accountNonLocked": "true1",
+    "id": 1,
+    "passwordChanged": "true1",
+    "id": 1,
+    "username": "username-11",
+    "id": 1,
+    "password": "password-11",
+
+    "quizEtudiants": [
+        {
+            "ref":"ref-1",
+            "quiz":{"id": "1"},
+            "note":"10",
+            "resultat":"resultat-1",
+            "questionCurrent":"10"
+        },
+        {
+            "ref":"ref-2",
+            "quiz":{"id": "2"},
+            "note":"20",
+            "resultat":"resultat-2",
+            "questionCurrent":"20"
+        },
+        {
+            "ref":"ref-3",
+            "quiz":{"id": "3"},
+            "note":"30",
+            "resultat":"resultat-3",
+            "questionCurrent":"30"
+        }
+    ],
+    "groupeEtudiantDetails": [
+        {
+            "groupeEtudiant":{"id": "1"}
+        },
+        {
+            "groupeEtudiant":{"id": "2"}
+        },
+        {
+            "groupeEtudiant":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

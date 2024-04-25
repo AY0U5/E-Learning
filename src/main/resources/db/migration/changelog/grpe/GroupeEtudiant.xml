@@ -1,0 +1,97 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="groupe_etudiant">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="libelle" type="VARCHAR(500)"/>
+        <column name="date_debut" type="TIMESTAMP"/>
+        <column name="date_fin" type="TIMESTAMP"/>
+        <column name="nombre_place" type="BIGINT"/>
+        <column name="nombre_placevide" type="BIGINT"/>
+        <column name="nombre_place_non_vide" type="BIGINT"/>
+
+        <column name="groupe_etude_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="groupe_type_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="groupe_etat_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="parcours_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="groupe_etudiant"
+              baseColumnNames="groupe_etude_id"
+              referencedTableName="groupe_etude"
+              referencedColumnNames="id"
+              constraintName="fk_groupe_etudiant_groupe_etude"/>
+      <addForeignKeyConstraint
+              baseTableName="groupe_etudiant"
+              baseColumnNames="groupe_type_id"
+              referencedTableName="groupe_type"
+              referencedColumnNames="id"
+              constraintName="fk_groupe_etudiant_groupe_type"/>
+      <addForeignKeyConstraint
+              baseTableName="groupe_etudiant"
+              baseColumnNames="groupe_etat_id"
+              referencedTableName="groupe_etat"
+              referencedColumnNames="id"
+              constraintName="fk_groupe_etudiant_groupe_etat"/>
+      <addForeignKeyConstraint
+              baseTableName="groupe_etudiant"
+              baseColumnNames="parcours_id"
+              referencedTableName="parcours"
+              referencedColumnNames="id"
+              constraintName="fk_groupe_etudiant_parcours"/>
+      <addForeignKeyConstraint
+              baseTableName="groupe_etudiant"
+              baseColumnNames="prof_id"
+              referencedTableName="prof"
+              referencedColumnNames="id"
+              constraintName="fk_groupe_etudiant_prof"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/grpe/GroupeEtudiant.csv"
+            tableName="groupe_etudiant">
+      <column name="id" type="NUMERIC"/>
+          <column name="libelle" type="VARCHAR(500)"/>
+          <column name="date_debut" type="TIMESTAMP"/>
+          <column name="date_fin" type="TIMESTAMP"/>
+          <column name="nombre_place" type="BIGINT"/>
+          <column name="nombre_placevide" type="BIGINT"/>
+          <column name="nombre_place_non_vide" type="BIGINT"/>
+        <column name="groupe_etude" type="BIGINT"/>
+        <column name="groupe_type" type="BIGINT"/>
+        <column name="groupe_etat" type="BIGINT"/>
+        <column name="parcours" type="BIGINT"/>
+        <column name="prof" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

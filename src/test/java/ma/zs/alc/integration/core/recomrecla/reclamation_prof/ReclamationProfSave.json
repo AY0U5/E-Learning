@@ -1,0 +1,20 @@
+{
+    "reference": "reference-1",
+    "message": "message-1",
+    "traite": "true",
+    "postView": "true",
+    "commentaireTraiteur": "commentaireTraiteur-1",
+    "objetReclamationProf": "objetReclamationProf-1",
+    "admin": {"id": "1"},
+    "prof": {"id": "1"},
+    "typeReclamationProf": {"id": "1"}
+
+}
+
+
+
+
+
+
+
+

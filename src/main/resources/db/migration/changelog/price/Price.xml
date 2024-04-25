@@ -1,0 +1,45 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="price">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="price" type="NUMERIC"/>
+        <column name="old_price" type="NUMERIC"/>
+        <column name="lib" type="VARCHAR(500)"/>
+        <column name="nre_course" type="NUMERIC"/>
+        <column name="nre_hours" type="NUMERIC"/>
+        <column name="nre_month" type="NUMERIC"/>
+        <column name="for_group" type="TINYINT"/>
+
+
+    </createTable>
+  </changeSet>
+
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="2" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/price/Price.csv"
+            tableName="price">
+      <column name="id" type="NUMERIC"/>
+          <column name="price" type="NUMERIC"/>
+          <column name="old_price" type="NUMERIC"/>
+          <column name="lib" type="VARCHAR(500)"/>
+          <column name="nre_course" type="NUMERIC"/>
+          <column name="nre_hours" type="NUMERIC"/>
+          <column name="nre_month" type="NUMERIC"/>
+          <column name="for_group" type="TINYINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

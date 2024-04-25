@@ -1,0 +1,51 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="categorie_section">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="code" type="VARCHAR(500)"/>
+        <column name="libelle" type="VARCHAR(500)"/>
+        <column name="numero_order" type="BIGINT"/>
+
+        <column name="super_categorie_section_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="categorie_section"
+              baseColumnNames="super_categorie_section_id"
+              referencedTableName="super_categorie_section"
+              referencedColumnNames="id"
+              constraintName="fk_categorie_section_super_categorie_section"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/courseref/CategorieSection.csv"
+            tableName="categorie_section">
+      <column name="id" type="NUMERIC"/>
+          <column name="code" type="VARCHAR(500)"/>
+          <column name="libelle" type="VARCHAR(500)"/>
+          <column name="numero_order" type="BIGINT"/>
+        <column name="super_categorie_section" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

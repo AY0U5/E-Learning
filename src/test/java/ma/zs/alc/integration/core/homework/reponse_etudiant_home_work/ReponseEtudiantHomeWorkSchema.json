@@ -1,0 +1,17 @@
+{
+    "howeWorkQSTReponse": {"id": "#number"},
+    "answer": "#string",
+    "homeWorkEtudiant": {"id": "#number"},
+    "homeWorkQuestion": {"id": "#number"},
+    "profNote": "#string",
+    "note": "#number"
+
+}
+
+
+
+
+
+
+
+

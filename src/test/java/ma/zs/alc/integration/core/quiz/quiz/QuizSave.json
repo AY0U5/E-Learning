@@ -1,0 +1,74 @@
+{
+    "ref": "ref-1",
+    "lib": "lib-1",
+    "section": {"id": "1"},
+    "numero": "10",
+    "seuilReussite": "10",
+
+    "questions": [
+        {
+            "ref":"ref-1",
+            "libelle":"libelle-1",
+            "urlImg":"urlImg-1",
+            "urlVideo":"urlVideo-1",
+            "numero":"10",
+            "pointReponseJuste":"10",
+            "pointReponsefausse":"10",
+            "typeDeQuestion":{"id": "1"},
+            "homeWork":{"id": "1"}
+        },
+        {
+            "ref":"ref-2",
+            "libelle":"libelle-2",
+            "urlImg":"urlImg-2",
+            "urlVideo":"urlVideo-2",
+            "numero":"20",
+            "pointReponseJuste":"20",
+            "pointReponsefausse":"20",
+            "typeDeQuestion":{"id": "2"},
+            "homeWork":{"id": "2"}
+        },
+        {
+            "ref":"ref-3",
+            "libelle":"libelle-3",
+            "urlImg":"urlImg-3",
+            "urlVideo":"urlVideo-3",
+            "numero":"30",
+            "pointReponseJuste":"30",
+            "pointReponsefausse":"30",
+            "typeDeQuestion":{"id": "3"},
+            "homeWork":{"id": "3"}
+        }
+    ],
+    "quizEtudiants": [
+        {
+            "ref":"ref-1",
+            "etudiant":{"id": "1"},
+            "note":"10",
+            "resultat":"resultat-1",
+            "questionCurrent":"10"
+        },
+        {
+            "ref":"ref-2",
+            "etudiant":{"id": "2"},
+            "note":"20",
+            "resultat":"resultat-2",
+            "questionCurrent":"20"
+        },
+        {
+            "ref":"ref-3",
+            "etudiant":{"id": "3"},
+            "note":"30",
+            "resultat":"resultat-3",
+            "questionCurrent":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

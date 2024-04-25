@@ -1,0 +1,16 @@
+{
+    "etudiant": {"id": "#number"},
+    "prof": {"id": "#number"},
+    "cours": {"id": "#number"},
+    "review": "#number",
+    "comment": "#string",
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+{
+    "id": 1,
+    "reference": "reference-11",
+    "id": 1,
+    "prof": {"id": "1"},
+    "id": 1,
+    "cours": {"id": "1"},
+    "id": 1,
+    "groupeEtudiant": {"id": "1"},
+    "id": 1,
+    "duree": "101",
+    "id": 1,
+    "totalheure": "101",
+    "id": 1,
+    "mois": "101",
+    "id": 1,
+    "annee": "101",
+    "id": 1,
+    "id": 1,
+    "id": 1,
+    "payer": "true1",
+    "id": 1,
+    "salary": {"id": "1"},
+
+    "sessionCoursSections": [
+        {
+            "section":{"id": "1"}
+        },
+        {
+            "section":{"id": "2"}
+        },
+        {
+            "section":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

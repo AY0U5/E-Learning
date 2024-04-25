@@ -1,0 +1,89 @@
+{
+    "code": "#string",
+    "libelle": "#string",
+    "description": "#string",
+    "image": "#string",
+    "etatCours": {"id": "#number"},
+    "parcours": {"id": "#number"},
+    "nombreSectionFinalise": "#number",
+    "nombreSectionEnCours": "#number",
+    "nombreLinkEnCours": "#number",
+    "nombreLinkFinalise": "#number",
+    "numeroOrder": "#number",
+
+    "sections": [
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "categorieSection":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "categorieSection":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlImage2":"#string",}
+        "urlImage3":"#string",}
+        "urlVideo":"#string",}
+        "contenu":"#string",}
+        "questions":"#string",}
+        "indicationProf":"#string",}
+        "numeroOrder":"#number",}
+        "categorieSection":{"id": "#number"},}
+        "url":"#number",}
+        "content":"#number"}
+      }
+    ],
+    "homeWorks": [
+      {
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlVideo":"#string",}
+        "typeHomeWork":{"id": "#number"}}
+      },
+      {
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlVideo":"#string",}
+        "typeHomeWork":{"id": "#number"}}
+      },
+      {
+        "libelle":"#string",}
+        "urlImage":"#string",}
+        "urlVideo":"#string",}
+        "typeHomeWork":{"id": "#number"}}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

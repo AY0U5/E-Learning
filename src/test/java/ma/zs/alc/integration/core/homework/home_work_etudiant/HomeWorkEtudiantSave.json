@@ -1,0 +1,38 @@
+{
+    "etudiant": {"id": "1"},
+    "homeWork": {"id": "1"},
+    "note": "10",
+    "resultat": "resultat-1",
+
+    "reponseEtudiantHomeWorks": [
+        {
+            "howeWorkQSTReponse":{"id": "1"},
+            "answer":"answer-1",
+            "homeWorkQuestion":{"id": "1"},
+            "profNote":"profNote-1",
+            "note":"10"
+        },
+        {
+            "howeWorkQSTReponse":{"id": "2"},
+            "answer":"answer-2",
+            "homeWorkQuestion":{"id": "2"},
+            "profNote":"profNote-2",
+            "note":"20"
+        },
+        {
+            "howeWorkQSTReponse":{"id": "3"},
+            "answer":"answer-3",
+            "homeWorkQuestion":{"id": "3"},
+            "profNote":"profNote-3",
+            "note":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{
+    "code": "#string",
+    "libelle": "#string",
+
+    "categorieSections": [
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number"}
+      },
+      {
+        "code":"#string",}
+        "libelle":"#string",}
+        "numeroOrder":"#number"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

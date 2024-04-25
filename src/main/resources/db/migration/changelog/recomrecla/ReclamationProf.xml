@@ -1,0 +1,83 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="reclamation_prof">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="reference" type="VARCHAR(500)"/>
+        <column name="date_reclamation" type="TIMESTAMP"/>
+        <column name="message" type="VARCHAR(500)"/>
+        <column name="traite" type="TINYINT"/>
+        <column name="date_traitement" type="TIMESTAMP"/>
+        <column name="date_reponse" type="TIMESTAMP"/>
+        <column name="post_view" type="TINYINT"/>
+        <column name="commentaire_traiteur" type="VARCHAR(500)"/>
+        <column name="objet_reclamation_prof" type="VARCHAR(500)"/>
+
+        <column name="admin_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_reclamation_prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="reclamation_prof"
+              baseColumnNames="admin_id"
+              referencedTableName="admin"
+              referencedColumnNames="id"
+              constraintName="fk_reclamation_prof_admin"/>
+      <addForeignKeyConstraint
+              baseTableName="reclamation_prof"
+              baseColumnNames="prof_id"
+              referencedTableName="prof"
+              referencedColumnNames="id"
+              constraintName="fk_reclamation_prof_prof"/>
+      <addForeignKeyConstraint
+              baseTableName="reclamation_prof"
+              baseColumnNames="type_reclamation_prof_id"
+              referencedTableName="type_reclamation_prof"
+              referencedColumnNames="id"
+              constraintName="fk_reclamation_prof_type_reclamation_prof"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/recomrecla/ReclamationProf.csv"
+            tableName="reclamation_prof">
+      <column name="id" type="NUMERIC"/>
+          <column name="reference" type="VARCHAR(500)"/>
+          <column name="date_reclamation" type="TIMESTAMP"/>
+          <column name="message" type="VARCHAR(500)"/>
+          <column name="traite" type="TINYINT"/>
+          <column name="date_traitement" type="TIMESTAMP"/>
+          <column name="date_reponse" type="TIMESTAMP"/>
+          <column name="post_view" type="TINYINT"/>
+          <column name="commentaire_traiteur" type="VARCHAR(500)"/>
+          <column name="objet_reclamation_prof" type="VARCHAR(500)"/>
+        <column name="admin" type="BIGINT"/>
+        <column name="prof" type="BIGINT"/>
+        <column name="type_reclamation_prof" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

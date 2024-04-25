@@ -1,0 +1,69 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="workload_bonus_prof">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="mois" type="BIGINT"/>
+        <column name="annee" type="BIGINT"/>
+
+        <column name="workload_bonus_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="salary_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="workload_bonus_prof"
+              baseColumnNames="workload_bonus_id"
+              referencedTableName="workload_bonus"
+              referencedColumnNames="id"
+              constraintName="fk_workload_bonus_prof_workload_bonus"/>
+      <addForeignKeyConstraint
+              baseTableName="workload_bonus_prof"
+              baseColumnNames="prof_id"
+              referencedTableName="prof"
+              referencedColumnNames="id"
+              constraintName="fk_workload_bonus_prof_prof"/>
+      <addForeignKeyConstraint
+              baseTableName="workload_bonus_prof"
+              baseColumnNames="salary_id"
+              referencedTableName="salary"
+              referencedColumnNames="id"
+              constraintName="fk_workload_bonus_prof_salary"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/salary/WorkloadBonusProf.csv"
+            tableName="workload_bonus_prof">
+      <column name="id" type="NUMERIC"/>
+          <column name="mois" type="BIGINT"/>
+          <column name="annee" type="BIGINT"/>
+        <column name="workload_bonus" type="BIGINT"/>
+        <column name="prof" type="BIGINT"/>
+        <column name="salary" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

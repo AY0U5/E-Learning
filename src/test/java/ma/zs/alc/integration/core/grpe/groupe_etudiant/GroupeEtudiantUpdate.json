@@ -1,0 +1,42 @@
+{
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "id": 1,
+    "id": 1,
+    "nombrePlace": "101",
+    "id": 1,
+    "nombrePlacevide": "101",
+    "id": 1,
+    "nombrePlaceNonVide": "101",
+    "id": 1,
+    "groupeEtude": {"id": "1"},
+    "id": 1,
+    "groupeType": {"id": "1"},
+    "id": 1,
+    "groupeEtat": {"id": "1"},
+    "id": 1,
+    "parcours": {"id": "1"},
+    "id": 1,
+    "prof": {"id": "1"},
+
+    "groupeEtudiantDetails": [
+        {
+            "etudiant":{"id": "1"}
+        },
+        {
+            "etudiant":{"id": "2"}
+        },
+        {
+            "etudiant":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

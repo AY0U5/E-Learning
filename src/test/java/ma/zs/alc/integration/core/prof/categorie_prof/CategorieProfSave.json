@@ -1,0 +1,55 @@
+{
+    "code": "code-1",
+    "level": "level-1",
+    "lessonRate": "10",
+
+    "profs": [
+        {
+            "ref":"ref-1",
+            "about":"about-1",
+            "parcours":{"id": "1"},
+            "typeTeacher":{"id": "1"},
+            "credentialsNonExpired":"false",
+            "enabled":"false",
+            "accountNonExpired":"false",
+            "accountNonLocked":"false",
+            "passwordChanged":"false",
+            "username":"username-1",
+            "password":"password-1"
+        },
+        {
+            "ref":"ref-2",
+            "about":"about-2",
+            "parcours":{"id": "2"},
+            "typeTeacher":{"id": "2"},
+            "credentialsNonExpired":"true",
+            "enabled":"true",
+            "accountNonExpired":"true",
+            "accountNonLocked":"true",
+            "passwordChanged":"true",
+            "username":"username-2",
+            "password":"password-2"
+        },
+        {
+            "ref":"ref-3",
+            "about":"about-3",
+            "parcours":{"id": "3"},
+            "typeTeacher":{"id": "3"},
+            "credentialsNonExpired":"false",
+            "enabled":"false",
+            "accountNonExpired":"false",
+            "accountNonLocked":"false",
+            "passwordChanged":"false",
+            "username":"username-3",
+            "password":"password-3"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

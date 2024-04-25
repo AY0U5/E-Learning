@@ -1,0 +1,55 @@
+{
+    "code": "#string",
+    "level": "#string",
+    "lessonRate": "#number",
+
+    "profs": [
+      {
+        "ref":"#string",}
+        "about":"#string",}
+        "parcours":{"id": "#number"},}
+        "typeTeacher":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "about":"#string",}
+        "parcours":{"id": "#number"},}
+        "typeTeacher":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      },
+      {
+        "ref":"#string",}
+        "about":"#string",}
+        "parcours":{"id": "#number"},}
+        "typeTeacher":{"id": "#number"},}
+        "credentialsNonExpired":"#bool",}
+        "enabled":"#bool",}
+        "accountNonExpired":"#bool",}
+        "accountNonLocked":"#bool",}
+        "passwordChanged":"#bool",}
+        "username":"#string",}
+        "password":"#string"}
+      }
+    ]
+}
+
+
+
+
+
+
+
+

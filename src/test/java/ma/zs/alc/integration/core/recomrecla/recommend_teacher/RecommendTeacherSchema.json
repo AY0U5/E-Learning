@@ -1,0 +1,19 @@
+{
+    "ref": "#string",
+    "nombrevote": "#number",
+    "nom": "#string",
+    "prenom": "#string",
+    "commentaire": "#string",
+    "telephone": "#string",
+    "login": "#string",
+    "prof": {"id": "#number"}
+
+}
+
+
+
+
+
+
+
+

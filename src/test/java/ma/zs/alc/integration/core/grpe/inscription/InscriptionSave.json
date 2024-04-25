@@ -1,0 +1,28 @@
+{
+    "numeroInscription": "10",
+    "etudiant": {"id": "1"},
+    "etatInscription": {"id": "1"},
+    "parcours": {"id": "1"},
+    "groupeEtude": {"id": "1"},
+    "groupeType": {"id": "1"},
+    "statutSocial": {"id": "1"},
+    "interetEtudiant": {"id": "1"},
+    "niveauEtude": {"id": "1"},
+    "fonction": {"id": "1"},
+    "quiz": {"id": "1"},
+    "noteQuizNiveau": "10",
+    "quizFinished": "true",
+    "dateRegistration": "dateRegistration-1",
+    "packStudent": {"id": "1"},
+    "skill": {"id": "1"},
+    "skype": "skype-1"
+
+}
+
+
+
+
+
+
+
+

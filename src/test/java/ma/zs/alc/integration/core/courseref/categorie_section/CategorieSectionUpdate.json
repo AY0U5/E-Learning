@@ -1,0 +1,66 @@
+{
+    "id": 1,
+    "code": "code-11",
+    "id": 1,
+    "libelle": "libelle-11",
+    "id": 1,
+    "numeroOrder": "101",
+    "id": 1,
+    "superCategorieSection": {"id": "1"},
+
+    "sections": [
+        {
+            "code":"code-1",
+            "libelle":"libelle-1",
+            "urlImage":"urlImage-1",
+            "urlImage2":"urlImage2-1",
+            "urlImage3":"urlImage3-1",
+            "urlVideo":"urlVideo-1",
+            "contenu":"contenu-1",
+            "questions":"questions-1",
+            "indicationProf":"indicationProf-1",
+            "numeroOrder":"10",
+            "cours":{"id": "1"},
+            "url":"10",
+            "content":"10"
+        },
+        {
+            "code":"code-2",
+            "libelle":"libelle-2",
+            "urlImage":"urlImage-2",
+            "urlImage2":"urlImage2-2",
+            "urlImage3":"urlImage3-2",
+            "urlVideo":"urlVideo-2",
+            "contenu":"contenu-2",
+            "questions":"questions-2",
+            "indicationProf":"indicationProf-2",
+            "numeroOrder":"20",
+            "cours":{"id": "2"},
+            "url":"20",
+            "content":"20"
+        },
+        {
+            "code":"code-3",
+            "libelle":"libelle-3",
+            "urlImage":"urlImage-3",
+            "urlImage2":"urlImage2-3",
+            "urlImage3":"urlImage3-3",
+            "urlVideo":"urlVideo-3",
+            "contenu":"contenu-3",
+            "questions":"questions-3",
+            "indicationProf":"indicationProf-3",
+            "numeroOrder":"30",
+            "cours":{"id": "3"},
+            "url":"30",
+            "content":"30"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

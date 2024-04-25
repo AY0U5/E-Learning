@@ -1,0 +1,40 @@
+{
+    "ref": "ref-1",
+    "etudiant": {"id": "1"},
+    "quiz": {"id": "1"},
+    "note": "10",
+    "resultat": "resultat-1",
+    "questionCurrent": "10",
+
+    "reponseEtudiants": [
+        {
+            "ref":"ref-1",
+            "reponse":{"id": "1"},
+            "answer":"answer-1",
+            "note":"10",
+            "question":{"id": "1"}
+        },
+        {
+            "ref":"ref-2",
+            "reponse":{"id": "2"},
+            "answer":"answer-2",
+            "note":"20",
+            "question":{"id": "2"}
+        },
+        {
+            "ref":"ref-3",
+            "reponse":{"id": "3"},
+            "answer":"answer-3",
+            "note":"30",
+            "question":{"id": "3"}
+        }
+    ]
+}
+
+
+
+
+
+
+
+

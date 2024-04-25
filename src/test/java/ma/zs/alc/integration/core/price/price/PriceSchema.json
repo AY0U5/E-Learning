@@ -1,0 +1,18 @@
+{
+    "price": "#number",
+    "oldPrice": "#number",
+    "lib": "#string",
+    "nreCourse": "#number",
+    "nreHours": "#number",
+    "nreMonth": "#number",
+    "forGroup": "#bool"
+
+}
+
+
+
+
+
+
+
+

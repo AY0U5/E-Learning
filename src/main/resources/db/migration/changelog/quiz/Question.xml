@@ -1,0 +1,79 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="question">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="ref" type="VARCHAR(500)"/>
+        <column name="libelle" type="VARCHAR(500)"/>
+        <column name="url_img" type="VARCHAR(500)"/>
+        <column name="url_video" type="VARCHAR(500)"/>
+        <column name="numero" type="BIGINT"/>
+        <column name="point_reponse_juste" type="NUMERIC"/>
+        <column name="point_reponsefausse" type="NUMERIC"/>
+
+        <column name="type_de_question_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="quiz_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="home_work_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="question"
+              baseColumnNames="type_de_question_id"
+              referencedTableName="type_de_question"
+              referencedColumnNames="id"
+              constraintName="fk_question_type_de_question"/>
+      <addForeignKeyConstraint
+              baseTableName="question"
+              baseColumnNames="quiz_id"
+              referencedTableName="quiz"
+              referencedColumnNames="id"
+              constraintName="fk_question_quiz"/>
+      <addForeignKeyConstraint
+              baseTableName="question"
+              baseColumnNames="home_work_id"
+              referencedTableName="home_work"
+              referencedColumnNames="id"
+              constraintName="fk_question_home_work"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/quiz/Question.csv"
+            tableName="question">
+      <column name="id" type="NUMERIC"/>
+          <column name="ref" type="VARCHAR(500)"/>
+          <column name="libelle" type="VARCHAR(500)"/>
+          <column name="url_img" type="VARCHAR(500)"/>
+          <column name="url_video" type="VARCHAR(500)"/>
+          <column name="numero" type="BIGINT"/>
+          <column name="point_reponse_juste" type="NUMERIC"/>
+          <column name="point_reponsefausse" type="NUMERIC"/>
+        <column name="type_de_question" type="BIGINT"/>
+        <column name="quiz" type="BIGINT"/>
+        <column name="home_work" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

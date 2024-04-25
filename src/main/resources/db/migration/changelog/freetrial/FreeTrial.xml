@@ -1,0 +1,139 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="free_trial">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="reference" type="VARCHAR(500)"/>
+        <column name="date_free_trial" type="TIMESTAMP"/>
+        <column name="link" type="VARCHAR(500)"/>
+        <column name="email_teacher_sent" type="TINYINT"/>
+        <column name="email_teacher_sending_date" type="TIMESTAMP"/>
+        <column name="whats_teacher_sent" type="TINYINT"/>
+        <column name="whats_teacher_sending_date" type="TIMESTAMP"/>
+        <column name="date_free_trial_premier_rappel" type="TIMESTAMP"/>
+        <column name="date_free_trial_premier_deuxieme_rappel" type="TIMESTAMP"/>
+        <column name="nombre_student_total" type="BIGINT"/>
+        <column name="nombre_student_abonne" type="BIGINT"/>
+        <column name="nombre_student_present" type="BIGINT"/>
+
+        <column name="prof_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="niveau_etude_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="free_trial_student_whats_template_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="free_trial_student_email_template_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="free_trial_teacher_email_template_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="free_trial_teacher_whats_template_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="free_trial_configuration_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="statut_free_trial_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="prof_id"
+              referencedTableName="prof"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_prof"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="niveau_etude_id"
+              referencedTableName="niveau_etude"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_niveau_etude"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="free_trial_student_whats_template_id"
+              referencedTableName="free_trial_student_whats_template"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_free_trial_student_whats_template"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="free_trial_student_email_template_id"
+              referencedTableName="free_trial_student_email_template"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_free_trial_student_email_template"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="free_trial_teacher_email_template_id"
+              referencedTableName="free_trial_teacher_email_template"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_free_trial_teacher_email_template"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="free_trial_teacher_whats_template_id"
+              referencedTableName="free_trial_teacher_whats_template"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_free_trial_teacher_whats_template"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="free_trial_configuration_id"
+              referencedTableName="free_trial_configuration"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_free_trial_configuration"/>
+      <addForeignKeyConstraint
+              baseTableName="free_trial"
+              baseColumnNames="statut_free_trial_id"
+              referencedTableName="statut_free_trial"
+              referencedColumnNames="id"
+              constraintName="fk_free_trial_statut_free_trial"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/freetrial/FreeTrial.csv"
+            tableName="free_trial">
+      <column name="id" type="NUMERIC"/>
+          <column name="reference" type="VARCHAR(500)"/>
+          <column name="date_free_trial" type="TIMESTAMP"/>
+          <column name="link" type="VARCHAR(500)"/>
+          <column name="email_teacher_sent" type="TINYINT"/>
+          <column name="email_teacher_sending_date" type="TIMESTAMP"/>
+          <column name="whats_teacher_sent" type="TINYINT"/>
+          <column name="whats_teacher_sending_date" type="TIMESTAMP"/>
+          <column name="date_free_trial_premier_rappel" type="TIMESTAMP"/>
+          <column name="date_free_trial_premier_deuxieme_rappel" type="TIMESTAMP"/>
+          <column name="nombre_student_total" type="BIGINT"/>
+          <column name="nombre_student_abonne" type="BIGINT"/>
+          <column name="nombre_student_present" type="BIGINT"/>
+        <column name="prof" type="BIGINT"/>
+        <column name="niveau_etude" type="BIGINT"/>
+        <column name="free_trial_student_whats_template" type="BIGINT"/>
+        <column name="free_trial_student_email_template" type="BIGINT"/>
+        <column name="free_trial_teacher_email_template" type="BIGINT"/>
+        <column name="free_trial_teacher_whats_template" type="BIGINT"/>
+        <column name="free_trial_configuration" type="BIGINT"/>
+        <column name="statut_free_trial" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

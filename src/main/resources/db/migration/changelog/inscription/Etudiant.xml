@@ -1,0 +1,163 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="etudiant">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="ref" type="VARCHAR(500)"/>
+        <column name="group_option" type="VARCHAR(500)"/>
+        <column name="credentials_non_expired" type="TINYINT"/>
+        <column name="enabled" type="TINYINT"/>
+        <column name="account_non_expired" type="TINYINT"/>
+        <column name="account_non_locked" type="TINYINT"/>
+        <column name="password_changed" type="TINYINT"/>
+        <column name="username" type="VARCHAR(500)"/>
+        <column name="password" type="VARCHAR(500)"/>
+
+        <column name="teacher_locality_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="etat_etudiant_schedule_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="parcours_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="groupe_etude_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="pack_student_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="statut_social_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="interet_etudiant_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="niveau_etude_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="skill_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="fonction_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="langue_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="teacher_locality_id"
+              referencedTableName="teacher_locality"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_teacher_locality"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="etat_etudiant_schedule_id"
+              referencedTableName="etat_etudiant_schedule"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_etat_etudiant_schedule"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="parcours_id"
+              referencedTableName="parcours"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_parcours"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="groupe_etude_id"
+              referencedTableName="groupe_etude"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_groupe_etude"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="pack_student_id"
+              referencedTableName="pack_student"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_pack_student"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="statut_social_id"
+              referencedTableName="statut_social"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_statut_social"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="interet_etudiant_id"
+              referencedTableName="interet_etudiant"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_interet_etudiant"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="niveau_etude_id"
+              referencedTableName="niveau_etude"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_niveau_etude"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="skill_id"
+              referencedTableName="skill"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_skill"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="fonction_id"
+              referencedTableName="fonction"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_fonction"/>
+      <addForeignKeyConstraint
+              baseTableName="etudiant"
+              baseColumnNames="langue_id"
+              referencedTableName="langue"
+              referencedColumnNames="id"
+              constraintName="fk_etudiant_langue"/>
+
+  </changeSet>
+
+
+  <!-- Load Data from CSV -->
+  <changeSet id="3" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/inscription/Etudiant.csv"
+            tableName="etudiant">
+      <column name="id" type="NUMERIC"/>
+          <column name="ref" type="VARCHAR(500)"/>
+          <column name="group_option" type="VARCHAR(500)"/>
+          <column name="credentials_non_expired" type="TINYINT"/>
+          <column name="enabled" type="TINYINT"/>
+          <column name="account_non_expired" type="TINYINT"/>
+          <column name="account_non_locked" type="TINYINT"/>
+          <column name="password_changed" type="TINYINT"/>
+          <column name="username" type="VARCHAR(500)"/>
+          <column name="password" type="VARCHAR(500)"/>
+        <column name="teacher_locality" type="BIGINT"/>
+        <column name="etat_etudiant_schedule" type="BIGINT"/>
+        <column name="parcours" type="BIGINT"/>
+        <column name="groupe_etude" type="BIGINT"/>
+        <column name="pack_student" type="BIGINT"/>
+        <column name="statut_social" type="BIGINT"/>
+        <column name="interet_etudiant" type="BIGINT"/>
+        <column name="niveau_etude" type="BIGINT"/>
+        <column name="skill" type="BIGINT"/>
+        <column name="fonction" type="BIGINT"/>
+        <column name="langue" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>
