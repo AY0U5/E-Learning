@@ -10,10 +10,6 @@ import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +17,25 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ma.zs.alc.service.facade.admin.course.ParcoursAdminService ;
-import ma.zs.alc.bean.core.course.Parcours ;
 import ma.zs.alc.service.facade.admin.courseref.EtatCoursAdminService ;
-import ma.zs.alc.bean.core.courseref.EtatCours ;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService ;
 import ma.zs.alc.bean.core.course.Section ;
 import ma.zs.alc.service.facade.admin.homework.HomeWorkAdminService ;
 import ma.zs.alc.bean.core.homework.HomeWork ;
 
-import java.util.List;
 @Service
 public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCriteria, CoursDao> implements CoursAdminService {
+    @Override
+    public List<Cours> findByParcoursCode(String code) {
+        return coursDao.findByParcoursCode(code);
+    }
+    @Override
+    public int deleteByParcoursCode(String code) {
+        return coursDao.deleteByParcoursCode(code);
+    }
+
+    private @Autowired CoursDao coursDao;
+
 
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)

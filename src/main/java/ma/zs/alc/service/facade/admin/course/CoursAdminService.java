@@ -9,6 +9,11 @@ import ma.zs.alc.zynerator.service.IService;
 
 public interface CoursAdminService extends  IService<Cours,CoursCriteria>  {
 
+
+    List<Cours> findByParcoursCode(String code);
+
+    int deleteByParcoursCode(String code);
+
     List<Cours> findByEtatCoursId(Long id);
     int deleteByEtatCoursId(Long id);
     long countByEtatCoursCode(String code);

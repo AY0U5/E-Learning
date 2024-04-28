@@ -1,10 +1,6 @@
 package  ma.zs.alc.ws.facade.admin.course;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import ma.zs.alc.bean.core.course.Cours;
 import ma.zs.alc.dao.criteria.core.course.CoursCriteria;
@@ -12,7 +8,6 @@ import ma.zs.alc.service.facade.admin.course.CoursAdminService;
 import ma.zs.alc.ws.converter.course.CoursConverter;
 import ma.zs.alc.ws.dto.course.CoursDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
-import ma.zs.alc.zynerator.dto.AuditEntityDto;
 import ma.zs.alc.zynerator.util.PaginatedList;
 
 
@@ -23,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import ma.zs.alc.zynerator.process.Result;
 
 
 import org.springframework.web.multipart.MultipartFile;
@@ -34,6 +28,18 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCriteria, CoursAdminService, CoursConverter> {
 
 
+    private @Autowired CoursAdminService coursAdminService;
+
+    @Operation(summary = "find by parcours code")
+    @GetMapping("parcours/code/{code}")
+    public List<CoursDto> findByParcoursCode(@PathVariable String code) {
+        return findDtos(coursAdminService.findByParcoursCode(code));
+    }
+    @Operation(summary = "delete by parcours code")
+    @DeleteMapping("parcours/code/{code}")
+    public int deleteByParcoursCode( @PathVariable String code) {
+        return coursAdminService.deleteByParcoursCode(code);
+    }
 
     @Operation(summary = "upload one cours")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
