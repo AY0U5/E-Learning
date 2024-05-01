@@ -7,23 +7,35 @@ import ma.zs.alc.dao.facade.core.courseref.EtatCoursDao;
 import ma.zs.alc.dao.specification.core.courseref.EtatCoursSpecification;
 import ma.zs.alc.service.facade.admin.courseref.EtatCoursAdminService;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
-import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
-import java.util.List;
 @Service
 public class EtatCoursAdminServiceImpl extends AbstractServiceImpl<EtatCours, EtatCoursCriteria, EtatCoursDao> implements EtatCoursAdminService {
 
+    @Override
+    public EtatCours findByCode(String code) {
+        return etatCoursDao.findByCode(code);
+    }
+    @Override
 
+    public int deleteByCode(String code) {
+        return etatCoursDao.deleteByCode(code);
+    }
+    @Override
+
+    public EtatCours findByLibelle(String lib) {
+        return etatCoursDao.findByLibelle(lib);
+    }
+    @Override
+    public int deleteByLibelle(String lib) {
+        return etatCoursDao.deleteByLibelle(lib);
+    }
+
+    private @Autowired EtatCoursDao etatCoursDao;
 
 
 

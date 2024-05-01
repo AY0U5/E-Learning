@@ -30,6 +30,7 @@ import java.util.List;
 public class CategorieSectionAdminServiceImpl extends AbstractServiceImpl<CategorieSection, CategorieSectionCriteria, CategorieSectionDao> implements CategorieSectionAdminService {
 
 
+
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public CategorieSection create(CategorieSection t) {
         CategorieSection saved= super.create(t);

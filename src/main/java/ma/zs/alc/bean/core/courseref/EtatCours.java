@@ -20,7 +20,7 @@ import java.util.Objects;
 @Table(name = "etat_cours")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class EtatCours   extends AuditBusinessObject     {
+public class EtatCours   extends AuditBusinessObject {
 
     private Long id;
 

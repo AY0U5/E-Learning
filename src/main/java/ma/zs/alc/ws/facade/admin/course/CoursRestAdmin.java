@@ -26,7 +26,17 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RestController
 @RequestMapping("/api/admin/cours/")
 public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCriteria, CoursAdminService, CoursConverter> {
-
+    //added
+    @Operation(summary = "find by cours code")
+    @GetMapping("/code/{code}")
+    public Cours findByCode(String code) {
+        return coursAdminService.findByCode(code);
+    }
+    @Operation(summary = "delete by cours code")
+    @DeleteMapping("/code/{code}")
+    public int deleteByCode(String code) {
+        return coursAdminService.deleteByCode(code);
+    }
 
     private @Autowired CoursAdminService coursAdminService;
 
@@ -41,6 +51,8 @@ public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCr
         return coursAdminService.deleteByParcoursCode(code);
     }
 
+
+    //
     @Operation(summary = "upload one cours")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
     public ResponseEntity<FileTempDto> uploadFileAndGetChecksum(@RequestBody MultipartFile file) throws Exception {

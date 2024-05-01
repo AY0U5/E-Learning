@@ -10,10 +10,6 @@ import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +19,39 @@ import org.springframework.transaction.annotation.Transactional;
 import ma.zs.alc.service.facade.admin.inscription.EtudiantAdminService ;
 import ma.zs.alc.bean.core.inscription.Etudiant ;
 import ma.zs.alc.service.facade.admin.courseref.CentreAdminService ;
-import ma.zs.alc.bean.core.courseref.Centre ;
 import ma.zs.alc.service.facade.admin.course.CoursAdminService ;
 import ma.zs.alc.bean.core.course.Cours ;
 
-import java.util.List;
 @Service
 public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, ParcoursCriteria, ParcoursDao> implements ParcoursAdminService {
+
+    @Override
+    public Parcours findByCode(String code) {
+        return parcoursDao.findByCode(code);
+    }
+    @Override
+    public int deleteByCode(String code) {
+        return parcoursDao.deleteByCode(code);
+    }
+    @Override
+    public Parcours findByLibelle(String lib) {
+        return parcoursDao.findByLibelle(lib);
+    }
+    @Override
+    public int deleteByLibelle(String Lib) {
+        return parcoursDao.deleteByLibelle(Lib);
+    }
+    @Override
+    public List<Parcours> findByCentreRef(String CentreRef) {
+        return parcoursDao.findByCentreRef(CentreRef);
+    }
+    @Override
+    public int deleteByCentreRef(String CentreRef) {
+        return parcoursDao.deleteByCentreRef(CentreRef);
+    }
+
+    private @Autowired ParcoursDao parcoursDao;
+    private @Autowired CentreAdminService centreAdminService;
 
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)

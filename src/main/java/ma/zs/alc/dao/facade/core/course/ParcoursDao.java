@@ -20,4 +20,10 @@ public interface ParcoursDao extends AbstractRepository<Parcours,Long>  {
     @Query("SELECT NEW Parcours(item.id,item.libelle) FROM Parcours item")
     List<Parcours> findAllOptimized();
 
+    Parcours findByLibelle(String libelle);
+    int deleteByLibelle(String libelle);
+
+    List<Parcours> findByCentreRef(String centreRef);
+
+    int deleteByCentreRef(String centreRef);
 }

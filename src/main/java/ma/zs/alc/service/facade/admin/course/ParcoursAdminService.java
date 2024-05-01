@@ -9,6 +9,18 @@ import ma.zs.alc.zynerator.service.IService;
 
 public interface ParcoursAdminService extends  IService<Parcours,ParcoursCriteria>  {
 
+    Parcours findByCode(String code);
+
+    int deleteByCode(String code);
+
+    Parcours findByLibelle(String lib);
+
+    int deleteByLibelle(String Lib);
+
+    List<Parcours> findByCentreRef(String CentreRef);
+
+    int deleteByCentreRef(String CentreRef);
+
     List<Parcours> findByCentreId(Long id);
     int deleteByCentreId(Long id);
     long countByCentreRef(String ref);

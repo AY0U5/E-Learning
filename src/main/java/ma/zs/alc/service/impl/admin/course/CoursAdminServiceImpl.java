@@ -25,6 +25,34 @@ import ma.zs.alc.bean.core.homework.HomeWork ;
 
 @Service
 public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCriteria, CoursDao> implements CoursAdminService {
+
+
+
+    /*@Override
+    public Cours saveCours(Cours cours) {
+//        etatCours: EtatCours
+//        parcours: Parcours
+        if (cours != null) {
+
+            if (findByCode(cours.getCode()) == null || cours.getEtatCours() != null || cours.getParcours() != null) {
+
+                Parcours parcours = parcoursAdminService.findByCode(cours.getParcours().getCode());
+                cours.setParcours(parcours);
+                EtatCours etatCours = etatCoursAdminService.findByCode(cours.getEtatCours().getCode());
+                cours.setEtatCours(etatCours);
+                coursDao.save(cours);
+                List<Cours> courss = coursDao.findAll();
+                for (Cours cours1 : courss) {
+                    if (cours1.getEtatCours()){
+
+                    }
+                }
+
+                return cours;
+            }
+        }
+        return null;
+    }*/
     @Override
     public List<Cours> findByParcoursCode(String code) {
         return coursDao.findByParcoursCode(code);
@@ -33,8 +61,18 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
     public int deleteByParcoursCode(String code) {
         return coursDao.deleteByParcoursCode(code);
     }
+    @Override
+    public Cours findByCode(String code) {
+        return coursDao.findByCode(code);
+    }
+    @Override
+    public int deleteByCode(String code) {
+        return coursDao.deleteByCode(code);
+    }
 
     private @Autowired CoursDao coursDao;
+    private @Autowired ParcoursAdminService parcoursAdminService;
+    private @Autowired EtatCoursAdminService etatCoursAdminService;
 
 
 
