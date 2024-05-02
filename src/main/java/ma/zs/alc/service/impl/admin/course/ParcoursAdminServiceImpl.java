@@ -28,7 +28,7 @@ import ma.zs.alc.bean.core.course.Cours ;
 public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, ParcoursCriteria, ParcoursDao> implements ParcoursAdminService {
 
 
-    public List<Cours> findByEtatParcoursId(Long id){
+    public List<Parcours> findByEtatParcoursId(Long id){
         return dao.findByEtatParcoursId(id);
     }
     public int deleteByEtatParcoursId(Long id){

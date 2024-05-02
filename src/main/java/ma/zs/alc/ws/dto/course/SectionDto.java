@@ -1,5 +1,6 @@
 package  ma.zs.alc.ws.dto.course;
 
+import ma.zs.alc.ws.dto.courseref.EtatSectionDto;
 import ma.zs.alc.zynerator.audit.Log;
 import ma.zs.alc.zynerator.dto.AuditBaseDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -27,6 +28,8 @@ public class SectionDto  extends AuditBaseDto {
     private Integer content  = 0 ;
 
     private CategorieSectionDto categorieSection ;
+
+    private EtatSectionDto etatSection ;
     private CoursDto cours ;
 
     private List<SectionItemDto> sectionItems ;
@@ -141,6 +144,14 @@ public class SectionDto  extends AuditBaseDto {
 
     public void setCategorieSection(CategorieSectionDto categorieSection){
         this.categorieSection = categorieSection;
+    }
+
+    public EtatSectionDto getEtatSection(){
+        return this.etatSection;
+    }
+
+    public void setEtatSection(EtatSectionDto etatSection){
+        this.etatSection = etatSection;
     }
     public CoursDto getCours(){
         return this.cours;

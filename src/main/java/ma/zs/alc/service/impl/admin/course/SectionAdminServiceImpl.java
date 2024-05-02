@@ -6,6 +6,7 @@ import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.dao.facade.core.course.SectionDao;
 import ma.zs.alc.dao.specification.core.course.SectionSpecification;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
+import ma.zs.alc.service.facade.admin.courseref.EtatSectionAdminService;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
@@ -76,6 +77,7 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
     public void findOrSaveAssociatedObject(Section t){
         if( t != null) {
             t.setCategorieSection(categorieSectionService.findOrSave(t.getCategorieSection()));
+            t.setEtatSection(etatSectionService.findOrSave(t.getEtatSection()));
             t.setCours(coursService.findOrSave(t.getCours()));
         }
     }
@@ -88,6 +90,16 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
     }
     public long countByCategorieSectionCode(String code){
         return dao.countByCategorieSectionCode(code);
+    }
+
+    public List<Section> findByEtatSectionId(Long id){
+        return dao.findByEtatSectionId(id);
+    }
+    public int deleteByEtatSectionId(Long id){
+        return dao.deleteByEtatSectionId(id);
+    }
+    public long countByEtatSectionCode(String code){
+        return dao.countByEtatSectionCode(code);
     }
     public List<Section> findByCoursId(Long id){
         return dao.findByCoursId(id);
@@ -114,6 +126,8 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
 
     @Autowired
     private CategorieSectionAdminService categorieSectionService ;
+
+    private @Autowired EtatSectionAdminService etatSectionService;
     @Autowired
     private CoursAdminService coursService ;
     @Autowired

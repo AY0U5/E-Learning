@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface ParcoursDao extends AbstractRepository<Parcours,Long>  {
 
-    List<Cours> findByEtatParcoursId(Long id);
+    List<Parcours> findByEtatParcoursId(Long id);
     int deleteByEtatParcoursId(Long id);
     long countByEtatParcoursCode(String code);
     Parcours findByCode(String code);

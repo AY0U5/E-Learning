@@ -215,6 +215,7 @@ public class AlcApplication {
     public CommandLineRunner demo(UserService userService, RoleService roleService, ModelPermissionService modelPermissionService, ActionPermissionService actionPermissionService, ModelPermissionUserService modelPermissionUserService) {
     return (args) -> {
         if(true){
+            createEtatSection();
             createEtatParcours();
             createEtatCours();
             createHoweWorkQSTReponse();
@@ -336,6 +337,16 @@ public class AlcApplication {
 
             }
         };
+    }
+    private void createEtatSection(){
+        String code = "code";
+        String libelle = "libelle";
+        for (int i = 1; i < 7; i++) {
+            EtatSection item = new EtatSection();
+            item.setCode(fakeString(code, i));
+            item.setLibelle(fakeString(libelle, i));
+            etatSectionService.create(item);
+        }
     }
 
     private void createEtatParcours(){
@@ -1592,6 +1603,7 @@ public class AlcApplication {
 
 
     private static void addPermission(List<ModelPermission> modelPermissions) {
+        modelPermissions.add(new ModelPermission("EtatSection"));
         modelPermissions.add(new ModelPermission("EtatParcours"));
         modelPermissions.add(new ModelPermission("EtatCours"));
         modelPermissions.add(new ModelPermission("HoweWorkQSTReponse"));
@@ -1693,6 +1705,8 @@ public class AlcApplication {
         actionPermissions.add(new ActionPermission("duplicate"));
     }
 
+    @Autowired
+    EtatSectionAdminService etatSectionService;
     @Autowired
     EtatParcoursAdminService etatParcoursService;
     @Autowired

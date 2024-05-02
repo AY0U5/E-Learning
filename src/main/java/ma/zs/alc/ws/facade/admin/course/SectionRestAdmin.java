@@ -10,6 +10,7 @@ import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
 import ma.zs.alc.ws.converter.course.SectionConverter;
+import ma.zs.alc.ws.dto.course.CoursDto;
 import ma.zs.alc.ws.dto.course.SectionDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.dto.AuditEntityDto;
@@ -33,7 +34,16 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RequestMapping("/api/admin/section/")
 public class SectionRestAdmin  extends AbstractController<Section, SectionDto, SectionCriteria, SectionAdminService, SectionConverter> {
 
-
+    @Operation(summary = "find by etatSection id")
+    @GetMapping("etatSection/id/{id}")
+    public List<SectionDto> findByEtatSectionId(@PathVariable Long id){
+        return findDtos(service.findByEtatSectionId(id));
+    }
+    @Operation(summary = "delete by etatSection id")
+    @DeleteMapping("etatSection/id/{id}")
+    public int deleteByEtatSectionId(@PathVariable Long id){
+        return service.deleteByEtatSectionId(id);
+    }
 
     @Operation(summary = "upload one section")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")

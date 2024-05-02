@@ -72,7 +72,6 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
 
     private @Autowired CoursDao coursDao;
     private @Autowired ParcoursAdminService parcoursAdminService;
-    private @Autowired EtatCoursAdminService etatCoursAdminService;
 
 
 

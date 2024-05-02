@@ -10,7 +10,7 @@ import ma.zs.alc.zynerator.service.IService;
 
 
 public interface ParcoursAdminService extends  IService<Parcours,ParcoursCriteria>  {
-    List<Cours> findByEtatParcoursId(Long id);
+    List<Parcours> findByEtatParcoursId(Long id);
     int deleteByEtatParcoursId(Long id);
 
     Parcours findByCode(String code);
