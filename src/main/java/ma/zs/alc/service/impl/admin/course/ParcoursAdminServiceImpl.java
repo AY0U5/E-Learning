@@ -6,6 +6,8 @@ import ma.zs.alc.dao.criteria.core.course.ParcoursCriteria;
 import ma.zs.alc.dao.facade.core.course.ParcoursDao;
 import ma.zs.alc.dao.specification.core.course.ParcoursSpecification;
 import ma.zs.alc.service.facade.admin.course.ParcoursAdminService;
+import ma.zs.alc.service.facade.admin.courseref.EtatParcoursAdminService;
+import ma.zs.alc.service.facade.admin.courseref.EtatParcoursAdminService;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,16 @@ import ma.zs.alc.bean.core.course.Cours ;
 @Service
 public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, ParcoursCriteria, ParcoursDao> implements ParcoursAdminService {
 
+
+    public List<Cours> findByEtatParcoursId(Long id){
+        return dao.findByEtatParcoursId(id);
+    }
+    public int deleteByEtatParcoursId(Long id){
+        return dao.deleteByEtatParcoursId(id);
+    }
+    public long countByEtatParcoursCode(String code){
+        return dao.countByEtatParcoursCode(code);
+    }
     @Override
     public Parcours findByCode(String code) {
         return parcoursDao.findByCode(code);
@@ -109,7 +121,9 @@ public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, Parc
     }
     public void findOrSaveAssociatedObject(Parcours t){
         if( t != null) {
+            t.setEtatParcours(etatParcoursService.findOrSave(t.getEtatParcours()));
             t.setCentre(centreService.findOrSave(t.getCentre()));
+            
         }
     }
 
@@ -136,6 +150,8 @@ public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, Parc
     }
 
 
+    @Autowired
+    private EtatParcoursAdminService etatParcoursService ;
     @Autowired
     private EtudiantAdminService etudiantService ;
     @Autowired

@@ -1,5 +1,6 @@
 package ma.zs.alc.dao.facade.core.course;
 
+import ma.zs.alc.bean.core.course.Cours;
 import org.springframework.data.jpa.repository.Query;
 import ma.zs.alc.zynerator.repository.AbstractRepository;
 import ma.zs.alc.bean.core.course.Parcours;
@@ -10,6 +11,10 @@ import java.util.List;
 
 @Repository
 public interface ParcoursDao extends AbstractRepository<Parcours,Long>  {
+
+    List<Cours> findByEtatParcoursId(Long id);
+    int deleteByEtatParcoursId(Long id);
+    long countByEtatParcoursCode(String code);
     Parcours findByCode(String code);
     int deleteByCode(String code);
 

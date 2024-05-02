@@ -18,7 +18,7 @@ import ma.zs.alc.ws.dto.inscription.EtudiantDto;
 import ma.zs.alc.ws.dto.inscriptionref.StatutSocialDto;
 import ma.zs.alc.ws.dto.inscriptionref.LangueDto;
 import ma.zs.alc.ws.dto.grpe.GroupeEtudiantDto;
-import ma.zs.alc.ws.dto.courseref.EtatCoursDto;
+import ma.zs.alc.ws.dto.courseref.EtatParcoursDto;
 import ma.zs.alc.ws.dto.courseref.CentreDto;
 import ma.zs.alc.ws.dto.grpe.GroupeEtudeDto;
 import ma.zs.alc.ws.dto.homework.HomeWorkDto;
@@ -41,6 +41,7 @@ public class ParcoursDto  extends AuditBaseDto {
     private Integer numeroOrder  = 0 ;
     private Integer nombreCours  = 0 ;
 
+    private EtatParcoursDto etatParcours ;
     private CentreDto centre ;
 
     private List<CoursDto> courss ;
@@ -111,6 +112,14 @@ public class ParcoursDto  extends AuditBaseDto {
         this.nombreCours = nombreCours;
     }
 
+
+    public EtatParcoursDto getEtatParcours(){
+        return this.etatParcours;
+    }
+
+    public void setEtatParcours(EtatParcoursDto etatParcours){
+        this.etatParcours = etatParcours;
+    }
 
     public CentreDto getCentre(){
         return this.centre;

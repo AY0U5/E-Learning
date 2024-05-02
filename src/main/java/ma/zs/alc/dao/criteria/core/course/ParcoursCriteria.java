@@ -3,6 +3,7 @@ package  ma.zs.alc.dao.criteria.core.course;
 
 import ma.zs.alc.dao.criteria.core.courseref.CentreCriteria;
 
+import ma.zs.alc.dao.criteria.core.courseref.EtatParcoursCriteria;
 import ma.zs.alc.zynerator.criteria.BaseCriteria;
 import java.util.List;
 import java.time.LocalDateTime;
@@ -10,6 +11,9 @@ import java.time.LocalDate;
 
 public class ParcoursCriteria extends  BaseCriteria  {
 
+
+    private EtatParcoursCriteria etatParcours ;
+    private List<EtatParcoursCriteria> etatParcourss ;
     private LocalDateTime datePublication;
     private LocalDateTime datePublicationFrom;
     private LocalDateTime datePublicationTo;
@@ -34,6 +38,21 @@ public class ParcoursCriteria extends  BaseCriteria  {
 
 
     public ParcoursCriteria(){}
+
+    public EtatParcoursCriteria getEtatParcours(){
+        return this.etatParcours;
+    }
+
+    public void setEtatParcours(EtatParcoursCriteria etatParcours){
+        this.etatParcours = etatParcours;
+    }
+    public List<EtatParcoursCriteria> getEtatParcourss(){
+        return this.etatParcourss;
+    }
+
+    public void setEtatParcourss(List<EtatParcoursCriteria> etatParcourss){
+        this.etatParcourss = etatParcourss;
+    }
 
     public LocalDateTime getDatePublication(){
         return this.datePublication;

@@ -10,6 +10,7 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
+import ma.zs.alc.bean.core.courseref.EtatParcours;
 import ma.zs.alc.bean.core.quizetudiant.QuizEtudiant;
 import ma.zs.alc.bean.core.inscriptionref.EtatEtudiantSchedule;
 import ma.zs.alc.bean.core.inscriptionref.InteretEtudiant;
@@ -61,6 +62,7 @@ public class Parcours   extends AuditBusinessObject     {
     private Centre centre ;
 
     private List<Cours> courss ;
+    private EtatParcours etatParcours ;
     private List<Etudiant> etudiants ;
 
     public Parcours(){
@@ -132,6 +134,15 @@ public class Parcours   extends AuditBusinessObject     {
     }
     public void setNombreCours(Integer nombreCours){
         this.nombreCours = nombreCours;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "etat_parcours")
+    public EtatParcours getEtatParcours(){
+        return this.etatParcours;
+    }
+    public void setEtatParcours(EtatParcours etatParcours){
+        this.etatParcours = etatParcours;
     }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "centre")
