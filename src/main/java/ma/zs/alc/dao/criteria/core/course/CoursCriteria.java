@@ -32,6 +32,11 @@ public class CoursCriteria extends  BaseCriteria  {
     private String numeroOrderMin;
     private String numeroOrderMax;
 
+    private String nombreSection;
+    private String nombreSectionMin;
+    private String nombreSectionMax;
+
+
     private EtatCoursCriteria etatCours ;
     private List<EtatCoursCriteria> etatCourss ;
     private ParcoursCriteria parcours ;
@@ -186,7 +191,25 @@ public class CoursCriteria extends  BaseCriteria  {
     public void setNumeroOrderMax(String numeroOrderMax){
         this.numeroOrderMax = numeroOrderMax;
     }
-      
+
+    public String getNombreSection(){
+        return this.nombreSection;
+    }
+    public void setNombreSection(String nombreSection){
+        this.nombreSection = nombreSection;
+    }
+    public String getNombreSectionMin(){
+        return this.nombreSectionMin;
+    }
+    public void setNombreSectionMin(String nombreSectionMin){
+        this.nombreSectionMin = nombreSectionMin;
+    }
+    public String getNombreSectionMax(){
+        return this.nombreSectionMax;
+    }
+    public void setNombreSectionMax(String nombreSectionMax){
+        this.nombreSectionMax = nombreSectionMax;
+    }
 
     public EtatCoursCriteria getEtatCours(){
         return this.etatCours;

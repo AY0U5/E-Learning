@@ -1072,7 +1072,8 @@ public class AlcApplication {
          String nombreLinkEnCours = "nombreLinkEnCours";
          String nombreLinkFinalise = "nombreLinkFinalise";
          String numeroOrder = "numeroOrder";
-        for (int i = 1; i < 7; i++) {
+        String nombreSection = "nombreSection";
+        for (int i = 1; i < 4; i++) {
             Cours item = new Cours();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1083,6 +1084,7 @@ public class AlcApplication {
             item.setNombreLinkEnCours(fakeInteger(nombreLinkEnCours, i));
             item.setNombreLinkFinalise(fakeInteger(nombreLinkFinalise, i));
             item.setNumeroOrder(fakeInteger(numeroOrder, i));
+            item.setNombreSection(fakeInteger(nombreSection, i));
             coursService.create(item);
         }
     }
@@ -1390,7 +1392,7 @@ public class AlcApplication {
         String libelle = "libelle";
          String numeroOrder = "numeroOrder";
          String nombreCours = "nombreCours";
-        for (int i = 1; i < 7; i++) {
+        for (int i = 1; i < 4; i++) {
             Parcours item = new Parcours();
             item.setDatePublication(fakeLocalDateTime(datePublication, i));
             item.setDateCreation(fakeLocalDateTime(dateCreation, i));
@@ -1557,7 +1559,7 @@ public class AlcApplication {
          String numeroOrder = "numeroOrder";
          String url = "url";
          String content = "content";
-        for (int i = 1; i < 7; i++) {
+        for (int i = 1; i < 4; i++) {
             Section item = new Section();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));

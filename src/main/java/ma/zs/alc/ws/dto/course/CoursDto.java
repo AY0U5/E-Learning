@@ -28,6 +28,7 @@ public class CoursDto  extends AuditBaseDto {
     private Integer nombreLinkFinalise  = 0 ;
     private Integer numeroOrder  = 0 ;
 
+    private Integer nombreSection  = 0 ;
     private EtatCoursDto etatCours ;
     private ParcoursDto parcours ;
 
@@ -113,6 +114,14 @@ public class CoursDto  extends AuditBaseDto {
         this.numeroOrder = numeroOrder;
     }
 
+
+    @Log
+    public Integer getNombreSection(){
+        return this.nombreSection;
+    }
+    public void setNombreSection(Integer nombreSection){
+        this.nombreSection = nombreSection;
+    }
 
     public EtatCoursDto getEtatCours(){
         return this.etatCours;
