@@ -6,10 +6,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
+import ma.zs.alc.bean.core.courseref.EtatCours;
 import ma.zs.alc.bean.core.courseref.EtatParcours;
 import ma.zs.alc.dao.criteria.core.courseref.EtatParcoursCriteria;
+import ma.zs.alc.service.facade.admin.courseref.EtatCoursAdminService;
 import ma.zs.alc.service.facade.admin.courseref.EtatParcoursAdminService;
 import ma.zs.alc.ws.converter.courseref.EtatParcoursConverter;
+import ma.zs.alc.ws.dto.course.SectionDto;
 import ma.zs.alc.ws.dto.courseref.EtatParcoursDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.dto.AuditEntityDto;
@@ -32,8 +35,17 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RestController
 @RequestMapping("/api/admin/etatParcours/")
 public class EtatParcoursRestAdmin  extends AbstractController<EtatParcours, EtatParcoursDto, EtatParcoursCriteria, EtatParcoursAdminService, EtatParcoursConverter> {
+    @Operation(summary = "Finds a etatParcours  by code")
+    @GetMapping("code/{code}")
+    public ResponseEntity<EtatParcoursDto> findByCode(@PathVariable String code) {
+        return  super.findByReferenceEntity ( new EtatParcours(code));
+    }
 
+    public int deleteByCode(String code) {
+        return etatCoursAdminService.deleteByCode(code);
+    }
 
+    private @Autowired EtatCoursAdminService etatCoursAdminService;
 
     @Operation(summary = "upload one etatParcours")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")

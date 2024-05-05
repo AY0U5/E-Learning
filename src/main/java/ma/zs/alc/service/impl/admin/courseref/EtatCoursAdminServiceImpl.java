@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 public class EtatCoursAdminServiceImpl extends AbstractServiceImpl<EtatCours, EtatCoursCriteria, EtatCoursDao> implements EtatCoursAdminService {
 
+
     @Override
     public EtatCours findByCode(String code) {
         return etatCoursDao.findByCode(code);

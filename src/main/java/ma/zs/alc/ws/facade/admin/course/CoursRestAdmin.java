@@ -3,15 +3,18 @@ package  ma.zs.alc.ws.facade.admin.course;
 import io.swagger.v3.oas.annotations.Operation;
 
 import ma.zs.alc.bean.core.course.Cours;
+import ma.zs.alc.bean.core.course.Parcours;
 import ma.zs.alc.dao.criteria.core.course.CoursCriteria;
 import ma.zs.alc.service.facade.admin.course.CoursAdminService;
 import ma.zs.alc.ws.converter.course.CoursConverter;
 import ma.zs.alc.ws.dto.course.CoursDto;
+import ma.zs.alc.ws.dto.course.ParcoursDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -85,8 +88,23 @@ public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCr
     @Operation(summary = "Saves the specified  cours")
     @PostMapping("")
     public ResponseEntity<CoursDto> save(@RequestBody CoursDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            converter.init(true);
+            Cours myT = converter.toItem(dto);
+            Cours t = service.saveCours(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                CoursDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+    /*public ResponseEntity<CoursDto> save(@RequestBody CoursDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  cours")
     @PutMapping("")

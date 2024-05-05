@@ -20,6 +20,8 @@ public interface CoursAdminService extends  IService<Cours,CoursCriteria>  {
 
     int deleteByCode(String code);
 
+    Cours saveCours(Cours cours);
+
     List<Cours> findByEtatCoursId(Long id);
     int deleteByEtatCoursId(Long id);
     long countByEtatCoursCode(String code);

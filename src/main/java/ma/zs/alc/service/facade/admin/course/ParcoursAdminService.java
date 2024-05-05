@@ -25,9 +25,14 @@ public interface ParcoursAdminService extends  IService<Parcours,ParcoursCriteri
 
     int deleteByCentreRef(String CentreRef);
 
+    Parcours saveparcour(Parcours parcours);
+
+    void updateParcour(Parcours parcours);
+
     List<Parcours> findByCentreId(Long id);
     int deleteByCentreId(Long id);
     long countByCentreRef(String ref);
+
 
 
 

@@ -18,6 +18,7 @@ import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,8 +78,23 @@ public class ParcoursRestAdmin  extends AbstractController<Parcours, ParcoursDto
     @Operation(summary = "Saves the specified  parcours")
     @PostMapping("")
     public ResponseEntity<ParcoursDto> save(@RequestBody ParcoursDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            converter.init(true);
+            Parcours myT = converter.toItem(dto);
+            Parcours t = service.saveparcour(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                ParcoursDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+   /* public ResponseEntity<ParcoursDto> save(@RequestBody ParcoursDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  parcours")
     @PutMapping("")
