@@ -1,6 +1,7 @@
 package ma.zs.alc.ws.converter.course;
 
 import ma.zs.alc.ws.converter.courseref.EtatSectionConverter;
+import ma.zs.alc.ws.dto.course.CoursDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ma.zs.alc.zynerator.util.ListUtil;
@@ -136,9 +137,14 @@ public class SectionConverter extends AbstractConverter<Section, SectionDto> {
                 dto.setEtatSection(etatSectionConverter.toDto(item.getEtatSection()));
 
             }
-            if (this.cours && item.getCours() != null) {
-                dto.setCours(coursConverter.toDto(item.getCours()));
-
+            if (item.getCours() != null) {
+                if (dto.getCours() == null) {
+                    dto.setCours(new CoursDto());
+                }
+                dto.getCours().setLibelle(item.getLibelle());
+                dto.getCours().setId(item.getId());
+                dto.getCours().setCode(item.getCode());
+//                dto.setCours(coursConverter.toDto(item.getCours()));
             }
             if (this.sectionItems && ListUtil.isNotEmpty(item.getSectionItems())) {
                 sectionItemConverter.init(true);

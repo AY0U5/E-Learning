@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
+import ma.zs.alc.bean.core.course.Cours;
 import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
@@ -18,6 +19,7 @@ import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,8 +79,25 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
     @Operation(summary = "Saves the specified  section")
     @PostMapping("")
     public ResponseEntity<SectionDto> save(@RequestBody SectionDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            /* SectionConverter sectionConverter= (SectionConverter) converter;
+            sectionConverter.setCours(false);*/
+            converter.init(true);
+            Section myT = converter.toItem(dto);
+            Section t = service.saveSection(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                SectionDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+    /*public ResponseEntity<SectionDto> save(@RequestBody SectionDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  section")
     @PutMapping("")

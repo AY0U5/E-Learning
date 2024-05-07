@@ -30,7 +30,12 @@ import java.util.List;
 public class CategorieSectionAdminServiceImpl extends AbstractServiceImpl<CategorieSection, CategorieSectionCriteria, CategorieSectionDao> implements CategorieSectionAdminService {
 
 
+    @Override
+    public CategorieSection findByCode(String code) {
+        return categorieSectionDao.findByCode(code);
+    }
 
+    private @Autowired CategorieSectionDao categorieSectionDao;
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public CategorieSection create(CategorieSection t) {
         CategorieSection saved= super.create(t);

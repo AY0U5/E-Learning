@@ -2,7 +2,10 @@ package ma.zs.alc.service.impl.admin.course;
 
 
 import ma.zs.alc.bean.core.course.Section;
+import ma.zs.alc.bean.core.courseref.CategorieSection;
+import ma.zs.alc.bean.core.courseref.EtatSection;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
+import ma.zs.alc.dao.facade.core.course.CoursDao;
 import ma.zs.alc.dao.facade.core.course.SectionDao;
 import ma.zs.alc.dao.specification.core.course.SectionSpecification;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
@@ -11,10 +14,6 @@ import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +21,15 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ma.zs.alc.service.facade.admin.courseref.CategorieSectionAdminService ;
-import ma.zs.alc.bean.core.courseref.CategorieSection ;
 import ma.zs.alc.service.facade.admin.course.CoursAdminService ;
 import ma.zs.alc.bean.core.course.Cours ;
 import ma.zs.alc.service.facade.admin.course.SectionItemAdminService ;
 import ma.zs.alc.bean.core.course.SectionItem ;
 
-import java.util.List;
 @Service
 public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, SectionCriteria, SectionDao> implements SectionAdminService {
 
-
+    private @Autowired SectionDao sectionDao;
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public Section create(Section t) {
         Section saved= super.create(t);
@@ -44,6 +41,36 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
         }
         return saved;
 
+    }
+
+    @Override
+    public Section saveSection(Section section) {
+        if (sectionDao.findByCode(section.getCode()) != null) {
+            return null;
+        }
+       /* if (section.getCours().getId() == null){
+            return null;
+        }*/
+        Cours cours = coursService.findById( section.getCours().getId());
+        if (cours == null) {
+            return null;
+        }
+//        if (section.getCategorieSection() == null){
+//            return null;
+//        }
+
+//        section.setCategorieSection(null);
+        section.setCours(cours);
+
+        EtatSection etatSection = etatSectionService.findById(1L);
+        section.setEtatSection(etatSection);
+
+        Integer nombreSection = cours.getNombreSection() + 1;
+        cours.setNombreSection(nombreSection);
+        coursService.updateCours(cours);
+        sectionDao.save(section);
+
+        return section;
     }
 
     public Section findWithAssociatedLists(Long id){

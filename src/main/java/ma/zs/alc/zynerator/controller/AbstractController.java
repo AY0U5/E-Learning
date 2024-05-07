@@ -155,7 +155,10 @@ public class AbstractController<T extends AuditBusinessObject, DTO extends BaseD
 
     public ResponseEntity<DTO> findWithAssociatedLists(Long id) {
         T loaded =  service.findWithAssociatedLists(id);
+      /*  converter.initObject(true);
+        converter.initList(false);*/
         converter.init(true);
+
         DTO dto = converter.toDto(loaded);
         return new ResponseEntity<>(dto, HttpStatus.OK);
      }
@@ -285,6 +288,7 @@ public class AbstractController<T extends AuditBusinessObject, DTO extends BaseD
         List<T> list = service.findPaginatedByCriteria(criteria, criteria.getPage(), criteria.getMaxResults(), criteria.getSortOrder(), criteria.getSortField());
         //list = converter.copyIncludeExcludeItems(list, criteria.getIncludes(), criteria.getExcludes());
         converter.initObject(true);
+        converter.initList(false);
         List<DTO> dtos = converter.toDto(list);
         PaginatedList paginatedList = new PaginatedList();
         paginatedList.setList(dtos);

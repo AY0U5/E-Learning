@@ -112,19 +112,25 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
         }
 
         cours.setParcours(parcours);
+        //
+//        cours.setParcours(parcoursService.findOrSave(cours.getParcours()));
+        //
         EtatCours etatCours = etatCoursService.findById(1L);
         cours.setEtatCours(etatCours);
 
-        coursDao.save(cours);
-
         Integer nombreCours = parcours.getNombreCours() + 1;
         parcours.setNombreCours(nombreCours);
-        parcoursAdminService.update(parcours);
+        parcoursAdminService.updateParcour(parcours);
+        coursDao.save(cours);
         return cours;
-
-
     }
 
+    @Override
+    public void updateCours(Cours cours) {
+        if (coursDao.findByCode(cours.getCode()) != null ){
+            coursDao.save(cours);
+        }
+    }
 
 
    /* @Override

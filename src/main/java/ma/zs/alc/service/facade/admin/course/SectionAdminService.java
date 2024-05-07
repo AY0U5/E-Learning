@@ -11,6 +11,8 @@ import ma.zs.alc.zynerator.service.IService;
 
 public interface SectionAdminService extends  IService<Section,SectionCriteria>  {
 
+    Section saveSection(Section section);
+
     List<Section> findByCategorieSectionId(Long id);
     int deleteByCategorieSectionId(Long id);
     long countByCategorieSectionCode(String code);

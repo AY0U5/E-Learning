@@ -14,6 +14,5 @@ public interface CategorieSectionAdminService extends  IService<CategorieSection
     long countBySuperCategorieSectionCode(String code);
 
 
-
-
+    CategorieSection findByCode(String code);
 }

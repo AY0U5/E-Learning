@@ -22,6 +22,8 @@ public interface CoursAdminService extends  IService<Cours,CoursCriteria>  {
 
     Cours saveCours(Cours cours);
 
+    void updateCours(Cours cours);
+
     List<Cours> findByEtatCoursId(Long id);
     int deleteByEtatCoursId(Long id);
     long countByEtatCoursCode(String code);

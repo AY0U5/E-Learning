@@ -97,30 +97,23 @@ public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, Parc
     @Override
     public Parcours saveparcour(Parcours parcours) {
         if (parcours != null) {
-
             if (parcoursDao.findByCode(parcours.getCode()) == null) {
-                // Centre centre = centreAdminService.findByRef(parcours.getCentre().getRef());
                 EtatParcours etatParcours = etatParcoursService.findById(1L);
                 parcours.setEtatParcours(etatParcours);
-             /*   parcours.setEtudiants(null);
-                parcours.setCentre(null);*/
-
+                //
+//                findOrSaveAssociatedObject(parcours);
+                //
                 parcoursDao.save(parcours);
                 return parcours;
             }
             return null;
-
         } else {
-
             return null;
-
         }
-
     }
     @Override
     public void updateParcour(Parcours parcours) {
         if (parcoursDao.findByCode(parcours.getCode()) != null ){
-//            updateWithAssociatedLists(parcours);
             parcoursDao.save(parcours);
         }
     }
