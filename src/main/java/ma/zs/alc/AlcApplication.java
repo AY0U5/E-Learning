@@ -476,7 +476,7 @@ public class AlcApplication {
          String passwordChanged = "passwordChanged";
         String username = "username";
         String password = "password";
-        for (int i = 1; i <= 1; i++) {
+        /*for (int i = 1; i <= 1; i++) {
             Admin item = new Admin();
             item.setDescription(fakeString(description, i));
             item.setCredentialsNonExpired(fakeBoolean(credentialsNonExpired, i));
@@ -487,7 +487,7 @@ public class AlcApplication {
             item.setUsername(fakeString(username, i));
             item.setPassword(fakeString(password, i));
             adminService.create(item);
-        }
+        }*/
     }
     private void createTypeDeQuestion(){
         String ref = "ref";

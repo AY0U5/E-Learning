@@ -225,9 +225,16 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
         return dao.findByParcoursId(id);
     }
 
-    public int deleteByParcoursId(Long id) {
+   /* public int deleteByParcoursId(Long id) {
         return dao.deleteByParcoursId(id);
-    }
+    }*/
+   public int deleteByParcoursId(Long id) {
+       List<Cours> Cours = findByParcoursId(id);
+       for (Cours cour : Cours){
+         deleteAssociatedLists(cour.getId());
+       }
+       return dao.deleteByParcoursId(id);
+   }
 
     public long countByParcoursCode(String code) {
         return dao.countByParcoursCode(code);
