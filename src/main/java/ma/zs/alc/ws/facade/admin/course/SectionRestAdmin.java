@@ -118,9 +118,21 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
 
     @Operation(summary = "Delete the specified section")
     @DeleteMapping("id/{id}")
-    public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
-        return super.deleteById(id);
+    protected ResponseEntity<Long> deleteById(@PathVariable Long id)  throws Exception {
+        ResponseEntity<Long> res;
+        HttpStatus status = HttpStatus.PRECONDITION_FAILED;
+        if (id != null) {
+            boolean resultDelete = service.deleteSectionById(id);
+            if (resultDelete) {
+                status = HttpStatus.OK;
+            }
+        }
+        res = new ResponseEntity<>(id, status);
+        return res;
     }
+   /* public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
+        return super.deleteById(id);
+    }*/
     @Operation(summary = "Delete multiple sections by ids")
     @DeleteMapping("multiple/id")
     public ResponseEntity<List<Long>> deleteByIdIn(@RequestBody List<Long> ids) throws Exception {

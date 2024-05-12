@@ -26,6 +26,8 @@ import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.service.facade.admin.homework.HomeWorkAdminService;
 import ma.zs.alc.bean.core.homework.HomeWork;
 
+import static java.lang.System.exit;
+
 @Service
 public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCriteria, CoursDao> implements CoursAdminService {
 
@@ -55,6 +57,34 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
         }
         return null;
     }*/
+
+
+
+    //
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
+    public boolean deleteCourById(Long id) {
+        boolean condition = deleteByIdCheckCondition(id);
+        if (condition) {
+            deleteAssociatedLists(id);
+
+            Cours cours = findById(id);
+            /*if (cours == null) {
+                exit(-1);
+            }
+            if (cours.getParcours() == null) {
+                exit(-2);
+            }*/
+            Parcours parcours = parcoursAdminService.findById(cours.getParcours().getId());
+            Integer nombreCours = parcours.getNombreCours() - 1;
+            parcours.setNombreCours(nombreCours);
+            parcoursAdminService.updateParcour(parcours);
+            dao.deleteById(id);
+
+        }
+        return condition;
+    }
+    //
     @Override
     public List<Cours> findByParcoursCode(String code) {
         return coursDao.findByParcoursCode(code);
@@ -127,7 +157,10 @@ public class CoursAdminServiceImpl extends AbstractServiceImpl<Cours, CoursCrite
 
     @Override
     public void updateCours(Cours cours) {
-        if (coursDao.findByCode(cours.getCode()) != null ){
+        /*if (coursDao.findByCode(cours.getCode()) != null ){
+            coursDao.save(cours);
+        }*/
+        if (coursDao.findById(cours.getId()) != null ){
             coursDao.save(cours);
         }
     }

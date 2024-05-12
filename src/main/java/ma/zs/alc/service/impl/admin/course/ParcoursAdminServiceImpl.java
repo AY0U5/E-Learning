@@ -113,7 +113,10 @@ public class ParcoursAdminServiceImpl extends AbstractServiceImpl<Parcours, Parc
     }
     @Override
     public void updateParcour(Parcours parcours) {
-        if (parcoursDao.findByCode(parcours.getCode()) != null ){
+        /*if (parcoursDao.findByCode(parcours.getCode()) != null ){
+            parcoursDao.save(parcours);
+        }*/
+        if (parcoursDao.findById(parcours.getId()) != null ){
             parcoursDao.save(parcours);
         }
     }

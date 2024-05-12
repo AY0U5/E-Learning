@@ -6,10 +6,13 @@ import ma.zs.alc.bean.core.course.Cours;
 import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.zynerator.service.IService;
-
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 
 public interface SectionAdminService extends  IService<Section,SectionCriteria>  {
+
+    boolean deleteSectionById(Long id);
 
     Section saveSection(Section section);
 

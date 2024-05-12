@@ -5,7 +5,6 @@ import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.bean.core.courseref.CategorieSection;
 import ma.zs.alc.bean.core.courseref.EtatSection;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
-import ma.zs.alc.dao.facade.core.course.CoursDao;
 import ma.zs.alc.dao.facade.core.course.SectionDao;
 import ma.zs.alc.dao.specification.core.course.SectionSpecification;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
@@ -28,6 +27,31 @@ import ma.zs.alc.bean.core.course.SectionItem ;
 
 @Service
 public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, SectionCriteria, SectionDao> implements SectionAdminService {
+
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
+    public boolean deleteSectionById(Long id) {
+        boolean condition = deleteByIdCheckCondition(id);
+        if (condition) {
+            deleteAssociatedLists(id);
+
+            Section section = findById(id);
+            /*if (cours == null) {
+                exit(-1);
+            }
+            if (cours.getParcours() == null) {
+                exit(-2);
+            }*/
+            Cours cours = coursService.findById(section.getCours().getId());
+            Integer nombreSection = cours.getNombreSection() - 1;
+            cours.setNombreSection(nombreSection);
+            coursService.updateCours(cours);
+            dao.deleteById(id);
+
+        }
+        return condition;
+    }
 
     private @Autowired SectionDao sectionDao;
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
@@ -55,20 +79,21 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
         if (cours == null) {
             return null;
         }
-//        if (section.getCategorieSection() == null){
-//            return null;
-//        }
+        if (section.getCategorieSection() == null){
+            return null;
+        }
+        CategorieSection categorieSection = categorieSectionService.findById( section.getCategorieSection().getId());
 
-//        section.setCategorieSection(null);
+        section.setCategorieSection(categorieSection);
         section.setCours(cours);
 
         EtatSection etatSection = etatSectionService.findById(1L);
         section.setEtatSection(etatSection);
 
+        sectionDao.save(section);
         Integer nombreSection = cours.getNombreSection() + 1;
         cours.setNombreSection(nombreSection);
         coursService.updateCours(cours);
-        sectionDao.save(section);
 
         return section;
     }

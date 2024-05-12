@@ -219,25 +219,25 @@ public class AlcApplication {
             createEtatSection();
             createEtatParcours();
             createEtatCours();
-            createHoweWorkQSTReponse();
+           /* createHoweWorkQSTReponse();
             createScheduleProf();
             createFreeTrialDetail();
             createRecommendTeacher();
             createReponseEtudiant();
-            createFonction();
+            createFonction();*/
             createAdmin();
             createTypeDeQuestion();
-            createClassRoom();
+           /* createClassRoom();
             createSessionCours();
-            createHomeWork();
-            createSuperCategorieSection();
+            createHomeWork();*/
+            createSuperCategorieSection();/*
             createEtatEtudiantSchedule();
             createFreeTrialConfiguration();
             createTypeReclamationEtudiant();
             createPackStudent();
             createReclamationProf();
-            createServices();
-            createTrancheHoraireProf();
+            createServices();*/
+           /* createTrancheHoraireProf();
             createSectionItem();
             createStatutSocial();
             createDictionary();
@@ -245,61 +245,61 @@ public class AlcApplication {
             createWorkloadBonus();
             createGroupeType();
             createGroupeEtudiant();
-            createClassAverageBonusProf();
+            createClassAverageBonusProf();*/
             createCategorieSection();
-            createCentre();
+          /*  createCentre();
             createTeacherLocality();
             createSkill();
             createFreeTrialStudentWhatsTemplate();
             createCalendrierProf();
             createEtudiant();
-            createCategorieProf();
+            createCategorieProf();*/
             createQuestion();
-            createContact();
+          /*  createContact();
             createFaqProf();
             createNiveauEtude();
             createEtatInscription();
             createFreeTrialformule();
-            createGroupeEtude();
+            createGroupeEtude();*/
             createQuiz();
-            createLangue();
+           /* createLangue();
             createWorkloadBonusProf();
             createClassAverageBonus();
             createQuizEtudiant();
-            createFreeTrialTeacherEmailTemplate();
+            createFreeTrialTeacherEmailTemplate();*/
             createCours();
-            createQuizClassRoom();
+           /* createQuizClassRoom();
             createPaiement();
             createTypeTeacher();
             createHomeWorkEtudiant();
             createReclamationEtudiant();
             createTypeHomeWork();
-            createFreeTrial();
+            createFreeTrial();*/
             createVocabularyQuiz();
             createInscription();
-            createSalary();
+          /*  createSalary();
             createHomeWorkQuestion();
             createPrice();
             createEtudiantClassRoom();
             createProfReview();
-            createFaqType();
+            createFaqType();*/
             createConfirmationToken();
-            createReponseEtudiantHomeWork();
+            /*createReponseEtudiantHomeWork();
             createNews();
             createStatutFreeTrial();
-            createGroupeEtat();
+            createGroupeEtat();*/
             createParcours();
-            createInviteStudent();
+           /* createInviteStudent();
             createEtudiantReview();
             createInteretEtudiant();
             createEtudiantCours();
-            createFreeTrialStudentEmailTemplate();
+            createFreeTrialStudentEmailTemplate();*/
             createVocabulary();
             createReponse();
-            createFaq();
+            /*createFaq();
             createFreeTrialTeacherWhatsTemplate();
             createLevelTestConfiguration();
-            createTypeReclamationProf();
+            createTypeReclamationProf();*/
             createSection();
 
         // ModelPermissions
@@ -492,12 +492,12 @@ public class AlcApplication {
     private void createTypeDeQuestion(){
         String ref = "ref";
         String lib = "lib";
-        for (int i = 1; i <= 1; i++) {
+        /*for (int i = 1; i <= 1; i++) {
             TypeDeQuestion item = new TypeDeQuestion();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
             typeDeQuestionService.create(item);
-        }
+        }*/
     }
     private void createClassRoom(){
         String libelle = "libelle";
@@ -891,7 +891,7 @@ public class AlcApplication {
          String numero = "numero";
          String pointReponseJuste = "pointReponseJuste";
          String pointReponsefausse = "pointReponsefausse";
-        for (int i = 1; i <= 1; i++) {
+      /*  for (int i = 1; i <= 1; i++) {
             Question item = new Question();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -901,7 +901,7 @@ public class AlcApplication {
             item.setPointReponseJuste(fakeBigDecimal(pointReponseJuste, i));
             item.setPointReponsefausse(fakeBigDecimal(pointReponsefausse, i));
             questionService.create(item);
-        }
+        }*/
     }
     private void createContact(){
         String name = "name";
@@ -994,7 +994,7 @@ public class AlcApplication {
         String dateFin = "dateFin";
          String numero = "numero";
          String seuilReussite = "seuilReussite";
-        for (int i = 1; i <= 1; i++) {
+       /* for (int i = 1; i <= 1; i++) {
             Quiz item = new Quiz();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
@@ -1003,7 +1003,7 @@ public class AlcApplication {
             item.setNumero(fakeLong(numero, i));
             item.setSeuilReussite(fakeLong(seuilReussite, i));
             quizService.create(item);
-        }
+        }*/
     }
     private void createLangue(){
         String ref = "ref";
@@ -1496,14 +1496,14 @@ public class AlcApplication {
         String lib = "lib";
         String etatReponse = "etatReponse";
          String numero = "numero";
-        for (int i = 1; i <= 1; i++) {
+      /*  for (int i = 1; i <= 1; i++) {
             Reponse item = new Reponse();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
             item.setEtatReponse(fakeString(etatReponse, i));
             item.setNumero(fakeLong(numero, i));
             reponseService.create(item);
-        }
+        }*/
     }
     private void createFaq(){
         String description = "description";
