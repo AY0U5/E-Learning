@@ -10,7 +10,11 @@ import ma.zs.alc.zynerator.service.IService;
 public interface EtatCoursAdminService extends  IService<EtatCours,EtatCoursCriteria>  {
 
 
+    EtatCours findByCode(String code);
 
+    int deleteByCode(String code);
 
+    EtatCours findByLibelle(String lib);
 
+    int deleteByLibelle(String lib);
 }

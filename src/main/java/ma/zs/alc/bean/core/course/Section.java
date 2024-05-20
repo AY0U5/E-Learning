@@ -13,6 +13,7 @@ import ma.zs.alc.bean.core.course.SectionItem;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import ma.zs.alc.bean.core.courseref.EtatSection;
 import ma.zs.alc.zynerator.audit.AuditBusinessObject;
 import jakarta.persistence.*;
 import java.util.Objects;
@@ -51,6 +52,8 @@ public class Section   extends AuditBusinessObject     {
     private Integer content = 0;
 
     private CategorieSection categorieSection ;
+
+    private EtatSection etatSection ;
     private Cours cours ;
 
     private List<SectionItem> sectionItems ;
@@ -150,6 +153,15 @@ public class Section   extends AuditBusinessObject     {
     }
     public void setCategorieSection(CategorieSection categorieSection){
         this.categorieSection = categorieSection;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "etat_section")
+    public EtatSection getEtatSection(){
+        return this.etatSection;
+    }
+    public void setEtatSection(EtatSection etatSection){
+        this.etatSection = etatSection;
     }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cours")

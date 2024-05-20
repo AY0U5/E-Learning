@@ -9,6 +9,13 @@ import ma.zs.alc.zynerator.service.IService;
 
 public interface QuestionAdminService extends  IService<Question,QuestionCriteria>  {
 
+    Question findByLibelle(String libelle);
+
+    int deleteByLibelle(String libelle);
+
+    //
+    Question saveqst(Question question);
+
     List<Question> findByTypeDeQuestionId(Long id);
     int deleteByTypeDeQuestionId(Long id);
     long countByTypeDeQuestionRef(String ref);

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import ma.zs.alc.bean.core.courseref.*;
+import ma.zs.alc.service.facade.admin.courseref.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,8 +25,6 @@ import ma.zs.alc.zynerator.security.bean.*;
 import ma.zs.alc.zynerator.security.common.AuthoritiesConstants;
 import ma.zs.alc.zynerator.security.service.facade.*;
 
-import ma.zs.alc.bean.core.courseref.EtatCours;
-import ma.zs.alc.service.facade.admin.courseref.EtatCoursAdminService;
 import ma.zs.alc.bean.core.homework.HoweWorkQSTReponse;
 import ma.zs.alc.service.facade.admin.homework.HoweWorkQSTReponseAdminService;
 import ma.zs.alc.bean.core.prof.ScheduleProf;
@@ -47,8 +47,6 @@ import ma.zs.alc.bean.core.learning.SessionCours;
 import ma.zs.alc.service.facade.admin.learning.SessionCoursAdminService;
 import ma.zs.alc.bean.core.homework.HomeWork;
 import ma.zs.alc.service.facade.admin.homework.HomeWorkAdminService;
-import ma.zs.alc.bean.core.courseref.SuperCategorieSection;
-import ma.zs.alc.service.facade.admin.courseref.SuperCategorieSectionAdminService;
 import ma.zs.alc.bean.core.inscriptionref.EtatEtudiantSchedule;
 import ma.zs.alc.service.facade.admin.inscriptionref.EtatEtudiantScheduleAdminService;
 import ma.zs.alc.bean.core.freetrial.FreeTrialConfiguration;
@@ -79,10 +77,6 @@ import ma.zs.alc.bean.core.grpe.GroupeEtudiant;
 import ma.zs.alc.service.facade.admin.grpe.GroupeEtudiantAdminService;
 import ma.zs.alc.bean.core.prof.ClassAverageBonusProf;
 import ma.zs.alc.service.facade.admin.prof.ClassAverageBonusProfAdminService;
-import ma.zs.alc.bean.core.courseref.CategorieSection;
-import ma.zs.alc.service.facade.admin.courseref.CategorieSectionAdminService;
-import ma.zs.alc.bean.core.courseref.Centre;
-import ma.zs.alc.service.facade.admin.courseref.CentreAdminService;
 import ma.zs.alc.bean.core.inscriptionref.TeacherLocality;
 import ma.zs.alc.service.facade.admin.inscriptionref.TeacherLocalityAdminService;
 import ma.zs.alc.bean.core.inscriptionref.Skill;
@@ -183,8 +177,6 @@ import ma.zs.alc.bean.core.faq.Faq;
 import ma.zs.alc.service.facade.admin.faq.FaqAdminService;
 import ma.zs.alc.bean.core.freetrial.FreeTrialTeacherWhatsTemplate;
 import ma.zs.alc.service.facade.admin.freetrial.FreeTrialTeacherWhatsTemplateAdminService;
-import ma.zs.alc.bean.core.courseref.LevelTestConfiguration;
-import ma.zs.alc.service.facade.admin.courseref.LevelTestConfigurationAdminService;
 import ma.zs.alc.bean.core.recomrecla.TypeReclamationProf;
 import ma.zs.alc.service.facade.admin.recomrecla.TypeReclamationProfAdminService;
 import ma.zs.alc.bean.core.course.Section;
@@ -224,26 +216,28 @@ public class AlcApplication {
     return (args) -> {
         if(true){
 
+            createEtatSection();
+            createEtatParcours();
             createEtatCours();
-            createHoweWorkQSTReponse();
+           /* createHoweWorkQSTReponse();
             createScheduleProf();
             createFreeTrialDetail();
             createRecommendTeacher();
             createReponseEtudiant();
-            createFonction();
+            createFonction();*/
             createAdmin();
             createTypeDeQuestion();
-            createClassRoom();
+           /* createClassRoom();
             createSessionCours();
-            createHomeWork();
-            createSuperCategorieSection();
+            createHomeWork();*/
+            createSuperCategorieSection();/*
             createEtatEtudiantSchedule();
             createFreeTrialConfiguration();
             createTypeReclamationEtudiant();
             createPackStudent();
             createReclamationProf();
-            createServices();
-            createTrancheHoraireProf();
+            createServices();*/
+           /* createTrancheHoraireProf();
             createSectionItem();
             createStatutSocial();
             createDictionary();
@@ -251,61 +245,61 @@ public class AlcApplication {
             createWorkloadBonus();
             createGroupeType();
             createGroupeEtudiant();
-            createClassAverageBonusProf();
+            createClassAverageBonusProf();*/
             createCategorieSection();
-            createCentre();
+          /*  createCentre();
             createTeacherLocality();
             createSkill();
             createFreeTrialStudentWhatsTemplate();
             createCalendrierProf();
             createEtudiant();
-            createCategorieProf();
+            createCategorieProf();*/
             createQuestion();
-            createContact();
+          /*  createContact();
             createFaqProf();
             createNiveauEtude();
             createEtatInscription();
             createFreeTrialformule();
-            createGroupeEtude();
+            createGroupeEtude();*/
             createQuiz();
-            createLangue();
+           /* createLangue();
             createWorkloadBonusProf();
             createClassAverageBonus();
             createQuizEtudiant();
-            createFreeTrialTeacherEmailTemplate();
+            createFreeTrialTeacherEmailTemplate();*/
             createCours();
-            createQuizClassRoom();
+           /* createQuizClassRoom();
             createPaiement();
             createTypeTeacher();
             createHomeWorkEtudiant();
             createReclamationEtudiant();
             createTypeHomeWork();
-            createFreeTrial();
+            createFreeTrial();*/
             createVocabularyQuiz();
             createInscription();
-            createSalary();
+          /*  createSalary();
             createHomeWorkQuestion();
             createPrice();
             createEtudiantClassRoom();
             createProfReview();
-            createFaqType();
+            createFaqType();*/
             createConfirmationToken();
-            createReponseEtudiantHomeWork();
+            /*createReponseEtudiantHomeWork();
             createNews();
             createStatutFreeTrial();
-            createGroupeEtat();
+            createGroupeEtat();*/
             createParcours();
-            createInviteStudent();
+           /* createInviteStudent();
             createEtudiantReview();
             createInteretEtudiant();
             createEtudiantCours();
-            createFreeTrialStudentEmailTemplate();
+            createFreeTrialStudentEmailTemplate();*/
             createVocabulary();
             createReponse();
-            createFaq();
+            /*createFaq();
             createFreeTrialTeacherWhatsTemplate();
             createLevelTestConfiguration();
-            createTypeReclamationProf();
+            createTypeReclamationProf();*/
             createSection();
 
         // ModelPermissions
@@ -320,7 +314,7 @@ public class AlcApplication {
 
         
 
-		// User Admin
+		/*// User Admin
 		User userForAdmin = new User("admin");
 		userForAdmin.setPassword("123");
 		// Role Admin
@@ -340,30 +334,49 @@ public class AlcApplication {
 
         userForAdmin.setModelPermissionUsers(modelPermissionUserService.initModelPermissionUser());
 
-        userService.create(userForAdmin);
+        userService.create(userForAdmin);*/
 
             }
         };
     }
+    private void createEtatSection(){
+        String code = "code";
+        String libelle = "libelle";
+       /* for (int i = 1; i <= 1; i++) {
+            EtatSection item = new EtatSection();
+            item.setCode(fakeString(code, i));
+            item.setLibelle(fakeString(libelle, i));
+            etatSectionService.create(item);
+        }*/
+    }
 
-
+    private void createEtatParcours(){
+        String code = "code";
+        String libelle = "libelle";
+        /*for (int i = 1; i <= 1; i++) {
+            EtatParcours item = new EtatParcours();
+            item.setCode(fakeString(code, i));
+            item.setLibelle(fakeString(libelle, i));
+            etatParcoursService.create(item);
+        }*/
+    }
 
     private void createEtatCours(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        /*for (int i = 1; i <= 1; i++) {
             EtatCours item = new EtatCours();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
             etatCoursService.create(item);
-        }
+        }*/
     }
     private void createHoweWorkQSTReponse(){
         String ref = "ref";
         String lib = "lib";
         String etatReponse = "etatReponse";
          String numero = "numero";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             HoweWorkQSTReponse item = new HoweWorkQSTReponse();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
@@ -380,7 +393,7 @@ public class AlcApplication {
         String grpName = "grpName";
         String profName = "profName";
          String profsId = "profsId";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ScheduleProf item = new ScheduleProf();
             item.setSubject(fakeString(subject, i));
             item.setStartTime(fakeLocalDateTime(startTime, i));
@@ -399,7 +412,7 @@ public class AlcApplication {
          String emailMessageSent = "emailMessageSent";
         String dateEnvoiEmailMessage = "dateEnvoiEmailMessage";
          String abonne = "abonne";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialDetail item = new FreeTrialDetail();
             item.setPresence(fakeBoolean(presence, i));
             item.setWhatsUpMessageSent(fakeBoolean(whatsUpMessageSent, i));
@@ -419,7 +432,7 @@ public class AlcApplication {
         String telephone = "telephone";
         String login = "login";
         String dateRecommamdation = "dateRecommamdation";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             RecommendTeacher item = new RecommendTeacher();
             item.setRef(fakeString(ref, i));
             item.setNombrevote(fakeInteger(nombrevote, i));
@@ -436,7 +449,7 @@ public class AlcApplication {
         String ref = "ref";
         String answer = "answer";
          String note = "note";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ReponseEtudiant item = new ReponseEtudiant();
             item.setRef(fakeString(ref, i));
             item.setAnswer(fakeString(answer, i));
@@ -447,7 +460,7 @@ public class AlcApplication {
     private void createFonction(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Fonction item = new Fonction();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -463,7 +476,7 @@ public class AlcApplication {
          String passwordChanged = "passwordChanged";
         String username = "username";
         String password = "password";
-        for (int i = 1; i < 100; i++) {
+        /*for (int i = 1; i <= 1; i++) {
             Admin item = new Admin();
             item.setDescription(fakeString(description, i));
             item.setCredentialsNonExpired(fakeBoolean(credentialsNonExpired, i));
@@ -474,22 +487,22 @@ public class AlcApplication {
             item.setUsername(fakeString(username, i));
             item.setPassword(fakeString(password, i));
             adminService.create(item);
-        }
+        }*/
     }
     private void createTypeDeQuestion(){
         String ref = "ref";
         String lib = "lib";
-        for (int i = 1; i < 100; i++) {
+        /*for (int i = 1; i <= 1; i++) {
             TypeDeQuestion item = new TypeDeQuestion();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
             typeDeQuestionService.create(item);
-        }
+        }*/
     }
     private void createClassRoom(){
         String libelle = "libelle";
         String description = "description";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ClassRoom item = new ClassRoom();
             item.setLibelle(fakeString(libelle, i));
             item.setDescription(fakeString(description, i));
@@ -505,7 +518,7 @@ public class AlcApplication {
         String dateFin = "dateFin";
         String dateDebut = "dateDebut";
          String payer = "payer";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             SessionCours item = new SessionCours();
             item.setReference(fakeString(reference, i));
             item.setDuree(fakeBigDecimal(duree, i));
@@ -522,7 +535,7 @@ public class AlcApplication {
         String libelle = "libelle";
         String urlImage = "urlImage";
         String urlVideo = "urlVideo";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             HomeWork item = new HomeWork();
             item.setLibelle(fakeString(libelle, i));
             item.setUrlImage(fakeString(urlImage, i));
@@ -533,7 +546,7 @@ public class AlcApplication {
     private void createSuperCategorieSection(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             SuperCategorieSection item = new SuperCategorieSection();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -544,7 +557,7 @@ public class AlcApplication {
         String ref = "ref";
         String libelle = "libelle";
         String couleur = "couleur";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             EtatEtudiantSchedule item = new EtatEtudiantSchedule();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -557,7 +570,7 @@ public class AlcApplication {
         String dateApplicationFin = "dateApplicationFin";
          String nombreStudentMax = "nombreStudentMax";
          String nombreStudentMin = "nombreStudentMin";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialConfiguration item = new FreeTrialConfiguration();
             item.setDateApplicationDebut(fakeLocalDateTime(dateApplicationDebut, i));
             item.setDateApplicationFin(fakeLocalDateTime(dateApplicationFin, i));
@@ -569,7 +582,7 @@ public class AlcApplication {
     private void createTypeReclamationEtudiant(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TypeReclamationEtudiant item = new TypeReclamationEtudiant();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -589,7 +602,7 @@ public class AlcApplication {
          String totalStudents = "totalStudents";
         String rating = "rating";
         String oldPrice = "oldPrice";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             PackStudent item = new PackStudent();
             item.setNombreCours(fakeInteger(nombreCours, i));
             item.setForGroupe(fakeBoolean(forGroupe, i));
@@ -616,7 +629,7 @@ public class AlcApplication {
          String postView = "postView";
         String commentaireTraiteur = "commentaireTraiteur";
         String objetReclamationProf = "objetReclamationProf";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ReclamationProf item = new ReclamationProf();
             item.setReference(fakeString(reference, i));
             item.setDateReclamation(fakeLocalDateTime(dateReclamation, i));
@@ -634,7 +647,7 @@ public class AlcApplication {
         String code = "code";
         String libelle = "libelle";
         String description = "description";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Services item = new Services();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -648,7 +661,7 @@ public class AlcApplication {
          String day = "day";
          String groupIndex = "groupIndex";
          String profsId = "profsId";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TrancheHoraireProf item = new TrancheHoraireProf();
             item.setStartHour(fakeString(startHour, i));
             item.setEndHour(fakeString(endHour, i));
@@ -666,7 +679,7 @@ public class AlcApplication {
         String explanation = "explanation";
         String example = "example";
         String synonyms = "synonyms";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             SectionItem item = new SectionItem();
             item.setImageUrl(fakeString(imageUrl, i));
             item.setResponse(fakeString(response, i));
@@ -681,7 +694,7 @@ public class AlcApplication {
     private void createStatutSocial(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             StatutSocial item = new StatutSocial();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -691,7 +704,7 @@ public class AlcApplication {
     private void createDictionary(){
         String word = "word";
         String definition = "definition";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Dictionary item = new Dictionary();
             item.setWord(fakeString(word, i));
             item.setDefinition(fakeString(definition, i));
@@ -701,7 +714,7 @@ public class AlcApplication {
     private void createFaqEtudiant(){
         String description = "description";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FaqEtudiant item = new FaqEtudiant();
             item.setDescription(fakeString(description, i));
             item.setLibelle(fakeString(libelle, i));
@@ -712,7 +725,7 @@ public class AlcApplication {
         String code = "code";
          String nombreSession = "nombreSession";
          String prix = "prix";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             WorkloadBonus item = new WorkloadBonus();
             item.setCode(fakeString(code, i));
             item.setNombreSession(fakeInteger(nombreSession, i));
@@ -723,7 +736,7 @@ public class AlcApplication {
     private void createGroupeType(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             GroupeType item = new GroupeType();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -737,7 +750,7 @@ public class AlcApplication {
          String nombrePlace = "nombrePlace";
          String nombrePlacevide = "nombrePlacevide";
          String nombrePlaceNonVide = "nombrePlaceNonVide";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             GroupeEtudiant item = new GroupeEtudiant();
             item.setLibelle(fakeString(libelle, i));
             item.setDateDebut(fakeLocalDateTime(dateDebut, i));
@@ -751,7 +764,7 @@ public class AlcApplication {
     private void createClassAverageBonusProf(){
          String mois = "mois";
          String annee = "annee";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ClassAverageBonusProf item = new ClassAverageBonusProf();
             item.setMois(fakeInteger(mois, i));
             item.setAnnee(fakeInteger(annee, i));
@@ -762,13 +775,13 @@ public class AlcApplication {
         String code = "code";
         String libelle = "libelle";
          String numeroOrder = "numeroOrder";
-        for (int i = 1; i < 100; i++) {
+       /* for (int i = 1; i <= 1; i++) {
             CategorieSection item = new CategorieSection();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
             item.setNumeroOrder(fakeInteger(numeroOrder, i));
             categorieSectionService.create(item);
-        }
+        }*/
     }
     private void createCentre(){
         String ref = "ref";
@@ -776,7 +789,7 @@ public class AlcApplication {
         String description = "description";
         String log = "log";
         String password = "password";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Centre item = new Centre();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -789,7 +802,7 @@ public class AlcApplication {
     private void createTeacherLocality(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TeacherLocality item = new TeacherLocality();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -799,7 +812,7 @@ public class AlcApplication {
     private void createSkill(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Skill item = new Skill();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -810,7 +823,7 @@ public class AlcApplication {
         String object = "object";
         String corps = "corps";
         String source = "source";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialStudentWhatsTemplate item = new FreeTrialStudentWhatsTemplate();
             item.setObject(fakeString(object, i));
             item.setCorps(fakeString(corps, i));
@@ -824,7 +837,7 @@ public class AlcApplication {
         String endTime = "endTime";
         String startRecur = "startRecur";
         String endRecur = "endRecur";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             CalendrierProf item = new CalendrierProf();
             item.setRef(fakeString(ref, i));
             item.setStartTime(fakeString(startTime, i));
@@ -844,7 +857,7 @@ public class AlcApplication {
          String passwordChanged = "passwordChanged";
         String username = "username";
         String password = "password";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Etudiant item = new Etudiant();
             item.setRef(fakeString(ref, i));
             item.setGroupOption(fakeString(groupOption, i));
@@ -862,7 +875,7 @@ public class AlcApplication {
         String code = "code";
         String level = "level";
          String lessonRate = "lessonRate";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             CategorieProf item = new CategorieProf();
             item.setCode(fakeString(code, i));
             item.setLevel(fakeString(level, i));
@@ -878,7 +891,7 @@ public class AlcApplication {
          String numero = "numero";
          String pointReponseJuste = "pointReponseJuste";
          String pointReponsefausse = "pointReponsefausse";
-        for (int i = 1; i < 100; i++) {
+      /*  for (int i = 1; i <= 1; i++) {
             Question item = new Question();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -888,7 +901,7 @@ public class AlcApplication {
             item.setPointReponseJuste(fakeBigDecimal(pointReponseJuste, i));
             item.setPointReponsefausse(fakeBigDecimal(pointReponsefausse, i));
             questionService.create(item);
-        }
+        }*/
     }
     private void createContact(){
         String name = "name";
@@ -898,7 +911,7 @@ public class AlcApplication {
         String dateContact = "dateContact";
          String replied = "replied";
         String message = "message";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Contact item = new Contact();
             item.setName(fakeString(name, i));
             item.setEmail(fakeString(email, i));
@@ -913,7 +926,7 @@ public class AlcApplication {
     private void createFaqProf(){
         String description = "description";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FaqProf item = new FaqProf();
             item.setDescription(fakeString(description, i));
             item.setLibelle(fakeString(libelle, i));
@@ -923,7 +936,7 @@ public class AlcApplication {
     private void createNiveauEtude(){
         String libelle = "libelle";
         String code = "code";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             NiveauEtude item = new NiveauEtude();
             item.setLibelle(fakeString(libelle, i));
             item.setCode(fakeString(code, i));
@@ -933,7 +946,7 @@ public class AlcApplication {
     private void createEtatInscription(){
         String ref = "ref";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             EtatInscription item = new EtatInscription();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -949,7 +962,7 @@ public class AlcApplication {
         String teacherPersonnality = "teacherPersonnality";
          String status = "status";
         String dateConfirmation = "dateConfirmation";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialformule item = new FreeTrialformule();
             item.setCode(fakeString(code, i));
             item.setDayspeerweek(fakeString(dayspeerweek, i));
@@ -966,7 +979,7 @@ public class AlcApplication {
         String libelle = "libelle";
         String description = "description";
          String nombreEtudiant = "nombreEtudiant";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             GroupeEtude item = new GroupeEtude();
             item.setLibelle(fakeString(libelle, i));
             item.setDescription(fakeString(description, i));
@@ -981,7 +994,7 @@ public class AlcApplication {
         String dateFin = "dateFin";
          String numero = "numero";
          String seuilReussite = "seuilReussite";
-        for (int i = 1; i < 100; i++) {
+       /* for (int i = 1; i <= 1; i++) {
             Quiz item = new Quiz();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
@@ -990,12 +1003,12 @@ public class AlcApplication {
             item.setNumero(fakeLong(numero, i));
             item.setSeuilReussite(fakeLong(seuilReussite, i));
             quizService.create(item);
-        }
+        }*/
     }
     private void createLangue(){
         String ref = "ref";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Langue item = new Langue();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1005,7 +1018,7 @@ public class AlcApplication {
     private void createWorkloadBonusProf(){
          String mois = "mois";
          String annee = "annee";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             WorkloadBonusProf item = new WorkloadBonusProf();
             item.setMois(fakeInteger(mois, i));
             item.setAnnee(fakeInteger(annee, i));
@@ -1016,7 +1029,7 @@ public class AlcApplication {
         String code = "code";
          String nombreSession = "nombreSession";
          String prix = "prix";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ClassAverageBonus item = new ClassAverageBonus();
             item.setCode(fakeString(code, i));
             item.setNombreSession(fakeInteger(nombreSession, i));
@@ -1029,7 +1042,7 @@ public class AlcApplication {
          String note = "note";
         String resultat = "resultat";
          String questionCurrent = "questionCurrent";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             QuizEtudiant item = new QuizEtudiant();
             item.setRef(fakeString(ref, i));
             item.setNote(fakeBigDecimal(note, i));
@@ -1042,7 +1055,7 @@ public class AlcApplication {
         String object = "object";
         String corps = "corps";
         String source = "source";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialTeacherEmailTemplate item = new FreeTrialTeacherEmailTemplate();
             item.setObject(fakeString(object, i));
             item.setCorps(fakeString(corps, i));
@@ -1060,7 +1073,8 @@ public class AlcApplication {
          String nombreLinkEnCours = "nombreLinkEnCours";
          String nombreLinkFinalise = "nombreLinkFinalise";
          String numeroOrder = "numeroOrder";
-        for (int i = 1; i < 100; i++) {
+        String nombreSection = "nombreSection";
+        /*for (int i = 1; i < 4; i++) {
             Cours item = new Cours();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1071,18 +1085,19 @@ public class AlcApplication {
             item.setNombreLinkEnCours(fakeInteger(nombreLinkEnCours, i));
             item.setNombreLinkFinalise(fakeInteger(nombreLinkFinalise, i));
             item.setNumeroOrder(fakeInteger(numeroOrder, i));
+            item.setNombreSection(fakeInteger(nombreSection, i));
             coursService.create(item);
-        }
+        }*/
     }
     private void createQuizClassRoom(){
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             QuizClassRoom item = new QuizClassRoom();
             quizClassRoomService.create(item);
         }
     }
     private void createPaiement(){
         String datePaiement = "datePaiement";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Paiement item = new Paiement();
             item.setDatePaiement(fakeLocalDateTime(datePaiement, i));
             paiementService.create(item);
@@ -1091,7 +1106,7 @@ public class AlcApplication {
     private void createTypeTeacher(){
         String libelle = "libelle";
         String code = "code";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TypeTeacher item = new TypeTeacher();
             item.setLibelle(fakeString(libelle, i));
             item.setCode(fakeString(code, i));
@@ -1102,7 +1117,7 @@ public class AlcApplication {
          String note = "note";
         String resultat = "resultat";
         String dateHomeWork = "dateHomeWork";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             HomeWorkEtudiant item = new HomeWorkEtudiant();
             item.setNote(fakeBigDecimal(note, i));
             item.setResultat(fakeString(resultat, i));
@@ -1123,7 +1138,7 @@ public class AlcApplication {
         String objetReclamationEtudiant = "objetReclamationEtudiant";
         String commentaireTraiteur = "commentaireTraiteur";
         String username = "username";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ReclamationEtudiant item = new ReclamationEtudiant();
             item.setReference(fakeString(reference, i));
             item.setDateReclamation(fakeLocalDateTime(dateReclamation, i));
@@ -1143,7 +1158,7 @@ public class AlcApplication {
     private void createTypeHomeWork(){
         String code = "code";
         String lib = "lib";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TypeHomeWork item = new TypeHomeWork();
             item.setCode(fakeString(code, i));
             item.setLib(fakeString(lib, i));
@@ -1163,7 +1178,7 @@ public class AlcApplication {
          String nombreStudentTotal = "nombreStudentTotal";
          String nombreStudentAbonne = "nombreStudentAbonne";
          String nombreStudentPresent = "nombreStudentPresent";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrial item = new FreeTrial();
             item.setReference(fakeString(reference, i));
             item.setDateFreeTrial(fakeLocalDateTime(dateFreeTrial, i));
@@ -1184,7 +1199,7 @@ public class AlcApplication {
         String libelle = "libelle";
         String dateDebut = "dateDebut";
         String dateFin = "dateFin";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             VocabularyQuiz item = new VocabularyQuiz();
             item.setLibelle(fakeString(libelle, i));
             item.setDateDebut(fakeLocalDateTime(dateDebut, i));
@@ -1200,7 +1215,7 @@ public class AlcApplication {
         String datedebutinscription = "datedebutinscription";
         String datefininscription = "datefininscription";
         String skype = "skype";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Inscription item = new Inscription();
             item.setNumeroInscription(fakeInteger(numeroInscription, i));
             item.setNoteQuizNiveau(fakeBigDecimal(noteQuizNiveau, i));
@@ -1221,7 +1236,7 @@ public class AlcApplication {
          String totalPayment = "totalPayment";
          String totalBonusClassAverage = "totalBonusClassAverage";
          String totalBonusWorkload = "totalBonusWorkload";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Salary item = new Salary();
             item.setCode(fakeString(code, i));
             item.setMois(fakeInteger(mois, i));
@@ -1240,7 +1255,7 @@ public class AlcApplication {
          String numero = "numero";
          String pointReponseJuste = "pointReponseJuste";
          String pointReponsefausse = "pointReponsefausse";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             HomeWorkQuestion item = new HomeWorkQuestion();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1258,7 +1273,7 @@ public class AlcApplication {
          String nreHours = "nreHours";
          String nreMonth = "nreMonth";
          String forGroup = "forGroup";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Price item = new Price();
             item.setPrice(fakeBigDecimal(price, i));
             item.setOldPrice(fakeBigDecimal(oldPrice, i));
@@ -1271,7 +1286,7 @@ public class AlcApplication {
         }
     }
     private void createEtudiantClassRoom(){
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             EtudiantClassRoom item = new EtudiantClassRoom();
             etudiantClassRoomService.create(item);
         }
@@ -1280,7 +1295,7 @@ public class AlcApplication {
          String review = "review";
         String comment = "comment";
         String dateReview = "dateReview";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ProfReview item = new ProfReview();
             item.setReview(fakeInteger(review, i));
             item.setComment(fakeString(comment, i));
@@ -1291,7 +1306,7 @@ public class AlcApplication {
     private void createFaqType(){
         String destinataire = "destinataire";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FaqType item = new FaqType();
             item.setDestinataire(fakeString(destinataire, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1303,7 +1318,7 @@ public class AlcApplication {
         String expiresAt = "expiresAt";
         String createdAt = "createdAt";
         String confirmedAt = "confirmedAt";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ConfirmationToken item = new ConfirmationToken();
             item.setToken(fakeString(token, i));
             item.setExpiresAt(fakeLocalDateTime(expiresAt, i));
@@ -1316,7 +1331,7 @@ public class AlcApplication {
         String answer = "answer";
         String profNote = "profNote";
          String note = "note";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             ReponseEtudiantHomeWork item = new ReponseEtudiantHomeWork();
             item.setAnswer(fakeString(answer, i));
             item.setProfNote(fakeString(profNote, i));
@@ -1334,7 +1349,7 @@ public class AlcApplication {
         String dateFin = "dateFin";
          String numeroOrdre = "numeroOrdre";
         String destinataire = "destinataire";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             News item = new News();
             item.setRef(fakeString(ref, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1352,7 +1367,7 @@ public class AlcApplication {
         String libelle = "libelle";
         String code = "code";
         String style = "style";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             StatutFreeTrial item = new StatutFreeTrial();
             item.setLibelle(fakeString(libelle, i));
             item.setCode(fakeString(code, i));
@@ -1363,7 +1378,7 @@ public class AlcApplication {
     private void createGroupeEtat(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             GroupeEtat item = new GroupeEtat();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1378,7 +1393,7 @@ public class AlcApplication {
         String libelle = "libelle";
          String numeroOrder = "numeroOrder";
          String nombreCours = "nombreCours";
-        for (int i = 1; i < 100; i++) {
+        /*for (int i = 1; i < 4; i++) {
             Parcours item = new Parcours();
             item.setDatePublication(fakeLocalDateTime(datePublication, i));
             item.setDateCreation(fakeLocalDateTime(dateCreation, i));
@@ -1388,7 +1403,7 @@ public class AlcApplication {
             item.setNumeroOrder(fakeInteger(numeroOrder, i));
             item.setNombreCours(fakeInteger(nombreCours, i));
             parcoursService.create(item);
-        }
+        }*/
     }
     private void createInviteStudent(){
         String code = "code";
@@ -1398,7 +1413,7 @@ public class AlcApplication {
         String dateSentInvitation = "dateSentInvitation";
         String dateAcceptInvitation = "dateAcceptInvitation";
         String datePayPack = "datePayPack";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             InviteStudent item = new InviteStudent();
             item.setCode(fakeString(code, i));
             item.setIsAccepted(fakeBoolean(isAccepted, i));
@@ -1414,7 +1429,7 @@ public class AlcApplication {
          String review = "review";
         String comment = "comment";
         String dateReview = "dateReview";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             EtudiantReview item = new EtudiantReview();
             item.setReview(fakeInteger(review, i));
             item.setComment(fakeString(comment, i));
@@ -1425,7 +1440,7 @@ public class AlcApplication {
     private void createInteretEtudiant(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             InteretEtudiant item = new InteretEtudiant();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1435,7 +1450,7 @@ public class AlcApplication {
     private void createEtudiantCours(){
          String payer = "payer";
         String dateFin = "dateFin";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             EtudiantCours item = new EtudiantCours();
             item.setPayer(fakeBoolean(payer, i));
             item.setDateFin(fakeLocalDateTime(dateFin, i));
@@ -1446,7 +1461,7 @@ public class AlcApplication {
         String object = "object";
         String corps = "corps";
         String source = "source";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialStudentEmailTemplate item = new FreeTrialStudentEmailTemplate();
             item.setObject(fakeString(object, i));
             item.setCorps(fakeString(corps, i));
@@ -1463,7 +1478,7 @@ public class AlcApplication {
         String explication = "explication";
         String exemple = "exemple";
         String image = "image";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Vocabulary item = new Vocabulary();
             item.setRef(fakeString(ref, i));
             item.setNumero(fakeLong(numero, i));
@@ -1481,19 +1496,19 @@ public class AlcApplication {
         String lib = "lib";
         String etatReponse = "etatReponse";
          String numero = "numero";
-        for (int i = 1; i < 100; i++) {
+      /*  for (int i = 1; i <= 1; i++) {
             Reponse item = new Reponse();
             item.setRef(fakeString(ref, i));
             item.setLib(fakeString(lib, i));
             item.setEtatReponse(fakeString(etatReponse, i));
             item.setNumero(fakeLong(numero, i));
             reponseService.create(item);
-        }
+        }*/
     }
     private void createFaq(){
         String description = "description";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             Faq item = new Faq();
             item.setDescription(fakeString(description, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1504,7 +1519,7 @@ public class AlcApplication {
         String object = "object";
         String corps = "corps";
         String source = "source";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             FreeTrialTeacherWhatsTemplate item = new FreeTrialTeacherWhatsTemplate();
             item.setObject(fakeString(object, i));
             item.setCorps(fakeString(corps, i));
@@ -1515,7 +1530,7 @@ public class AlcApplication {
     private void createLevelTestConfiguration(){
          String noteMin = "noteMin";
          String noteMax = "noteMax";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             LevelTestConfiguration item = new LevelTestConfiguration();
             item.setNoteMin(fakeBigDecimal(noteMin, i));
             item.setNoteMax(fakeBigDecimal(noteMax, i));
@@ -1525,7 +1540,7 @@ public class AlcApplication {
     private void createTypeReclamationProf(){
         String code = "code";
         String libelle = "libelle";
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i <= 1; i++) {
             TypeReclamationProf item = new TypeReclamationProf();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1545,7 +1560,7 @@ public class AlcApplication {
          String numeroOrder = "numeroOrder";
          String url = "url";
          String content = "content";
-        for (int i = 1; i < 100; i++) {
+        /*for (int i = 1; i < 4; i++) {
             Section item = new Section();
             item.setCode(fakeString(code, i));
             item.setLibelle(fakeString(libelle, i));
@@ -1560,7 +1575,7 @@ public class AlcApplication {
             item.setUrl(fakeInteger(url, i));
             item.setContent(fakeInteger(content, i));
             sectionService.create(item);
-        }
+        }*/
     }
 
     private static String fakeString(String attributeName, int i) {
@@ -1591,6 +1606,8 @@ public class AlcApplication {
 
 
     private static void addPermission(List<ModelPermission> modelPermissions) {
+        modelPermissions.add(new ModelPermission("EtatSection"));
+        modelPermissions.add(new ModelPermission("EtatParcours"));
         modelPermissions.add(new ModelPermission("EtatCours"));
         modelPermissions.add(new ModelPermission("HoweWorkQSTReponse"));
         modelPermissions.add(new ModelPermission("ScheduleProf"));
@@ -1691,7 +1708,10 @@ public class AlcApplication {
         actionPermissions.add(new ActionPermission("duplicate"));
     }
 
-
+    @Autowired
+    EtatSectionAdminService etatSectionService;
+    @Autowired
+    EtatParcoursAdminService etatParcoursService;
     @Autowired
     EtatCoursAdminService etatCoursService;
     @Autowired

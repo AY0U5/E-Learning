@@ -18,6 +18,7 @@ public class CoursSpecification extends  AbstractSpecification<CoursCriteria, Co
         addPredicateInt("nombreLinkEnCours", criteria.getNombreLinkEnCours(), criteria.getNombreLinkEnCoursMin(), criteria.getNombreLinkEnCoursMax());
         addPredicateInt("nombreLinkFinalise", criteria.getNombreLinkFinalise(), criteria.getNombreLinkFinaliseMin(), criteria.getNombreLinkFinaliseMax());
         addPredicateInt("numeroOrder", criteria.getNumeroOrder(), criteria.getNumeroOrderMin(), criteria.getNumeroOrderMax());
+        addPredicateInt("nombreSection", criteria.getNombreSection(), criteria.getNombreSectionMin(), criteria.getNombreSectionMax());
         addPredicateFk("etatCours","id", criteria.getEtatCours()==null?null:criteria.getEtatCours().getId());
         addPredicateFk("etatCours","id", criteria.getEtatCourss());
         addPredicateFk("etatCours","code", criteria.getEtatCours()==null?null:criteria.getEtatCours().getCode());

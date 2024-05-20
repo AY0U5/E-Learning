@@ -25,6 +25,9 @@ public class SectionSpecification extends  AbstractSpecification<SectionCriteria
         addPredicateFk("categorieSection","id", criteria.getCategorieSection()==null?null:criteria.getCategorieSection().getId());
         addPredicateFk("categorieSection","id", criteria.getCategorieSections());
         addPredicateFk("categorieSection","code", criteria.getCategorieSection()==null?null:criteria.getCategorieSection().getCode());
+        addPredicateFk("etatSection","id", criteria.getEtatSection()==null?null:criteria.getEtatSection().getId());
+        addPredicateFk("etatSection","id", criteria.getEtatSections());
+        addPredicateFk("etatSection","code", criteria.getEtatSection()==null?null:criteria.getEtatSection().getCode());
         addPredicateFk("cours","id", criteria.getCours()==null?null:criteria.getCours().getId());
         addPredicateFk("cours","id", criteria.getCourss());
         addPredicateFk("cours","code", criteria.getCours()==null?null:criteria.getCours().getCode());

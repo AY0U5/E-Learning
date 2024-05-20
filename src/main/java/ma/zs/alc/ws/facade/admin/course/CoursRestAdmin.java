@@ -1,29 +1,26 @@
 package  ma.zs.alc.ws.facade.admin.course;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import ma.zs.alc.bean.core.course.Cours;
+import ma.zs.alc.bean.core.course.Parcours;
 import ma.zs.alc.dao.criteria.core.course.CoursCriteria;
 import ma.zs.alc.service.facade.admin.course.CoursAdminService;
 import ma.zs.alc.ws.converter.course.CoursConverter;
 import ma.zs.alc.ws.dto.course.CoursDto;
+import ma.zs.alc.ws.dto.course.ParcoursDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
-import ma.zs.alc.zynerator.dto.AuditEntityDto;
 import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import ma.zs.alc.zynerator.process.Result;
 
 
 import org.springframework.web.multipart.MultipartFile;
@@ -32,9 +29,33 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RestController
 @RequestMapping("/api/admin/cours/")
 public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCriteria, CoursAdminService, CoursConverter> {
+    //added
+    @Operation(summary = "find by cours code")
+    @GetMapping("/code/{code}")
+    public Cours findByCode(String code) {
+        return coursAdminService.findByCode(code);
+    }
+    @Operation(summary = "delete by cours code")
+    @DeleteMapping("/code/{code}")
+    public int deleteByCode(String code) {
+        return coursAdminService.deleteByCode(code);
+    }
+
+    private @Autowired CoursAdminService coursAdminService;
+
+    @Operation(summary = "find by parcours code")
+    @GetMapping("parcours/code/{code}")
+    public List<CoursDto> findByParcoursCode(@PathVariable String code) {
+        return findDtos(coursAdminService.findByParcoursCode(code));
+    }
+    @Operation(summary = "delete by parcours code")
+    @DeleteMapping("parcours/code/{code}")
+    public int deleteByParcoursCode( @PathVariable String code) {
+        return coursAdminService.deleteByParcoursCode(code);
+    }
 
 
-
+    //
     @Operation(summary = "upload one cours")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
     public ResponseEntity<FileTempDto> uploadFileAndGetChecksum(@RequestBody MultipartFile file) throws Exception {
@@ -67,8 +88,23 @@ public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCr
     @Operation(summary = "Saves the specified  cours")
     @PostMapping("")
     public ResponseEntity<CoursDto> save(@RequestBody CoursDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            converter.init(true);
+            Cours myT = converter.toItem(dto);
+            Cours t = service.saveCours(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                CoursDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+    /*public ResponseEntity<CoursDto> save(@RequestBody CoursDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  cours")
     @PutMapping("")
@@ -89,9 +125,21 @@ public class CoursRestAdmin  extends AbstractController<Cours, CoursDto, CoursCr
 
     @Operation(summary = "Delete the specified cours")
     @DeleteMapping("id/{id}")
-    public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
-        return super.deleteById(id);
+    protected ResponseEntity<Long> deleteById(@PathVariable Long id)  throws Exception {
+        ResponseEntity<Long> res;
+        HttpStatus status = HttpStatus.PRECONDITION_FAILED;
+        if (id != null) {
+            boolean resultDelete = service.deleteCourById(id);
+            if (resultDelete) {
+                status = HttpStatus.OK;
+            }
+        }
+        res = new ResponseEntity<>(id, status);
+        return res;
     }
+   /* public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
+        return super.deleteById(id);
+    }*/
     @Operation(summary = "Delete multiple courss by ids")
     @DeleteMapping("multiple/id")
     public ResponseEntity<List<Long>> deleteByIdIn(@RequestBody List<Long> ids) throws Exception {

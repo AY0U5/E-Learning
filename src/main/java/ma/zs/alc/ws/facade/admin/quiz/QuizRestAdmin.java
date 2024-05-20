@@ -17,6 +17,7 @@ import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +35,40 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 public class QuizRestAdmin  extends AbstractController<Quiz, QuizDto, QuizCriteria, QuizAdminService, QuizConverter> {
 
 
+    private @Autowired QuizAdminService quizAdminService;
+
+    @Operation(summary = "Finds a quiz by lib")
+    @GetMapping("lib/{lib}")
+    public ResponseEntity<QuizDto> findBylib(@PathVariable String lib) {
+//        return quizAdminService.findBylib(lib);
+        Quiz loaded = quizAdminService.findBylib(lib);
+        QuizDto dto = null;
+        HttpStatus status = HttpStatus.NO_CONTENT;
+        if (loaded != null) {
+//            converter.init(true);
+            dto = converter.toDto(loaded);
+            status = HttpStatus.OK;
+            return new ResponseEntity<>(dto, status);
+
+        }else {
+
+            return new ResponseEntity<>(dto, status);
+        }
+    }
+
+    @Operation(summary = "delete a quiz by lib")
+    @DeleteMapping("lib/{lib}")
+    public int deleteBylib(@PathVariable  String lib) {
+        return quizAdminService.deleteBylib(lib);
+    }
+
+    /*public Quiz findByRef(String ref) {
+        return quizAdminService.findByRef(ref);
+    }
+
+    public int deleteByRef(String ref) {
+        return quizAdminService.deleteByRef(ref);
+    }*/
 
     @Operation(summary = "upload one quiz")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
@@ -58,11 +93,11 @@ public class QuizRestAdmin  extends AbstractController<Quiz, QuizDto, QuizCriter
         return super.findAllOptimized();
     }
 
-    @Operation(summary = "Finds a quiz by lib")
+    /*@Operation(summary = "Finds a quiz by lib")
     @GetMapping("lib/{lib}")
     public ResponseEntity<QuizDto> findByLib(@PathVariable String lib) {
         return super.findByReferenceEntity(new Quiz(lib));
-    }
+    }*/
 
     @Operation(summary = "Saves the specified  quiz")
     @PostMapping("")

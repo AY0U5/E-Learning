@@ -10,6 +10,10 @@ import java.util.List;
 
 @Repository
 public interface ReponseDao extends AbstractRepository<Reponse,Long>  {
+
+    Reponse findByLib(String lib);
+
+    int deleteByLib(String lib);
     Reponse findByRef(String ref);
     int deleteByRef(String ref);
 

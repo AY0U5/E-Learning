@@ -3,6 +3,7 @@ package  ma.zs.alc.dao.criteria.core.course;
 
 import ma.zs.alc.dao.criteria.core.courseref.CategorieSectionCriteria;
 
+import ma.zs.alc.dao.criteria.core.courseref.EtatSectionCriteria;
 import ma.zs.alc.zynerator.criteria.BaseCriteria;
 import java.util.List;
 
@@ -38,6 +39,9 @@ public class SectionCriteria extends  BaseCriteria  {
 
     private CategorieSectionCriteria categorieSection ;
     private List<CategorieSectionCriteria> categorieSections ;
+
+    private EtatSectionCriteria etatSection ;
+    private List<EtatSectionCriteria> etatSections ;
     private CoursCriteria cours ;
     private List<CoursCriteria> courss ;
 
@@ -232,6 +236,21 @@ public class SectionCriteria extends  BaseCriteria  {
 
     public void setCategorieSections(List<CategorieSectionCriteria> categorieSections){
         this.categorieSections = categorieSections;
+    }
+
+    public EtatSectionCriteria getEtatSection(){
+        return this.etatSection;
+    }
+
+    public void setEtatSection(EtatSectionCriteria etatSection){
+        this.etatSection = etatSection;
+    }
+    public List<EtatSectionCriteria> getEtatSections(){
+        return this.etatSections;
+    }
+
+    public void setEtatSections(List<EtatSectionCriteria> etatSections){
+        this.etatSections = etatSections;
     }
     public CoursCriteria getCours(){
         return this.cours;

@@ -6,10 +6,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
+import ma.zs.alc.bean.core.course.Cours;
 import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
 import ma.zs.alc.ws.converter.course.SectionConverter;
+import ma.zs.alc.ws.dto.course.CoursDto;
 import ma.zs.alc.ws.dto.course.SectionDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.dto.AuditEntityDto;
@@ -17,6 +19,7 @@ import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +36,16 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RequestMapping("/api/admin/section/")
 public class SectionRestAdmin  extends AbstractController<Section, SectionDto, SectionCriteria, SectionAdminService, SectionConverter> {
 
-
+    @Operation(summary = "find by etatSection id")
+    @GetMapping("etatSection/id/{id}")
+    public List<SectionDto> findByEtatSectionId(@PathVariable Long id){
+        return findDtos(service.findByEtatSectionId(id));
+    }
+    @Operation(summary = "delete by etatSection id")
+    @DeleteMapping("etatSection/id/{id}")
+    public int deleteByEtatSectionId(@PathVariable Long id){
+        return service.deleteByEtatSectionId(id);
+    }
 
     @Operation(summary = "upload one section")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
@@ -67,8 +79,25 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
     @Operation(summary = "Saves the specified  section")
     @PostMapping("")
     public ResponseEntity<SectionDto> save(@RequestBody SectionDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            /* SectionConverter sectionConverter= (SectionConverter) converter;
+            sectionConverter.setCours(false);*/
+            converter.init(true);
+            Section myT = converter.toItem(dto);
+            Section t = service.saveSection(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                SectionDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+    /*public ResponseEntity<SectionDto> save(@RequestBody SectionDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  section")
     @PutMapping("")
@@ -89,9 +118,21 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
 
     @Operation(summary = "Delete the specified section")
     @DeleteMapping("id/{id}")
-    public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
-        return super.deleteById(id);
+    protected ResponseEntity<Long> deleteById(@PathVariable Long id)  throws Exception {
+        ResponseEntity<Long> res;
+        HttpStatus status = HttpStatus.PRECONDITION_FAILED;
+        if (id != null) {
+            boolean resultDelete = service.deleteSectionById(id);
+            if (resultDelete) {
+                status = HttpStatus.OK;
+            }
+        }
+        res = new ResponseEntity<>(id, status);
+        return res;
     }
+   /* public ResponseEntity<Long> deleteById(@PathVariable Long id) throws Exception {
+        return super.deleteById(id);
+    }*/
     @Operation(summary = "Delete multiple sections by ids")
     @DeleteMapping("multiple/id")
     public ResponseEntity<List<Long>> deleteByIdIn(@RequestBody List<Long> ids) throws Exception {

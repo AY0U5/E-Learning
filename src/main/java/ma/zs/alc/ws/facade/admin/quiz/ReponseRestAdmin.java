@@ -28,12 +28,13 @@ import ma.zs.alc.zynerator.process.Result;
 
 import org.springframework.web.multipart.MultipartFile;
 import ma.zs.alc.zynerator.dto.FileTempDto;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/api/admin/reponse/")
 public class ReponseRestAdmin  extends AbstractController<Reponse, ReponseDto, ReponseCriteria, ReponseAdminService, ReponseConverter> {
 
-
+    private @Autowired ReponseAdminService reponseAdminService;
 
     @Operation(summary = "upload one reponse")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
@@ -61,8 +62,21 @@ public class ReponseRestAdmin  extends AbstractController<Reponse, ReponseDto, R
     @Operation(summary = "Finds a reponse by lib")
     @GetMapping("lib/{lib}")
     public ResponseEntity<ReponseDto> findByLib(@PathVariable String lib) {
-        return super.findByReferenceEntity(new Reponse(lib));
+        Reponse loaded = reponseAdminService.findByLib(lib);
+        ReponseDto dto = null;
+        HttpStatus status = HttpStatus.NO_CONTENT;
+        if (loaded != null) {
+//            converter.init(true);
+            dto = converter.toDto(loaded);
+            status = HttpStatus.OK;
+            return new ResponseEntity<>(dto, status);
+        }else {
+            return new ResponseEntity<>(dto, status);
+        }
     }
+   /* public ResponseEntity<ReponseDto> findByLib(@PathVariable String lib) {
+        return super.findByReferenceEntity(new Reponse(lib));
+    }*/
 
     @Operation(summary = "Saves the specified  reponse")
     @PostMapping("")

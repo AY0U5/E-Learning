@@ -48,6 +48,7 @@ public class Cours   extends AuditBusinessObject     {
     private Integer nombreLinkFinalise = 0;
     private Integer numeroOrder = 0;
 
+    private Integer nombreSection = 0;
     private EtatCours etatCours ;
     private Parcours parcours ;
 
@@ -151,6 +152,12 @@ public class Cours   extends AuditBusinessObject     {
     }
     public void setNumeroOrder(Integer numeroOrder){
         this.numeroOrder = numeroOrder;
+    }
+    public Integer getNombreSection(){
+        return this.nombreSection;
+    }
+    public void setNombreSection(Integer nombreSection){
+        this.nombreSection = nombreSection;
     }
     @OneToMany(mappedBy = "cours")
 

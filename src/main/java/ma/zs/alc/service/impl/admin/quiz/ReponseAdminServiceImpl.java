@@ -1,34 +1,49 @@
 package ma.zs.alc.service.impl.admin.quiz;
 
 
+import ma.zs.alc.bean.core.quiz.Question;
 import ma.zs.alc.bean.core.quiz.Reponse;
 import ma.zs.alc.dao.criteria.core.quiz.ReponseCriteria;
 import ma.zs.alc.dao.facade.core.quiz.ReponseDao;
 import ma.zs.alc.dao.specification.core.quiz.ReponseSpecification;
 import ma.zs.alc.service.facade.admin.quiz.ReponseAdminService;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
-import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ma.zs.alc.service.facade.admin.quiz.QuestionAdminService ;
-import ma.zs.alc.bean.core.quiz.Question ;
 
-import java.util.List;
 @Service
 public class ReponseAdminServiceImpl extends AbstractServiceImpl<Reponse, ReponseCriteria, ReponseDao> implements ReponseAdminService {
 
 
+    private @Autowired ReponseDao reponseDao;
 
+    @Override
+    public Reponse saverep(Reponse reponse) {
+        if(reponse == null){
+            return null;
+        }else {
+            if(reponse.getQuestion() == null){
+                return null;
+            }
+            Question question = questionService.findById(reponse.getQuestion().getId());
+            reponse.setQuestion(question);
+            return reponseDao.save(reponse);
+        }
+    }
 
-
+    @Override
+    public Reponse findByLib(String lib) {
+        return reponseDao.findByLib(lib);
+    }
+    @Override
+    public int deleteByLib(String lib) {
+        return reponseDao.deleteByLib(lib);
+    }
 
     public Reponse findByReferenceEntity(Reponse t){
         return t==null? null : dao.findByRef(t.getRef());

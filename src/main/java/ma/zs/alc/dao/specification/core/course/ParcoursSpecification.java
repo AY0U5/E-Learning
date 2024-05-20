@@ -16,6 +16,9 @@ public class ParcoursSpecification extends  AbstractSpecification<ParcoursCriter
         addPredicate("libelle", criteria.getLibelle(),criteria.getLibelleLike());
         addPredicateInt("numeroOrder", criteria.getNumeroOrder(), criteria.getNumeroOrderMin(), criteria.getNumeroOrderMax());
         addPredicateInt("nombreCours", criteria.getNombreCours(), criteria.getNombreCoursMin(), criteria.getNombreCoursMax());
+        addPredicateFk("etatParcours","id", criteria.getEtatParcours()==null?null:criteria.getEtatParcours().getId());
+        addPredicateFk("etatParcours","id", criteria.getEtatParcourss());
+        addPredicateFk("etatParcours","code", criteria.getEtatParcours()==null?null:criteria.getEtatParcours().getCode());
         addPredicateFk("centre","id", criteria.getCentre()==null?null:criteria.getCentre().getId());
         addPredicateFk("centre","id", criteria.getCentres());
         addPredicateFk("centre","ref", criteria.getCentre()==null?null:criteria.getCentre().getRef());

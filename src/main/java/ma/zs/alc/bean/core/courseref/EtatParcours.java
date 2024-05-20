@@ -17,10 +17,10 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "etat_cours")
+@Table(name = "etat_parcours")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class EtatCours   extends AuditBusinessObject {
+public class EtatParcours   extends AuditBusinessObject {
 
     private Long id;
 
@@ -31,19 +31,19 @@ public class EtatCours   extends AuditBusinessObject {
 
 
 
-    public EtatCours(){
+    public EtatParcours(){
         super();
     }
 
-    public EtatCours(Long id){
+    public EtatParcours(Long id){
         this.id = id;
     }
 
-    public EtatCours(Long id,String libelle){
+    public EtatParcours(Long id,String libelle){
         this.id = id;
         this.libelle = libelle ;
     }
-    public EtatCours(String libelle){
+    public EtatParcours(String libelle){
         this.libelle = libelle ;
     }
 
@@ -82,8 +82,8 @@ public class EtatCours   extends AuditBusinessObject {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EtatCours etatCours = (EtatCours) o;
-        return id != null && id.equals(etatCours.id);
+        EtatParcours etatParcours = (EtatParcours) o;
+        return id != null && id.equals(etatParcours.id);
     }
 
     @Override
@@ -92,4 +92,3 @@ public class EtatCours   extends AuditBusinessObject {
     }
 
 }
-

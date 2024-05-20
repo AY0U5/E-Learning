@@ -10,6 +10,7 @@ import ma.zs.alc.bean.core.course.Parcours;
 import ma.zs.alc.dao.criteria.core.course.ParcoursCriteria;
 import ma.zs.alc.service.facade.admin.course.ParcoursAdminService;
 import ma.zs.alc.ws.converter.course.ParcoursConverter;
+import ma.zs.alc.ws.dto.course.CoursDto;
 import ma.zs.alc.ws.dto.course.ParcoursDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.dto.AuditEntityDto;
@@ -17,6 +18,7 @@ import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +36,16 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 public class ParcoursRestAdmin  extends AbstractController<Parcours, ParcoursDto, ParcoursCriteria, ParcoursAdminService, ParcoursConverter> {
 
 
-
+    @Operation(summary = "find by etatParcours id")
+    @GetMapping("etatParcours/id/{id}")
+    public List<ParcoursDto> findByEtatParcoursId(@PathVariable Long id){
+        return findDtos(service.findByEtatParcoursId(id));
+    }
+    @Operation(summary = "delete by etatParcours id")
+    @DeleteMapping("etatParcours/id/{id}")
+    public int deleteByEtatParcoursId(@PathVariable Long id){
+        return service.deleteByEtatParcoursId(id);
+    }
     @Operation(summary = "upload one parcours")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
     public ResponseEntity<FileTempDto> uploadFileAndGetChecksum(@RequestBody MultipartFile file) throws Exception {
@@ -67,8 +78,23 @@ public class ParcoursRestAdmin  extends AbstractController<Parcours, ParcoursDto
     @Operation(summary = "Saves the specified  parcours")
     @PostMapping("")
     public ResponseEntity<ParcoursDto> save(@RequestBody ParcoursDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            converter.init(true);
+            Parcours myT = converter.toItem(dto);
+            Parcours t = service.saveparcour(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                ParcoursDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+   /* public ResponseEntity<ParcoursDto> save(@RequestBody ParcoursDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  parcours")
     @PutMapping("")

@@ -80,6 +80,8 @@ public class CoursConverter extends AbstractConverter<Cours, CoursDto> {
                 item.setNombreLinkFinalise(dto.getNombreLinkFinalise());
             if(StringUtil.isNotEmpty(dto.getNumeroOrder()))
                 item.setNumeroOrder(dto.getNumeroOrder());
+            if (StringUtil.isNotEmpty(dto.getNombreSection()))
+                item.setNombreSection(dto.getNombreSection());
             if(this.etatCours && dto.getEtatCours()!=null)
                 item.setEtatCours(etatCoursConverter.toItem(dto.getEtatCours())) ;
 
@@ -126,6 +128,8 @@ public class CoursConverter extends AbstractConverter<Cours, CoursDto> {
                 dto.setNombreLinkFinalise(item.getNombreLinkFinalise());
             if(StringUtil.isNotEmpty(item.getNumeroOrder()))
                 dto.setNumeroOrder(item.getNumeroOrder());
+            if (StringUtil.isNotEmpty(item.getNombreSection()))
+                dto.setNombreSection(item.getNombreSection());
             if(this.etatCours && item.getEtatCours()!=null) {
                 dto.setEtatCours(etatCoursConverter.toDto(item.getEtatCours())) ;
 

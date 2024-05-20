@@ -17,4 +17,7 @@ public interface EtatCoursDao extends AbstractRepository<EtatCours,Long>  {
     @Query("SELECT NEW EtatCours(item.id,item.libelle) FROM EtatCours item")
     List<EtatCours> findAllOptimized();
 
+    EtatCours findByLibelle(String lib);
+
+    int deleteByLibelle(String lib);
 }

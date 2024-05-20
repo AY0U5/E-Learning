@@ -7,16 +7,20 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import ma.zs.alc.bean.core.quiz.Question;
+import ma.zs.alc.bean.core.quiz.Quiz;
 import ma.zs.alc.dao.criteria.core.quiz.QuestionCriteria;
 import ma.zs.alc.service.facade.admin.quiz.QuestionAdminService;
+import ma.zs.alc.service.facade.admin.quiz.QuizAdminService;
 import ma.zs.alc.ws.converter.quiz.QuestionConverter;
 import ma.zs.alc.ws.dto.quiz.QuestionDto;
+import ma.zs.alc.ws.dto.quiz.QuizDto;
 import ma.zs.alc.zynerator.controller.AbstractController;
 import ma.zs.alc.zynerator.dto.AuditEntityDto;
 import ma.zs.alc.zynerator.util.PaginatedList;
 
 
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +39,25 @@ public class QuestionRestAdmin  extends AbstractController<Question, QuestionDto
 
 
 
+
+    private @Autowired QuestionAdminService questionAdminService;
+
+    @Operation(summary = "Finds a quiz by lib")
+    @GetMapping("lib/{lib}")
+    public ResponseEntity<QuestionDto> findBylib(@PathVariable String lib) {
+//        return quizAdminService.findBylib(lib);
+        Question loaded = questionAdminService.findByLibelle(lib);
+        QuestionDto dto = null;
+        HttpStatus status = HttpStatus.NO_CONTENT;
+        if (loaded != null) {
+//            converter.init(true);
+            dto = converter.toDto(loaded);
+            status = HttpStatus.OK;
+            return new ResponseEntity<>(dto, status);
+        }else {
+            return new ResponseEntity<>(dto, status);
+        }
+    }
     @Operation(summary = "upload one question")
     @RequestMapping(value = "upload", method = RequestMethod.POST, consumes = "multipart/form-data")
     public ResponseEntity<FileTempDto> uploadFileAndGetChecksum(@RequestBody MultipartFile file) throws Exception {
@@ -58,17 +81,32 @@ public class QuestionRestAdmin  extends AbstractController<Question, QuestionDto
         return super.findAllOptimized();
     }
 
-    @Operation(summary = "Finds a question by libelle")
+    /*@Operation(summary = "Finds a question by libelle")
     @GetMapping("libelle/{libelle}")
     public ResponseEntity<QuestionDto> findByLibelle(@PathVariable String libelle) {
         return super.findByReferenceEntity(new Question(libelle));
-    }
+    }*/
 
     @Operation(summary = "Saves the specified  question")
     @PostMapping("")
     public ResponseEntity<QuestionDto> save(@RequestBody QuestionDto dto) throws Exception {
-        return super.save(dto);
+        if(dto!=null){
+            converter.init(true);
+            Question myT = converter.toItem(dto);
+            Question t = questionAdminService.saveqst(myT);
+            if (t == null) {
+                return new ResponseEntity<>(null, HttpStatus.IM_USED);
+            }else{
+                QuestionDto myDto = converter.toDto(t);
+                return new ResponseEntity<>(myDto, HttpStatus.CREATED);
+            }
+        }else {
+            return new ResponseEntity<>(dto, HttpStatus.NO_CONTENT);
+        }
     }
+   /* public ResponseEntity<QuestionDto> save(@RequestBody QuestionDto dto) throws Exception {
+        return super.save(dto);
+    }*/
 
     @Operation(summary = "Updates the specified  question")
     @PutMapping("")

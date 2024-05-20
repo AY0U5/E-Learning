@@ -18,6 +18,8 @@ public interface CoursDao extends AbstractRepository<Cours,Long>  {
     long countByEtatCoursCode(String code);
     List<Cours> findByParcoursId(Long id);
     int deleteByParcoursId(Long id);
+    List<Cours> findByParcoursCode(String code);
+    int deleteByParcoursCode(String code);
     long countByParcoursCode(String code);
 
     @Query("SELECT NEW Cours(item.id,item.libelle) FROM Cours item")
