@@ -10,10 +10,6 @@ import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +21,34 @@ import ma.zs.alc.bean.core.quizetudiant.QuizEtudiant ;
 import ma.zs.alc.service.facade.admin.quiz.QuestionAdminService ;
 import ma.zs.alc.bean.core.quiz.Question ;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService ;
-import ma.zs.alc.bean.core.course.Section ;
 
-import java.util.List;
 @Service
 public class QuizAdminServiceImpl extends AbstractServiceImpl<Quiz, QuizCriteria, QuizDao> implements QuizAdminService {
 
+
+    private @Autowired QuizDao quizDao;
+
+    @Override
+    public Quiz findBylib(String lib) {
+       Quiz quiz = quizDao.findBylib(lib);
+       if(quiz != null){
+       return quiz;
+       }else {
+           return null;
+       }
+    }
+    @Override
+    public int deleteBylib(String lib) {
+        return quizDao.deleteBylib(lib);
+    }
+    @Override
+    public Quiz findByRef(String ref) {
+        return quizDao.findByRef(ref);
+    }
+    @Override
+    public int deleteByRef(String ref) {
+        return quizDao.deleteByRef(ref);
+    }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public Quiz create(Quiz t) {

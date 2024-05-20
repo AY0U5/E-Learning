@@ -2,6 +2,7 @@ package ma.zs.alc.service.impl.admin.quiz;
 
 
 import ma.zs.alc.bean.core.quiz.Question;
+import ma.zs.alc.bean.core.quizref.TypeDeQuestion;
 import ma.zs.alc.dao.criteria.core.quiz.QuestionCriteria;
 import ma.zs.alc.dao.facade.core.quiz.QuestionDao;
 import ma.zs.alc.dao.specification.core.quiz.QuestionSpecification;
@@ -10,10 +11,6 @@ import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
-
-
-
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +18,60 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ma.zs.alc.service.facade.admin.quiz.QuizAdminService ;
-import ma.zs.alc.bean.core.quiz.Quiz ;
 import ma.zs.alc.service.facade.admin.quizref.TypeDeQuestionAdminService ;
-import ma.zs.alc.bean.core.quizref.TypeDeQuestion ;
 import ma.zs.alc.service.facade.admin.quiz.ReponseAdminService ;
 import ma.zs.alc.bean.core.quiz.Reponse ;
 import ma.zs.alc.service.facade.admin.homework.HomeWorkAdminService ;
-import ma.zs.alc.bean.core.homework.HomeWork ;
 
-import java.util.List;
 @Service
 public class QuestionAdminServiceImpl extends AbstractServiceImpl<Question, QuestionCriteria, QuestionDao> implements QuestionAdminService {
 
+    //
+    private @Autowired QuestionDao questionDao;
 
+    @Override
+    public Question findByLibelle(String libelle) {
+        return questionDao.findByLibelle(libelle);
+    }
+    @Override
+    public int deleteByLibelle(String libelle) {
+        return questionDao.deleteByLibelle(libelle);
+    }
+
+    //
+    @Override
+    public Question saveqst(Question question){
+        if (question == null) {
+            return null;
+        }else {
+            if(questionDao.findByLibelle(question.getLibelle()) != null){
+                return null;
+            }
+            if(question.getTypeDeQuestion() == null){
+                return null;
+            }
+            TypeDeQuestion typeDeQuestion = typeDeQuestionService.findById(question.getTypeDeQuestion().getId());
+           /* if (typeDeQuestion == null){
+                return null;
+            }*/
+            question.setTypeDeQuestion(typeDeQuestion);
+            Question saved = questionDao.save(question);
+
+            if (saved != null && saved.getReponses() != null) {
+                /*saved.getReponses().forEach(element-> {
+                    element.setQuestion(saved);
+                    reponseService.create(element);
+                });*/
+                List<Reponse> Reponses = saved.getReponses();
+                for (Reponse reponse : Reponses){
+                    reponse.setQuestion(saved);
+                    reponseService.saverep(reponse);
+                }
+            }
+            return saved;
+        }
+    }
+    //
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public Question create(Question t) {
         Question saved= super.create(t);

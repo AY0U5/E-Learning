@@ -10,6 +10,9 @@ import java.util.List;
 
 @Repository
 public interface QuizDao extends AbstractRepository<Quiz,Long>  {
+
+    Quiz findBylib(String lib);
+    int deleteBylib(String lib);
     Quiz findByRef(String ref);
     int deleteByRef(String ref);
 

@@ -314,7 +314,7 @@ public class AlcApplication {
 
         
 
-		// User Admin
+		/*// User Admin
 		User userForAdmin = new User("admin");
 		userForAdmin.setPassword("123");
 		// Role Admin
@@ -334,7 +334,7 @@ public class AlcApplication {
 
         userForAdmin.setModelPermissionUsers(modelPermissionUserService.initModelPermissionUser());
 
-        userService.create(userForAdmin);
+        userService.create(userForAdmin);*/
 
             }
         };
