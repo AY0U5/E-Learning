@@ -10,6 +10,7 @@ import ma.zs.alc.bean.core.course.Cours;
 import ma.zs.alc.bean.core.course.Section;
 import ma.zs.alc.dao.criteria.core.course.SectionCriteria;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
+import ma.zs.alc.ws.converter.course.CoursConverter;
 import ma.zs.alc.ws.converter.course.SectionConverter;
 import ma.zs.alc.ws.dto.course.CoursDto;
 import ma.zs.alc.ws.dto.course.SectionDto;
@@ -37,6 +38,8 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 public class SectionRestAdmin  extends AbstractController<Section, SectionDto, SectionCriteria, SectionAdminService, SectionConverter> {
 
     private @Autowired SectionAdminService sectionAdminService;
+    private @Autowired SectionConverter sectionConverter;
+    private @Autowired CoursConverter coursConverter;
     @Operation(summary = "find by etatSection id")
     @GetMapping("etatSection/id/{id}")
     public List<SectionDto> findByEtatSectionId(@PathVariable Long id){
@@ -105,19 +108,22 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
     public ResponseEntity<SectionDto> update( @RequestBody SectionDto dto) throws Exception {
         ResponseEntity<SectionDto> res ;
         if (dto.getId() == null || sectionAdminService.findById(dto.getId()) == null)
-            res = new ResponseEntity<>(HttpStatus.CONFLICT);
+            res = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         else {
-            Section t = sectionAdminService.findById(dto.getId());
-            converter.copy(dto,t);
-            Section updated = sectionAdminService.updatesection(t);
+
+//            Section t = sectionAdminService.findById(dto.getId());
+//            sectionConverter.copy(dto,t);
+            Section item = sectionConverter.toItem(dto);
+            Section updated = sectionAdminService.updatesection(item);
             SectionDto myDto = converter.toDto(updated);
             res = new ResponseEntity<>(myDto, HttpStatus.OK);
         }
         return res;
     }
-   /* public ResponseEntity<SectionDto> update(@RequestBody SectionDto dto) throws Exception {
+    /*public ResponseEntity<SectionDto> update(@RequestBody SectionDto dto) throws Exception {
         return super.update(dto);
     }*/
+
 
     @Operation(summary = "Delete list of section")
     @PostMapping("multiple")
@@ -178,8 +184,26 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
     @Operation(summary = "Finds a section and associated list by id")
     @GetMapping("id/{id}")
     public ResponseEntity<SectionDto> findById(@PathVariable Long id) {
+
+            Section loaded =  service.findWithAssociatedLists(id);
+        Cours cour;
+        CoursDto courdto = new CoursDto();
+            if(loaded.getCours() != null){
+
+              cour  = loaded.getCours();
+                 courdto = coursConverter.toDto(cour);
+            }
+      /*  converter.initObject(true);
+        converter.initList(false);*/
+            converter.init(true);
+
+            SectionDto dto = converter.toDto(loaded);
+            dto.setCours(courdto);
+            return new ResponseEntity<>(dto, HttpStatus.OK);
+
+    }/*public ResponseEntity<SectionDto> findById(@PathVariable Long id) {
         return super.findWithAssociatedLists(id);
-    }
+    }*/
 
     @Operation(summary = "Finds sections by criteria")
     @PostMapping("find-by-criteria")

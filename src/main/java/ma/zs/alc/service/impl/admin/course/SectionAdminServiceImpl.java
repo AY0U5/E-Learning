@@ -12,6 +12,7 @@ import ma.zs.alc.service.facade.admin.courseref.EtatSectionAdminService;
 import ma.zs.alc.zynerator.exception.EntityNotFoundException;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
+import ma.zs.alc.zynerator.util.Utils;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -36,17 +37,31 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
     @Override
     public Section updatesection(Section section) {
         //saveAuditData(t, ACTION_TYPE.UPDATE);
-        Section loadedItem = sectionDao.findById(section.getId()).orElse(null);
+        /*Section loadedItem = sectionDao.findById(section.getId()).orElse(null);
         if (loadedItem == null) {
             throw new EntityNotFoundException("errors.notFound", new String[]{itemClass.getSimpleName(), section.getId().toString()});
         } else {
-            //Utils.copyNonNullProperties(t, loadedItem);
-            //dao.saveAndFlush(loadedItem);
+            Utils.copyNonNullProperties(section, loadedItem);
+            dao.saveAndFlush(loadedItem);
 //            updateWithAssociatedLists(t);
 
             sectionDao.save(section);
             return loadedItem;
+        }*/
+        if(section.getCategorieSection() != null) {
+            CategorieSection categorieSection = categorieSectionService.findById(section.getCategorieSection().getId());
+            section.setCategorieSection(categorieSection);
         }
+        if(section.getCours() != null) {
+            Cours cour = coursService.findById(section.getCours().getId());
+            section.setCours(cour);
+        }
+        if(section.getEtatSection() != null) {
+            EtatSection etatSection = etatSectionService.findById(section.getEtatSection().getId());
+            section.setEtatSection(etatSection);
+        }
+        section.setContenu(section.getContenu());
+        return sectionDao.save(section);
     }
 
     @Override
