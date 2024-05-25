@@ -36,6 +36,7 @@ import ma.zs.alc.zynerator.dto.FileTempDto;
 @RequestMapping("/api/admin/section/")
 public class SectionRestAdmin  extends AbstractController<Section, SectionDto, SectionCriteria, SectionAdminService, SectionConverter> {
 
+    private @Autowired SectionAdminService sectionAdminService;
     @Operation(summary = "find by etatSection id")
     @GetMapping("etatSection/id/{id}")
     public List<SectionDto> findByEtatSectionId(@PathVariable Long id){
@@ -101,9 +102,22 @@ public class SectionRestAdmin  extends AbstractController<Section, SectionDto, S
 
     @Operation(summary = "Updates the specified  section")
     @PutMapping("")
-    public ResponseEntity<SectionDto> update(@RequestBody SectionDto dto) throws Exception {
-        return super.update(dto);
+    public ResponseEntity<SectionDto> update( @RequestBody SectionDto dto) throws Exception {
+        ResponseEntity<SectionDto> res ;
+        if (dto.getId() == null || sectionAdminService.findById(dto.getId()) == null)
+            res = new ResponseEntity<>(HttpStatus.CONFLICT);
+        else {
+            Section t = sectionAdminService.findById(dto.getId());
+            converter.copy(dto,t);
+            Section updated = sectionAdminService.updatesection(t);
+            SectionDto myDto = converter.toDto(updated);
+            res = new ResponseEntity<>(myDto, HttpStatus.OK);
+        }
+        return res;
     }
+   /* public ResponseEntity<SectionDto> update(@RequestBody SectionDto dto) throws Exception {
+        return super.update(dto);
+    }*/
 
     @Operation(summary = "Delete list of section")
     @PostMapping("multiple")

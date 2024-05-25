@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface SectionAdminService extends  IService<Section,SectionCriteria>  {
 
+    //    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
+    Section updatesection(Section section);
+
     boolean deleteSectionById(Long id);
 
     Section saveSection(Section section);

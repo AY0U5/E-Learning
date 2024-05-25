@@ -41,7 +41,7 @@ public class Section   extends AuditBusinessObject     {
     private String urlImage3;
     @Column(length = 500)
     private String urlVideo;
-    @Column(length = 500)
+    @Column(columnDefinition = "TEXT")
     private String contenu;
     @Column(length = 500)
     private String questions;
@@ -73,9 +73,6 @@ public class Section   extends AuditBusinessObject     {
     public Section(String code){
         this.code = code ;
     }
-
-
-
 
     @Id
     @Column(name = "id")
