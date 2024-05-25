@@ -98,6 +98,16 @@ public class UserConverter extends AbstractConverter<User, UserDto> {
                 dto.setAccountNonLocked(item.isAccountNonLocked());
             if(StringUtil.isNotEmpty(item.getUsername()))
                 dto.setUsername(item.getUsername());
+
+            if(StringUtil.isNotEmpty(item.getFirstName()))
+                dto.setFirstName(item.getFirstName());
+
+            if(StringUtil.isNotEmpty(item.getLastName()))
+                dto.setLastName(item.getLastName());
+
+            if(StringUtil.isNotEmpty(item.getPhone()))
+                dto.setPhone(item.getPhone());
+
             if(StringUtil.isNotEmpty(item.getPassword()))
                 dto.setPassword(item.getPassword());
             if(StringUtil.isNotEmpty(item.getPasswordChanged()))

@@ -9,6 +9,7 @@ import ma.zs.alc.dao.facade.core.course.SectionDao;
 import ma.zs.alc.dao.specification.core.course.SectionSpecification;
 import ma.zs.alc.service.facade.admin.course.SectionAdminService;
 import ma.zs.alc.service.facade.admin.courseref.EtatSectionAdminService;
+import ma.zs.alc.zynerator.exception.EntityNotFoundException;
 import ma.zs.alc.zynerator.service.AbstractServiceImpl;
 import ma.zs.alc.zynerator.util.ListUtil;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,25 @@ import ma.zs.alc.bean.core.course.SectionItem ;
 @Service
 public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, SectionCriteria, SectionDao> implements SectionAdminService {
 
+
+    private @Autowired SectionDao sectionDao;
+
+//    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
+    @Override
+    public Section updatesection(Section section) {
+        //saveAuditData(t, ACTION_TYPE.UPDATE);
+        Section loadedItem = sectionDao.findById(section.getId()).orElse(null);
+        if (loadedItem == null) {
+            throw new EntityNotFoundException("errors.notFound", new String[]{itemClass.getSimpleName(), section.getId().toString()});
+        } else {
+            //Utils.copyNonNullProperties(t, loadedItem);
+            //dao.saveAndFlush(loadedItem);
+//            updateWithAssociatedLists(t);
+
+            sectionDao.save(section);
+            return loadedItem;
+        }
+    }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
@@ -53,7 +73,7 @@ public class SectionAdminServiceImpl extends AbstractServiceImpl<Section, Sectio
         return condition;
     }
 
-    private @Autowired SectionDao sectionDao;
+
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class, readOnly = false)
     public Section create(Section t) {
         Section saved= super.create(t);
