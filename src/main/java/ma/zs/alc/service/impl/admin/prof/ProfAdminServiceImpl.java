@@ -110,7 +110,7 @@ public class ProfAdminServiceImpl extends AbstractServiceImpl<Prof, ProfCriteria
         }*/
         Prof mySaved = super.create(t);
 
-        if (t.getTrancheHoraireProfs() != null) {
+       /* if (t.getTrancheHoraireProfs() != null) {
         t.getTrancheHoraireProfs().forEach(element-> {
             element.setProf(mySaved);
             trancheHoraireProfService.create(element);
@@ -127,7 +127,7 @@ public class ProfAdminServiceImpl extends AbstractServiceImpl<Prof, ProfCriteria
             element.setProf(mySaved);
             recommendTeacherService.create(element);
         });
-        }
+        }*/
         return mySaved;
      }
 

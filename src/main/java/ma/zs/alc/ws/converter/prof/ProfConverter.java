@@ -72,11 +72,11 @@ public class ProfConverter extends AbstractConverter<Prof, ProfDto> {
                 item.setRef(dto.getRef());
             if(StringUtil.isNotEmpty(dto.getAbout()))
                 item.setAbout(dto.getAbout());
-            item.setCredentialsNonExpired(dto.getCredentialsNonExpired());
-            item.setEnabled(dto.getEnabled());
-            item.setAccountNonExpired(dto.getAccountNonExpired());
-            item.setAccountNonLocked(dto.getAccountNonLocked());
-            item.setPasswordChanged(dto.getPasswordChanged());
+//            item.setCredentialsNonExpired(dto.getCredentialsNonExpired());
+//            item.setEnabled(dto.getEnabled());
+//            item.setAccountNonExpired(dto.getAccountNonExpired());
+//            item.setAccountNonLocked(dto.getAccountNonLocked());
+//            item.setPasswordChanged(dto.getPasswordChanged());
             if(StringUtil.isNotEmpty(dto.getUsername()))
                 item.setUsername(dto.getUsername());
             if(StringUtil.isNotEmpty(dto.getPassword()))
