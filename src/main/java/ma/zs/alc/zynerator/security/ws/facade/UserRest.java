@@ -7,6 +7,8 @@ import ma.zs.alc.zynerator.security.bean.User;
 import ma.zs.alc.zynerator.security.dao.criteria.core.UserCriteria;
 import ma.zs.alc.zynerator.security.service.facade.UserService;
 import ma.zs.alc.zynerator.security.ws.converter.UserConverter;
+import ma.zs.alc.zynerator.security.ws.dto.RoleDto;
+import ma.zs.alc.zynerator.security.ws.dto.RoleUserDto;
 import ma.zs.alc.zynerator.security.ws.dto.UserDto;
 import ma.zs.alc.zynerator.util.PaginatedList;
 import ma.zs.alc.zynerator.security.payload.request.ChangePasswordRequest;
@@ -64,8 +66,24 @@ public class UserRest  extends AbstractController<User, UserDto, UserCriteria, U
     @Operation(summary = "Updates the specified  user")
     @PutMapping("")
     public ResponseEntity<UserDto> update(@RequestBody UserDto dto) throws Exception {
-        return super.update(dto);
+        ResponseEntity<UserDto> res ;
+        if (dto.getId() == null || service.findById(dto.getId()) == null)
+            res = new ResponseEntity<>(HttpStatus.CONFLICT);
+        else {
+            /*List<RoleUserDto> roleUsers = dto.getRoleUsers();
+            RoleUserDto first = roleUsers.getFirst();
+            RoleDto role = first.getRole();*/
+            User t = service.findById(dto.getId());
+            converter.copy(dto,t);
+            User updated = service.updateUser(t);
+            UserDto myDto = converter.toDto(updated);
+            res = new ResponseEntity<>(myDto, HttpStatus.OK);
+        }
+        return res;
     }
+    /*public ResponseEntity<UserDto> update(@RequestBody UserDto dto) throws Exception {
+        return super.update(dto);
+    }*/
 
     @Operation(summary = "Delete list of user")
     @PostMapping("multiple")

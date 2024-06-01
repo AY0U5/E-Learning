@@ -68,10 +68,10 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/open/**").permitAll()
                                 .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll() // Permit access to Swagger UI and API docs
                                 .requestMatchers("/api/admin/login").permitAll()
-                                .requestMatchers("/api/admin/**").permitAll()//.hasAnyAuthority(AuthoritiesConstants.ADMIN)
-                                .requestMatchers("/api/admin/**").permitAll()//.hasAnyAuthority(AuthoritiesConstants.ANONYMOUS)
+                                .requestMatchers("/api/admin/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
+                                .requestMatchers("/api/user/**").permitAll()//.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+//                                .requestMatchers("/api/admin/**").permilAll()//.hasAnyAuthority(AuthoritiesConstants.ANONYMOUS)
                                 .anyRequest().authenticated()
-
                 );
 
         http.authenticationProvider(authenticationProvider());

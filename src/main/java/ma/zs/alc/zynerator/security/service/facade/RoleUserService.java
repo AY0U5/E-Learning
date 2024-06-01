@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface RoleUserService extends  IService<RoleUser,RoleUserCriteria>  {
 
+    RoleUser save(RoleUser roleUser);
+
     List<RoleUser> findByRoleId(Long id);
     int deleteByRoleId(Long id);
     long countByRoleAuthority(String authority);

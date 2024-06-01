@@ -21,4 +21,5 @@ public interface UserService extends IService<User, UserCriteria>, UserDetailsSe
     UserDetails loadUserByUsername(String username);
 
 
+    User updateUser(User t);
 }

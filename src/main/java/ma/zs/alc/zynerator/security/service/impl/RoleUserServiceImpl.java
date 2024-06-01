@@ -18,9 +18,12 @@ import java.util.List;
 public class RoleUserServiceImpl extends AbstractServiceImpl<RoleUser, RoleUserCriteria, RoleUserDao> implements RoleUserService {
 
 
+private @Autowired RoleUserDao roleUserDao;
 
-
-
+    @Override
+    public RoleUser save (RoleUser roleUser) {
+        return roleUserDao.save(roleUser);
+    }
 
     public List<RoleUser> findByRoleId(Long id){
         return dao.findByRoleId(id);
